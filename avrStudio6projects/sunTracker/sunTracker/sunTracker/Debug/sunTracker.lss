@@ -1,0 +1,1638 @@
+
+sunTracker.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00000824  00000000  00000000  00000074  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .bss          00000005  00800060  00800060  00000898  2**0
+                  ALLOC
+  2 .stab         000006cc  00000000  00000000  00000898  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  3 .stabstr      00000085  00000000  00000000  00000f64  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  4 .debug_aranges 00000140  00000000  00000000  00000ff0  2**3
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   00000a71  00000000  00000000  00001130  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 00000344  00000000  00000000  00001ba1  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   00000964  00000000  00000000  00001ee5  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  000001e0  00000000  00000000  0000284c  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    000002bd  00000000  00000000  00002a2c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    000002fe  00000000  00000000  00002ce9  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0e c0       	rjmp	.+28     	; 0x1e <__ctors_end>
+   2:	28 c0       	rjmp	.+80     	; 0x54 <__bad_interrupt>
+   4:	27 c0       	rjmp	.+78     	; 0x54 <__bad_interrupt>
+   6:	26 c0       	rjmp	.+76     	; 0x54 <__bad_interrupt>
+   8:	25 c0       	rjmp	.+74     	; 0x54 <__bad_interrupt>
+   a:	ae c0       	rjmp	.+348    	; 0x168 <__vector_5>
+   c:	23 c0       	rjmp	.+70     	; 0x54 <__bad_interrupt>
+   e:	22 c0       	rjmp	.+68     	; 0x54 <__bad_interrupt>
+  10:	21 c0       	rjmp	.+66     	; 0x54 <__bad_interrupt>
+  12:	20 c0       	rjmp	.+64     	; 0x54 <__bad_interrupt>
+  14:	1f c0       	rjmp	.+62     	; 0x54 <__bad_interrupt>
+  16:	1e c0       	rjmp	.+60     	; 0x54 <__bad_interrupt>
+  18:	1d c0       	rjmp	.+58     	; 0x54 <__bad_interrupt>
+  1a:	1c c0       	rjmp	.+56     	; 0x54 <__bad_interrupt>
+  1c:	1b c0       	rjmp	.+54     	; 0x54 <__bad_interrupt>
+
+0000001e <__ctors_end>:
+  1e:	11 24       	eor	r1, r1
+  20:	1f be       	out	0x3f, r1	; 63
+  22:	cf e5       	ldi	r28, 0x5F	; 95
+  24:	d1 e0       	ldi	r29, 0x01	; 1
+  26:	de bf       	out	0x3e, r29	; 62
+  28:	cd bf       	out	0x3d, r28	; 61
+
+0000002a <__do_copy_data>:
+  2a:	10 e0       	ldi	r17, 0x00	; 0
+  2c:	a0 e6       	ldi	r26, 0x60	; 96
+  2e:	b0 e0       	ldi	r27, 0x00	; 0
+  30:	e4 e2       	ldi	r30, 0x24	; 36
+  32:	f8 e0       	ldi	r31, 0x08	; 8
+  34:	02 c0       	rjmp	.+4      	; 0x3a <__CCP__+0x6>
+  36:	05 90       	lpm	r0, Z+
+  38:	0d 92       	st	X+, r0
+  3a:	a0 36       	cpi	r26, 0x60	; 96
+  3c:	b1 07       	cpc	r27, r17
+  3e:	d9 f7       	brne	.-10     	; 0x36 <__CCP__+0x2>
+
+00000040 <__do_clear_bss>:
+  40:	10 e0       	ldi	r17, 0x00	; 0
+  42:	a0 e6       	ldi	r26, 0x60	; 96
+  44:	b0 e0       	ldi	r27, 0x00	; 0
+  46:	01 c0       	rjmp	.+2      	; 0x4a <.do_clear_bss_start>
+
+00000048 <.do_clear_bss_loop>:
+  48:	1d 92       	st	X+, r1
+
+0000004a <.do_clear_bss_start>:
+  4a:	a5 36       	cpi	r26, 0x65	; 101
+  4c:	b1 07       	cpc	r27, r17
+  4e:	e1 f7       	brne	.-8      	; 0x48 <.do_clear_bss_loop>
+  50:	79 d1       	rcall	.+754    	; 0x344 <main>
+  52:	e6 c3       	rjmp	.+1996   	; 0x820 <_exit>
+
+00000054 <__bad_interrupt>:
+  54:	d5 cf       	rjmp	.-86     	; 0x0 <__vectors>
+
+00000056 <adcInit>:
+
+#include "adc.h"
+
+void adcInit()
+{
+  56:	cf 93       	push	r28
+  58:	df 93       	push	r29
+  5a:	00 d0       	rcall	.+0      	; 0x5c <adcInit+0x6>
+  5c:	cd b7       	in	r28, 0x3d	; 61
+  5e:	de b7       	in	r29, 0x3e	; 62
+        CPU Frequenz: 8MHz
+        -> Prescaler 64 -> ADC Frequenz 125kHz
+            
+    */
+    
+    ADCSRA |= (1<<ADEN);
+  60:	86 e2       	ldi	r24, 0x26	; 38
+  62:	90 e0       	ldi	r25, 0x00	; 0
+  64:	26 e2       	ldi	r18, 0x26	; 38
+  66:	30 e0       	ldi	r19, 0x00	; 0
+  68:	f9 01       	movw	r30, r18
+  6a:	20 81       	ld	r18, Z
+  6c:	20 68       	ori	r18, 0x80	; 128
+  6e:	fc 01       	movw	r30, r24
+  70:	20 83       	st	Z, r18
+    
+    /* interne Referenzspannung nutzen (1.1V)	*/
+    ADMUX |=  (1<<REFS1);
+  72:	87 e2       	ldi	r24, 0x27	; 39
+  74:	90 e0       	ldi	r25, 0x00	; 0
+  76:	27 e2       	ldi	r18, 0x27	; 39
+  78:	30 e0       	ldi	r19, 0x00	; 0
+  7a:	f9 01       	movw	r30, r18
+  7c:	20 81       	ld	r18, Z
+  7e:	20 68       	ori	r18, 0x80	; 128
+  80:	fc 01       	movw	r30, r24
+  82:	20 83       	st	Z, r18
+    
+    ADCSRA |= ((1<<ADPS2) | (1<<ADPS1) | (1<<ADSC));
+  84:	86 e2       	ldi	r24, 0x26	; 38
+  86:	90 e0       	ldi	r25, 0x00	; 0
+  88:	26 e2       	ldi	r18, 0x26	; 38
+  8a:	30 e0       	ldi	r19, 0x00	; 0
+  8c:	f9 01       	movw	r30, r18
+  8e:	20 81       	ld	r18, Z
+  90:	26 64       	ori	r18, 0x46	; 70
+  92:	fc 01       	movw	r30, r24
+  94:	20 83       	st	Z, r18
+
+    /* Auf Abschluss der Konvertierung warten
+       Das Register ADCSRA wird mit "1<<ADSC" maskiert. Da ADSC den Wert 6 hat, wartet das while 
+       also solange, bis das Bit6 von ADCSRA == 0 wird.
+    */
+    while (ADCSRA & (1<<ADSC) ) {}
+  96:	00 00       	nop
+  98:	86 e2       	ldi	r24, 0x26	; 38
+  9a:	90 e0       	ldi	r25, 0x00	; 0
+  9c:	fc 01       	movw	r30, r24
+  9e:	80 81       	ld	r24, Z
+  a0:	88 2f       	mov	r24, r24
+  a2:	90 e0       	ldi	r25, 0x00	; 0
+  a4:	80 74       	andi	r24, 0x40	; 64
+  a6:	90 70       	andi	r25, 0x00	; 0
+  a8:	00 97       	sbiw	r24, 0x00	; 0
+  aa:	b1 f7       	brne	.-20     	; 0x98 <adcInit+0x42>
+    //ADCSRA |= (1<<ADIE);				
+  
+    /* ADCW muss einmal gelesen werden, sonst wird Ergebnis der nächsten
+        Wandlung nicht übernommen. 
+    */
+    result = ADCW;		 
+  ac:	84 e2       	ldi	r24, 0x24	; 36
+  ae:	90 e0       	ldi	r25, 0x00	; 0
+  b0:	fc 01       	movw	r30, r24
+  b2:	80 81       	ld	r24, Z
+  b4:	91 81       	ldd	r25, Z+1	; 0x01
+  b6:	9a 83       	std	Y+2, r25	; 0x02
+  b8:	89 83       	std	Y+1, r24	; 0x01
+   
+}
+  ba:	0f 90       	pop	r0
+  bc:	0f 90       	pop	r0
+  be:	df 91       	pop	r29
+  c0:	cf 91       	pop	r28
+  c2:	08 95       	ret
+
+000000c4 <adcRead>:
+
+
+
+**************************************************************************************************************/
+uint16_t adcRead(uint8_t channel)
+{
+  c4:	cf 93       	push	r28
+  c6:	df 93       	push	r29
+  c8:	00 d0       	rcall	.+0      	; 0xca <adcRead+0x6>
+  ca:	00 d0       	rcall	.+0      	; 0xcc <adcRead+0x8>
+  cc:	0f 92       	push	r0
+  ce:	cd b7       	in	r28, 0x3d	; 61
+  d0:	de b7       	in	r29, 0x3e	; 62
+  d2:	8d 83       	std	Y+5, r24	; 0x05
+	uint32_t result;
+  
+    	
+	/* 	ADC Kanal auswählen   
+         -> dabei das REFS1 bit immer gesetzt lassen*/
+    ADMUX = (channel + 0x80);              
+  d4:	87 e2       	ldi	r24, 0x27	; 39
+  d6:	90 e0       	ldi	r25, 0x00	; 0
+  d8:	2d 81       	ldd	r18, Y+5	; 0x05
+  da:	20 58       	subi	r18, 0x80	; 128
+  dc:	fc 01       	movw	r30, r24
+  de:	20 83       	st	Z, r18
+
+    //ADMUX |=  (1<<REFS0);
+
+	/* Single Konvertierung anstoßen */
+  	ADCSRA |= (1<<ADSC);	
+  e0:	86 e2       	ldi	r24, 0x26	; 38
+  e2:	90 e0       	ldi	r25, 0x00	; 0
+  e4:	26 e2       	ldi	r18, 0x26	; 38
+  e6:	30 e0       	ldi	r19, 0x00	; 0
+  e8:	f9 01       	movw	r30, r18
+  ea:	20 81       	ld	r18, Z
+  ec:	20 64       	ori	r18, 0x40	; 64
+  ee:	fc 01       	movw	r30, r24
+  f0:	20 83       	st	Z, r18
+    
+
+  	/* Auf Abschluss der Konvertierung warten */
+ 	while (ADCSRA & (1<<ADSC) ) {}
+  f2:	00 00       	nop
+  f4:	86 e2       	ldi	r24, 0x26	; 38
+  f6:	90 e0       	ldi	r25, 0x00	; 0
+  f8:	fc 01       	movw	r30, r24
+  fa:	80 81       	ld	r24, Z
+  fc:	88 2f       	mov	r24, r24
+  fe:	90 e0       	ldi	r25, 0x00	; 0
+ 100:	80 74       	andi	r24, 0x40	; 64
+ 102:	90 70       	andi	r25, 0x00	; 0
+ 104:	00 97       	sbiw	r24, 0x00	; 0
+ 106:	b1 f7       	brne	.-20     	; 0xf4 <adcRead+0x30>
+	
+
+	/* Ergebnis als Bitwert */
+	result = (uint32_t) ADCW;
+ 108:	84 e2       	ldi	r24, 0x24	; 36
+ 10a:	90 e0       	ldi	r25, 0x00	; 0
+ 10c:	fc 01       	movw	r30, r24
+ 10e:	80 81       	ld	r24, Z
+ 110:	91 81       	ldd	r25, Z+1	; 0x01
+ 112:	cc 01       	movw	r24, r24
+ 114:	a0 e0       	ldi	r26, 0x00	; 0
+ 116:	b0 e0       	ldi	r27, 0x00	; 0
+ 118:	89 83       	std	Y+1, r24	; 0x01
+ 11a:	9a 83       	std	Y+2, r25	; 0x02
+ 11c:	ab 83       	std	Y+3, r26	; 0x03
+ 11e:	bc 83       	std	Y+4, r27	; 0x04
+        -> + 512 -> Korrekte Rundung durch Addition des halben Divisors    
+    */
+    //result = (((uint32_t)110 * result) + (uint32_t) 512) / 1023; 
+
+    //result = (result * 5850) / 100;
+    result = ((643500 * result)+51150) / 102300; 
+ 120:	69 81       	ldd	r22, Y+1	; 0x01
+ 122:	7a 81       	ldd	r23, Y+2	; 0x02
+ 124:	8b 81       	ldd	r24, Y+3	; 0x03
+ 126:	9c 81       	ldd	r25, Y+4	; 0x04
+ 128:	2c ea       	ldi	r18, 0xAC	; 172
+ 12a:	31 ed       	ldi	r19, 0xD1	; 209
+ 12c:	49 e0       	ldi	r20, 0x09	; 9
+ 12e:	50 e0       	ldi	r21, 0x00	; 0
+ 130:	3c d3       	rcall	.+1656   	; 0x7aa <__mulsi3>
+ 132:	dc 01       	movw	r26, r24
+ 134:	cb 01       	movw	r24, r22
+ 136:	82 53       	subi	r24, 0x32	; 50
+ 138:	98 43       	sbci	r25, 0x38	; 56
+ 13a:	af 4f       	sbci	r26, 0xFF	; 255
+ 13c:	bf 4f       	sbci	r27, 0xFF	; 255
+ 13e:	2c e9       	ldi	r18, 0x9C	; 156
+ 140:	3f e8       	ldi	r19, 0x8F	; 143
+ 142:	41 e0       	ldi	r20, 0x01	; 1
+ 144:	50 e0       	ldi	r21, 0x00	; 0
+ 146:	bc 01       	movw	r22, r24
+ 148:	cd 01       	movw	r24, r26
+ 14a:	48 d3       	rcall	.+1680   	; 0x7dc <__udivmodsi4>
+ 14c:	29 83       	std	Y+1, r18	; 0x01
+ 14e:	3a 83       	std	Y+2, r19	; 0x02
+ 150:	4b 83       	std	Y+3, r20	; 0x03
+ 152:	5c 83       	std	Y+4, r21	; 0x04
+
+	return (uint16_t) result;
+ 154:	89 81       	ldd	r24, Y+1	; 0x01
+ 156:	9a 81       	ldd	r25, Y+2	; 0x02
+}
+ 158:	0f 90       	pop	r0
+ 15a:	0f 90       	pop	r0
+ 15c:	0f 90       	pop	r0
+ 15e:	0f 90       	pop	r0
+ 160:	0f 90       	pop	r0
+ 162:	df 91       	pop	r29
+ 164:	cf 91       	pop	r28
+ 166:	08 95       	ret
+
+00000168 <__vector_5>:
+   Wenn der SleepMode als aktiv gesetzt ist, dann werden bei
+   jedem ISR Aufruf von der SleepTime 33ms abgezogen.
+   (Der Overflow tritt jeweils nach 33ms auf)    
+*/
+ISR(TIM0_OVF_vect)
+{
+ 168:	1f 92       	push	r1
+ 16a:	0f 92       	push	r0
+ 16c:	0f b6       	in	r0, 0x3f	; 63
+ 16e:	0f 92       	push	r0
+ 170:	11 24       	eor	r1, r1
+ 172:	8f 93       	push	r24
+ 174:	9f 93       	push	r25
+ 176:	af 93       	push	r26
+ 178:	bf 93       	push	r27
+ 17a:	cf 93       	push	r28
+ 17c:	df 93       	push	r29
+ 17e:	cd b7       	in	r28, 0x3d	; 61
+ 180:	de b7       	in	r29, 0x3e	; 62
+    if (sleepingActive==TRUE && leftSleepingTimeMs>33)
+ 182:	80 91 60 00 	lds	r24, 0x0060
+ 186:	81 30       	cpi	r24, 0x01	; 1
+ 188:	01 f5       	brne	.+64     	; 0x1ca <__vector_5+0x62>
+ 18a:	80 91 61 00 	lds	r24, 0x0061
+ 18e:	90 91 62 00 	lds	r25, 0x0062
+ 192:	a0 91 63 00 	lds	r26, 0x0063
+ 196:	b0 91 64 00 	lds	r27, 0x0064
+ 19a:	82 32       	cpi	r24, 0x22	; 34
+ 19c:	91 05       	cpc	r25, r1
+ 19e:	a1 05       	cpc	r26, r1
+ 1a0:	b1 05       	cpc	r27, r1
+ 1a2:	98 f0       	brcs	.+38     	; 0x1ca <__vector_5+0x62>
+    {
+        leftSleepingTimeMs -= 33;
+ 1a4:	80 91 61 00 	lds	r24, 0x0061
+ 1a8:	90 91 62 00 	lds	r25, 0x0062
+ 1ac:	a0 91 63 00 	lds	r26, 0x0063
+ 1b0:	b0 91 64 00 	lds	r27, 0x0064
+ 1b4:	81 97       	sbiw	r24, 0x21	; 33
+ 1b6:	a1 09       	sbc	r26, r1
+ 1b8:	b1 09       	sbc	r27, r1
+ 1ba:	80 93 61 00 	sts	0x0061, r24
+ 1be:	90 93 62 00 	sts	0x0062, r25
+ 1c2:	a0 93 63 00 	sts	0x0063, r26
+ 1c6:	b0 93 64 00 	sts	0x0064, r27
+    }
+}
+ 1ca:	df 91       	pop	r29
+ 1cc:	cf 91       	pop	r28
+ 1ce:	bf 91       	pop	r27
+ 1d0:	af 91       	pop	r26
+ 1d2:	9f 91       	pop	r25
+ 1d4:	8f 91       	pop	r24
+ 1d6:	0f 90       	pop	r0
+ 1d8:	0f be       	out	0x3f, r0	; 63
+ 1da:	0f 90       	pop	r0
+ 1dc:	1f 90       	pop	r1
+ 1de:	18 95       	reti
+
+000001e0 <myInit>:
+			- führt Initialisierungen durch
+			- wird bei Systemstart ausgeführt
+
+--------------------------------------------------------------------------------------*/
+void myInit()
+{
+ 1e0:	cf 93       	push	r28
+ 1e2:	df 93       	push	r29
+ 1e4:	cd b7       	in	r28, 0x3d	; 61
+ 1e6:	de b7       	in	r29, 0x3e	; 62
+    
+    leftSleepingTimeMs = 0;
+ 1e8:	10 92 61 00 	sts	0x0061, r1
+ 1ec:	10 92 62 00 	sts	0x0062, r1
+ 1f0:	10 92 63 00 	sts	0x0063, r1
+ 1f4:	10 92 64 00 	sts	0x0064, r1
+    sleepingActive = FALSE;
+ 1f8:	10 92 60 00 	sts	0x0060, r1
+    
+    /* configure controller pins as outputs and switch off (low level) */
+    DDRB |= ((1<<SERVO_SWITCH) | (1<<POWERTRANSFER_SWITCH));
+ 1fc:	87 e3       	ldi	r24, 0x37	; 55
+ 1fe:	90 e0       	ldi	r25, 0x00	; 0
+ 200:	27 e3       	ldi	r18, 0x37	; 55
+ 202:	30 e0       	ldi	r19, 0x00	; 0
+ 204:	f9 01       	movw	r30, r18
+ 206:	20 81       	ld	r18, Z
+ 208:	25 60       	ori	r18, 0x05	; 5
+ 20a:	fc 01       	movw	r30, r24
+ 20c:	20 83       	st	Z, r18
+    
+	
+}
+ 20e:	df 91       	pop	r29
+ 210:	cf 91       	pop	r28
+ 212:	08 95       	ret
+
+00000214 <pwmInit>:
+
+*********************************************************************************************** */
+
+
+void pwmInit(void)
+{
+ 214:	cf 93       	push	r28
+ 216:	df 93       	push	r29
+ 218:	cd b7       	in	r28, 0x3d	; 61
+ 21a:	de b7       	in	r29, 0x3e	; 62
+	DDRB |= (1<<DDB1);		
+ 21c:	87 e3       	ldi	r24, 0x37	; 55
+ 21e:	90 e0       	ldi	r25, 0x00	; 0
+ 220:	27 e3       	ldi	r18, 0x37	; 55
+ 222:	30 e0       	ldi	r19, 0x00	; 0
+ 224:	f9 01       	movw	r30, r18
+ 226:	20 81       	ld	r18, Z
+ 228:	22 60       	ori	r18, 0x02	; 2
+ 22a:	fc 01       	movw	r30, r24
+ 22c:	20 83       	st	Z, r18
+    
+    //Startwert laden -> Servo in Stellung max links
+    OCR0B=22;	//Vergleichswert laden 
+ 22e:	88 e4       	ldi	r24, 0x48	; 72
+ 230:	90 e0       	ldi	r25, 0x00	; 0
+ 232:	26 e1       	ldi	r18, 0x16	; 22
+ 234:	fc 01       	movw	r30, r24
+ 236:	20 83       	st	Z, r18
+    
+    
+    //Prescaler = 1024
+    TCCR0B |= ((1<<CS00) | (1<<CS02));  
+ 238:	83 e5       	ldi	r24, 0x53	; 83
+ 23a:	90 e0       	ldi	r25, 0x00	; 0
+ 23c:	23 e5       	ldi	r18, 0x53	; 83
+ 23e:	30 e0       	ldi	r19, 0x00	; 0
+ 240:	f9 01       	movw	r30, r18
+ 242:	20 81       	ld	r18, Z
+ 244:	25 60       	ori	r18, 0x05	; 5
+ 246:	fc 01       	movw	r30, r24
+ 248:	20 83       	st	Z, r18
+    
+	/*Fast PWM Modus
+        -> Clear OC0B on Compare Match
+        -> Set OC0B at TOP (255)
+	*/
+    TCCR0A |= ((1<<WGM00) | (1<<WGM01));	
+ 24a:	8a e4       	ldi	r24, 0x4A	; 74
+ 24c:	90 e0       	ldi	r25, 0x00	; 0
+ 24e:	2a e4       	ldi	r18, 0x4A	; 74
+ 250:	30 e0       	ldi	r19, 0x00	; 0
+ 252:	f9 01       	movw	r30, r18
+ 254:	20 81       	ld	r18, Z
+ 256:	23 60       	ori	r18, 0x03	; 3
+ 258:	fc 01       	movw	r30, r24
+ 25a:	20 83       	st	Z, r18
+									
+    //TCCR0B &= ~((1<<WGM02) | (1<<CS01));
+    
+    
+    //Timer overflow interrupt enablen
+    TIMSK |= (1<<TOIE0);
+ 25c:	89 e5       	ldi	r24, 0x59	; 89
+ 25e:	90 e0       	ldi	r25, 0x00	; 0
+ 260:	29 e5       	ldi	r18, 0x59	; 89
+ 262:	30 e0       	ldi	r19, 0x00	; 0
+ 264:	f9 01       	movw	r30, r18
+ 266:	20 81       	ld	r18, Z
+ 268:	22 60       	ori	r18, 0x02	; 2
+ 26a:	fc 01       	movw	r30, r24
+ 26c:	20 83       	st	Z, r18
+
+	
+}
+ 26e:	df 91       	pop	r29
+ 270:	cf 91       	pop	r28
+ 272:	08 95       	ret
+
+00000274 <pwmSetDutyCycle>:
+
+/* For servo use the compare value has to be inside 
+   the boundary of 7 and 17 (Duty: 1ms and 2ms) */
+void pwmSetDutyCycle(uint8_t compare)
+{   
+ 274:	cf 93       	push	r28
+ 276:	df 93       	push	r29
+ 278:	0f 92       	push	r0
+ 27a:	cd b7       	in	r28, 0x3d	; 61
+ 27c:	de b7       	in	r29, 0x3e	; 62
+ 27e:	89 83       	std	Y+1, r24	; 0x01
+    OCR0B = compare;	
+ 280:	88 e4       	ldi	r24, 0x48	; 72
+ 282:	90 e0       	ldi	r25, 0x00	; 0
+ 284:	29 81       	ldd	r18, Y+1	; 0x01
+ 286:	fc 01       	movw	r30, r24
+ 288:	20 83       	st	Z, r18
+}
+ 28a:	0f 90       	pop	r0
+ 28c:	df 91       	pop	r29
+ 28e:	cf 91       	pop	r28
+ 290:	08 95       	ret
+
+00000292 <disablePwm>:
+
+
+/* The following two functions aim to make the software more
+   energy-efficient by disabling the pwm output when not needed */
+void disablePwm(void)
+{
+ 292:	cf 93       	push	r28
+ 294:	df 93       	push	r29
+ 296:	cd b7       	in	r28, 0x3d	; 61
+ 298:	de b7       	in	r29, 0x3e	; 62
+    TCCR0A &= ~(1<<COM0B1);
+ 29a:	8a e4       	ldi	r24, 0x4A	; 74
+ 29c:	90 e0       	ldi	r25, 0x00	; 0
+ 29e:	2a e4       	ldi	r18, 0x4A	; 74
+ 2a0:	30 e0       	ldi	r19, 0x00	; 0
+ 2a2:	f9 01       	movw	r30, r18
+ 2a4:	20 81       	ld	r18, Z
+ 2a6:	2f 7d       	andi	r18, 0xDF	; 223
+ 2a8:	fc 01       	movw	r30, r24
+ 2aa:	20 83       	st	Z, r18
+}
+ 2ac:	df 91       	pop	r29
+ 2ae:	cf 91       	pop	r28
+ 2b0:	08 95       	ret
+
+000002b2 <enablePwm>:
+
+void enablePwm(void)
+{
+ 2b2:	cf 93       	push	r28
+ 2b4:	df 93       	push	r29
+ 2b6:	cd b7       	in	r28, 0x3d	; 61
+ 2b8:	de b7       	in	r29, 0x3e	; 62
+    TCCR0A |= (1<<COM0B1);
+ 2ba:	8a e4       	ldi	r24, 0x4A	; 74
+ 2bc:	90 e0       	ldi	r25, 0x00	; 0
+ 2be:	2a e4       	ldi	r18, 0x4A	; 74
+ 2c0:	30 e0       	ldi	r19, 0x00	; 0
+ 2c2:	f9 01       	movw	r30, r18
+ 2c4:	20 81       	ld	r18, Z
+ 2c6:	20 62       	ori	r18, 0x20	; 32
+ 2c8:	fc 01       	movw	r30, r24
+ 2ca:	20 83       	st	Z, r18
+}
+ 2cc:	df 91       	pop	r29
+ 2ce:	cf 91       	pop	r28
+ 2d0:	08 95       	ret
+
+000002d2 <sleepDeeplyMs>:
+   As long the leftSleepingTime is > 0 this functions continues to
+   enter the sleeping mode.   
+
+*/
+void sleepDeeplyMs()
+{   
+ 2d2:	cf 93       	push	r28
+ 2d4:	df 93       	push	r29
+ 2d6:	cd b7       	in	r28, 0x3d	; 61
+ 2d8:	de b7       	in	r29, 0x3e	; 62
+    set_sleep_mode(SLEEP_MODE_IDLE);  
+ 2da:	85 e5       	ldi	r24, 0x55	; 85
+ 2dc:	90 e0       	ldi	r25, 0x00	; 0
+ 2de:	25 e5       	ldi	r18, 0x55	; 85
+ 2e0:	30 e0       	ldi	r19, 0x00	; 0
+ 2e2:	f9 01       	movw	r30, r18
+ 2e4:	20 81       	ld	r18, Z
+ 2e6:	27 7e       	andi	r18, 0xE7	; 231
+ 2e8:	fc 01       	movw	r30, r24
+ 2ea:	20 83       	st	Z, r18
+    
+    /* disable interrupts */
+    cli();
+ 2ec:	f8 94       	cli
+    
+    sleepingActive = TRUE;
+ 2ee:	81 e0       	ldi	r24, 0x01	; 1
+ 2f0:	80 93 60 00 	sts	0x0060, r24
+    
+    while(leftSleepingTimeMs > 33)
+ 2f4:	14 c0       	rjmp	.+40     	; 0x31e <sleepDeeplyMs+0x4c>
+    {   
+        /* the variable leftSleepingTimeMs is now decremented each 33ms in the 
+           timer0 overflow interrupt -> see interrupt.c for details */
+        sleep_enable();
+ 2f6:	85 e5       	ldi	r24, 0x55	; 85
+ 2f8:	90 e0       	ldi	r25, 0x00	; 0
+ 2fa:	25 e5       	ldi	r18, 0x55	; 85
+ 2fc:	30 e0       	ldi	r19, 0x00	; 0
+ 2fe:	f9 01       	movw	r30, r18
+ 300:	20 81       	ld	r18, Z
+ 302:	20 62       	ori	r18, 0x20	; 32
+ 304:	fc 01       	movw	r30, r24
+ 306:	20 83       	st	Z, r18
+        /* enable interrupts */
+        sei();
+ 308:	78 94       	sei
+        sleep_cpu();
+ 30a:	88 95       	sleep
+        sleep_disable();        
+ 30c:	85 e5       	ldi	r24, 0x55	; 85
+ 30e:	90 e0       	ldi	r25, 0x00	; 0
+ 310:	25 e5       	ldi	r18, 0x55	; 85
+ 312:	30 e0       	ldi	r19, 0x00	; 0
+ 314:	f9 01       	movw	r30, r18
+ 316:	20 81       	ld	r18, Z
+ 318:	2f 7d       	andi	r18, 0xDF	; 223
+ 31a:	fc 01       	movw	r30, r24
+ 31c:	20 83       	st	Z, r18
+    /* disable interrupts */
+    cli();
+    
+    sleepingActive = TRUE;
+    
+    while(leftSleepingTimeMs > 33)
+ 31e:	80 91 61 00 	lds	r24, 0x0061
+ 322:	90 91 62 00 	lds	r25, 0x0062
+ 326:	a0 91 63 00 	lds	r26, 0x0063
+ 32a:	b0 91 64 00 	lds	r27, 0x0064
+ 32e:	82 32       	cpi	r24, 0x22	; 34
+ 330:	91 05       	cpc	r25, r1
+ 332:	a1 05       	cpc	r26, r1
+ 334:	b1 05       	cpc	r27, r1
+ 336:	f8 f6       	brcc	.-66     	; 0x2f6 <sleepDeeplyMs+0x24>
+        /* enable interrupts */
+        sei();
+        sleep_cpu();
+        sleep_disable();        
+    }
+    sleepingActive = FALSE;   
+ 338:	10 92 60 00 	sts	0x0060, r1
+    sei();
+ 33c:	78 94       	sei
+ 33e:	df 91       	pop	r29
+ 340:	cf 91       	pop	r28
+ 342:	08 95       	ret
+
+00000344 <main>:
+
+/******************************************************************************
+Main loop
+******************************************************************************/
+void main(void)
+{
+ 344:	cf 93       	push	r28
+ 346:	df 93       	push	r29
+ 348:	cd b7       	in	r28, 0x3d	; 61
+ 34a:	de b7       	in	r29, 0x3e	; 62
+ 34c:	60 97       	sbiw	r28, 0x10	; 16
+ 34e:	0f b6       	in	r0, 0x3f	; 63
+ 350:	f8 94       	cli
+ 352:	de bf       	out	0x3e, r29	; 62
+ 354:	0f be       	out	0x3f, r0	; 63
+ 356:	cd bf       	out	0x3d, r28	; 61
+    volatile uint8_t mainState = STATE_START;
+ 358:	19 82       	std	Y+1, r1	; 0x01
+    /* holds the servo position regarding to the lowest sensor voltage */ 
+    volatile uint8_t servoPosSensorLow;
+    
+    /* holds the variable for the elapsed time [seconds]
+       -> used to measure the time in state supply on */
+    volatile uint32_t elapsedTimeS=0;
+ 35a:	1d 86       	std	Y+13, r1	; 0x0d
+ 35c:	1e 86       	std	Y+14, r1	; 0x0e
+ 35e:	1f 86       	std	Y+15, r1	; 0x0f
+ 360:	18 8a       	std	Y+16, r1	; 0x10
+    
+    /* controller initialization */
+    myInit();
+ 362:	3e df       	rcall	.-388    	; 0x1e0 <myInit>
+    adcInit();
+ 364:	78 de       	rcall	.-784    	; 0x56 <adcInit>
+    pwmInit();
+ 366:	56 df       	rcall	.-340    	; 0x214 <pwmInit>
+    
+    sei();
+ 368:	78 94       	sei
+ 36a:	01 c0       	rjmp	.+2      	; 0x36e <main+0x2a>
+                    /* if the time measurement is active -> count time up  */
+                    elapsedTimeS += TIME_10_SEC;
+                }                
+            }
+        }              	
+    } 
+ 36c:	00 00       	nop
+    
+    /* execute state machine */
+    while(1)
+    {
+        /* check if a waiting time needs to be applied before the state machine is executed again */
+        sleepDeeplyMs();
+ 36e:	b1 df       	rcall	.-158    	; 0x2d2 <sleepDeeplyMs>
+        
+        
+        
+        /*****************************************************************************************/
+        if (mainState == STATE_START)
+ 370:	89 81       	ldd	r24, Y+1	; 0x01
+ 372:	88 23       	and	r24, r24
+ 374:	09 f5       	brne	.+66     	; 0x3b8 <main+0x74>
+        {
+            /* state actions */
+            SWITCHES_OFF;
+ 376:	88 e3       	ldi	r24, 0x38	; 56
+ 378:	90 e0       	ldi	r25, 0x00	; 0
+ 37a:	28 e3       	ldi	r18, 0x38	; 56
+ 37c:	30 e0       	ldi	r19, 0x00	; 0
+ 37e:	f9 01       	movw	r30, r18
+ 380:	20 81       	ld	r18, Z
+ 382:	2a 7f       	andi	r18, 0xFA	; 250
+ 384:	fc 01       	movw	r30, r24
+ 386:	20 83       	st	Z, r18
+            uSolarNow = 0;
+ 388:	1b 82       	std	Y+3, r1	; 0x03
+ 38a:	1a 82       	std	Y+2, r1	; 0x02
+            uSensorLowest = 65535;
+ 38c:	8f ef       	ldi	r24, 0xFF	; 255
+ 38e:	9f ef       	ldi	r25, 0xFF	; 255
+ 390:	9b 87       	std	Y+11, r25	; 0x0b
+ 392:	8a 87       	std	Y+10, r24	; 0x0a
+            servoPosSensorLow = 0;
+ 394:	1c 86       	std	Y+12, r1	; 0x0c
+            servoPosNow = SERVO_POS_MAX_LEFT;
+ 396:	82 e0       	ldi	r24, 0x02	; 2
+ 398:	8e 83       	std	Y+6, r24	; 0x06
+            /* assume that the servo is currently in the max right position
+                -> worst case assumption */
+            gotoServoPos(SERVO_POS_MAX_RIGHT, servoPosNow);
+ 39a:	9e 81       	ldd	r25, Y+6	; 0x06
+ 39c:	86 e1       	ldi	r24, 0x16	; 22
+ 39e:	69 2f       	mov	r22, r25
+ 3a0:	00 d1       	rcall	.+512    	; 0x5a2 <gotoServoPos>
+            leftSleepingTimeMs = 0;
+ 3a2:	10 92 61 00 	sts	0x0061, r1
+ 3a6:	10 92 62 00 	sts	0x0062, r1
+ 3aa:	10 92 63 00 	sts	0x0063, r1
+ 3ae:	10 92 64 00 	sts	0x0064, r1
+                            
+                            
+            /* state transitions */    
+            mainState = STATE_DETECT_BEST_SERVO_POS;         
+ 3b2:	81 e0       	ldi	r24, 0x01	; 1
+ 3b4:	89 83       	std	Y+1, r24	; 0x01
+                    /* if the time measurement is active -> count time up  */
+                    elapsedTimeS += TIME_10_SEC;
+                }                
+            }
+        }              	
+    } 
+ 3b6:	da cf       	rjmp	.-76     	; 0x36c <main+0x28>
+                            
+            /* state transitions */    
+            mainState = STATE_DETECT_BEST_SERVO_POS;         
+        }
+        /*****************************************************************************************/
+        else if (mainState == STATE_DETECT_BEST_SERVO_POS)
+ 3b8:	89 81       	ldd	r24, Y+1	; 0x01
+ 3ba:	81 30       	cpi	r24, 0x01	; 1
+ 3bc:	09 f0       	breq	.+2      	; 0x3c0 <main+0x7c>
+ 3be:	48 c0       	rjmp	.+144    	; 0x450 <main+0x10c>
+        {
+            /* state actions */
+
+            /* the higher the brightness - the lower the sensor output voltage */
+            uSensorNow = adcRead(SENSOR_VOLTAGE);
+ 3c0:	82 e0       	ldi	r24, 0x02	; 2
+ 3c2:	80 de       	rcall	.-768    	; 0xc4 <adcRead>
+ 3c4:	99 87       	std	Y+9, r25	; 0x09
+ 3c6:	88 87       	std	Y+8, r24	; 0x08
+                    
+            /* store lowest sensor voltage and linked servo position*/
+            if (uSensorNow < uSensorLowest)
+ 3c8:	28 85       	ldd	r18, Y+8	; 0x08
+ 3ca:	39 85       	ldd	r19, Y+9	; 0x09
+ 3cc:	8a 85       	ldd	r24, Y+10	; 0x0a
+ 3ce:	9b 85       	ldd	r25, Y+11	; 0x0b
+ 3d0:	28 17       	cp	r18, r24
+ 3d2:	39 07       	cpc	r19, r25
+ 3d4:	30 f4       	brcc	.+12     	; 0x3e2 <main+0x9e>
+            {
+                uSensorLowest = uSensorNow;
+ 3d6:	88 85       	ldd	r24, Y+8	; 0x08
+ 3d8:	99 85       	ldd	r25, Y+9	; 0x09
+ 3da:	9b 87       	std	Y+11, r25	; 0x0b
+ 3dc:	8a 87       	std	Y+10, r24	; 0x0a
+                servoPosSensorLow = servoPosNow;
+ 3de:	8e 81       	ldd	r24, Y+6	; 0x06
+ 3e0:	8c 87       	std	Y+12, r24	; 0x0c
+            }
+                
+            
+            servoPosBefore = servoPosNow;
+ 3e2:	8e 81       	ldd	r24, Y+6	; 0x06
+ 3e4:	8f 83       	std	Y+7, r24	; 0x07
+            servoPosNow += 1;
+ 3e6:	8e 81       	ldd	r24, Y+6	; 0x06
+ 3e8:	8f 5f       	subi	r24, 0xFF	; 255
+ 3ea:	8e 83       	std	Y+6, r24	; 0x06
+                                                        
+            gotoServoPos(servoPosBefore, servoPosNow);                                        
+ 3ec:	8f 81       	ldd	r24, Y+7	; 0x07
+ 3ee:	9e 81       	ldd	r25, Y+6	; 0x06
+ 3f0:	69 2f       	mov	r22, r25
+ 3f2:	d7 d0       	rcall	.+430    	; 0x5a2 <gotoServoPos>
+            
+            leftSleepingTimeMs = 500;
+ 3f4:	84 ef       	ldi	r24, 0xF4	; 244
+ 3f6:	91 e0       	ldi	r25, 0x01	; 1
+ 3f8:	a0 e0       	ldi	r26, 0x00	; 0
+ 3fa:	b0 e0       	ldi	r27, 0x00	; 0
+ 3fc:	80 93 61 00 	sts	0x0061, r24
+ 400:	90 93 62 00 	sts	0x0062, r25
+ 404:	a0 93 63 00 	sts	0x0063, r26
+ 408:	b0 93 64 00 	sts	0x0064, r27
+                
+           
+            /* state transitions */ 
+            if (servoPosNow > SERVO_POS_MAX_RIGHT)
+ 40c:	8e 81       	ldd	r24, Y+6	; 0x06
+ 40e:	87 31       	cpi	r24, 0x17	; 23
+ 410:	08 f4       	brcc	.+2      	; 0x414 <main+0xd0>
+ 412:	ac cf       	rjmp	.-168    	; 0x36c <main+0x28>
+            {
+                /* all possible servo position have been checked for max brightness 
+                    -> move servo to brightest position */
+                gotoServoPos(servoPosBefore, servoPosSensorLow);
+ 414:	8f 81       	ldd	r24, Y+7	; 0x07
+ 416:	9c 85       	ldd	r25, Y+12	; 0x0c
+ 418:	69 2f       	mov	r22, r25
+ 41a:	c3 d0       	rcall	.+390    	; 0x5a2 <gotoServoPos>
+                servoPosNow = servoPosSensorLow;
+ 41c:	8c 85       	ldd	r24, Y+12	; 0x0c
+ 41e:	8e 83       	std	Y+6, r24	; 0x06
+                    
+                /* measure solar output voltage at brightest servo position 
+                    -> if resulting voltage is below threshold -> wait 5 min and restart state machine */
+                uSolarNow = adcRead(SOLAR_VOLTAGE);
+ 420:	83 e0       	ldi	r24, 0x03	; 3
+ 422:	50 de       	rcall	.-864    	; 0xc4 <adcRead>
+ 424:	9b 83       	std	Y+3, r25	; 0x03
+ 426:	8a 83       	std	Y+2, r24	; 0x02
+                    
+                if (uSolarNow < MIN_SOLAR_VOLTAGE)
+ 428:	8a 81       	ldd	r24, Y+2	; 0x02
+ 42a:	9b 81       	ldd	r25, Y+3	; 0x03
+ 42c:	f9 e0       	ldi	r31, 0x09	; 9
+ 42e:	84 3c       	cpi	r24, 0xC4	; 196
+ 430:	9f 07       	cpc	r25, r31
+ 432:	18 f4       	brcc	.+6      	; 0x43a <main+0xf6>
+                {   
+                    mainState = STATE_SUPPLY_OFF;                    
+ 434:	84 e0       	ldi	r24, 0x04	; 4
+ 436:	89 83       	std	Y+1, r24	; 0x01
+                    /* if the time measurement is active -> count time up  */
+                    elapsedTimeS += TIME_10_SEC;
+                }                
+            }
+        }              	
+    } 
+ 438:	99 cf       	rjmp	.-206    	; 0x36c <main+0x28>
+                {   
+                    mainState = STATE_SUPPLY_OFF;                    
+                }
+                else
+                {
+                    leftSleepingTimeMs = 0;
+ 43a:	10 92 61 00 	sts	0x0061, r1
+ 43e:	10 92 62 00 	sts	0x0062, r1
+ 442:	10 92 63 00 	sts	0x0063, r1
+ 446:	10 92 64 00 	sts	0x0064, r1
+                    mainState = STATE_LOGIC_START;    
+ 44a:	82 e0       	ldi	r24, 0x02	; 2
+ 44c:	89 83       	std	Y+1, r24	; 0x01
+                    /* if the time measurement is active -> count time up  */
+                    elapsedTimeS += TIME_10_SEC;
+                }                
+            }
+        }              	
+    } 
+ 44e:	8e cf       	rjmp	.-228    	; 0x36c <main+0x28>
+                    mainState = STATE_LOGIC_START;    
+                }                   
+            }                 
+        }
+        /*****************************************************************************************/
+        else if (mainState == STATE_LOGIC_START)
+ 450:	89 81       	ldd	r24, Y+1	; 0x01
+ 452:	82 30       	cpi	r24, 0x02	; 2
+ 454:	e9 f4       	brne	.+58     	; 0x490 <main+0x14c>
+        {
+            /* state actions */
+            /* measure the solar voltage and the battery voltage */
+            uSolarNow = adcRead(SOLAR_VOLTAGE);
+ 456:	83 e0       	ldi	r24, 0x03	; 3
+ 458:	35 de       	rcall	.-918    	; 0xc4 <adcRead>
+ 45a:	9b 83       	std	Y+3, r25	; 0x03
+ 45c:	8a 83       	std	Y+2, r24	; 0x02
+            uBatteryNow = adcRead(BATTERY_VOLTAGE);
+ 45e:	80 e0       	ldi	r24, 0x00	; 0
+ 460:	31 de       	rcall	.-926    	; 0xc4 <adcRead>
+ 462:	9d 83       	std	Y+5, r25	; 0x05
+ 464:	8c 83       	std	Y+4, r24	; 0x04
+            leftSleepingTimeMs = 0;                
+ 466:	10 92 61 00 	sts	0x0061, r1
+ 46a:	10 92 62 00 	sts	0x0062, r1
+ 46e:	10 92 63 00 	sts	0x0063, r1
+ 472:	10 92 64 00 	sts	0x0064, r1
+                
+            /* state transitions */
+            if (uSolarNow > uBatteryNow)
+ 476:	2a 81       	ldd	r18, Y+2	; 0x02
+ 478:	3b 81       	ldd	r19, Y+3	; 0x03
+ 47a:	8c 81       	ldd	r24, Y+4	; 0x04
+ 47c:	9d 81       	ldd	r25, Y+5	; 0x05
+ 47e:	82 17       	cp	r24, r18
+ 480:	93 07       	cpc	r25, r19
+ 482:	18 f4       	brcc	.+6      	; 0x48a <main+0x146>
+            {
+                /* connect the solar voltage to the device */
+                mainState = STATE_SUPPLY_ON;
+ 484:	83 e0       	ldi	r24, 0x03	; 3
+ 486:	89 83       	std	Y+1, r24	; 0x01
+                    /* if the time measurement is active -> count time up  */
+                    elapsedTimeS += TIME_10_SEC;
+                }                
+            }
+        }              	
+    } 
+ 488:	71 cf       	rjmp	.-286    	; 0x36c <main+0x28>
+            }                               
+            else
+            {
+                /* leave the solar voltage and the device disconnected 
+                    -> but monitor the situation for 5min */
+                mainState = STATE_SUPPLY_OFF;                    
+ 48a:	84 e0       	ldi	r24, 0x04	; 4
+ 48c:	89 83       	std	Y+1, r24	; 0x01
+                    /* if the time measurement is active -> count time up  */
+                    elapsedTimeS += TIME_10_SEC;
+                }                
+            }
+        }              	
+    } 
+ 48e:	6e cf       	rjmp	.-292    	; 0x36c <main+0x28>
+                    -> but monitor the situation for 5min */
+                mainState = STATE_SUPPLY_OFF;                    
+            }  
+        }                  
+        /*****************************************************************************************/
+        else if (mainState == STATE_SUPPLY_ON)
+ 490:	89 81       	ldd	r24, Y+1	; 0x01
+ 492:	83 30       	cpi	r24, 0x03	; 3
+ 494:	a1 f5       	brne	.+104    	; 0x4fe <main+0x1ba>
+        {
+            /* state actions */
+            elapsedTimeS = 0;
+ 496:	1d 86       	std	Y+13, r1	; 0x0d
+ 498:	1e 86       	std	Y+14, r1	; 0x0e
+ 49a:	1f 86       	std	Y+15, r1	; 0x0f
+ 49c:	18 8a       	std	Y+16, r1	; 0x10
+            /* measure the solar voltage and the battery voltage */
+            uSolarNow = adcRead(SOLAR_VOLTAGE);
+ 49e:	83 e0       	ldi	r24, 0x03	; 3
+ 4a0:	11 de       	rcall	.-990    	; 0xc4 <adcRead>
+ 4a2:	9b 83       	std	Y+3, r25	; 0x03
+ 4a4:	8a 83       	std	Y+2, r24	; 0x02
+            uBatteryNow = adcRead(BATTERY_VOLTAGE);
+ 4a6:	80 e0       	ldi	r24, 0x00	; 0
+ 4a8:	0d de       	rcall	.-998    	; 0xc4 <adcRead>
+ 4aa:	9d 83       	std	Y+5, r25	; 0x05
+ 4ac:	8c 83       	std	Y+4, r24	; 0x04
+            POWERTRANSFER_SWITCH_ON;
+ 4ae:	88 e3       	ldi	r24, 0x38	; 56
+ 4b0:	90 e0       	ldi	r25, 0x00	; 0
+ 4b2:	28 e3       	ldi	r18, 0x38	; 56
+ 4b4:	30 e0       	ldi	r19, 0x00	; 0
+ 4b6:	f9 01       	movw	r30, r18
+ 4b8:	20 81       	ld	r18, Z
+ 4ba:	24 60       	ori	r18, 0x04	; 4
+ 4bc:	fc 01       	movw	r30, r24
+ 4be:	20 83       	st	Z, r18
+            leftSleepingTimeMs = 0;
+ 4c0:	10 92 61 00 	sts	0x0061, r1
+ 4c4:	10 92 62 00 	sts	0x0062, r1
+ 4c8:	10 92 63 00 	sts	0x0063, r1
+ 4cc:	10 92 64 00 	sts	0x0064, r1
+                
+                  
+            /* state transitions */
+            /* if the solar voltage falls below the battery voltage 
+                -> goto state supply off*/
+            if (uSolarNow < uBatteryNow)
+ 4d0:	2a 81       	ldd	r18, Y+2	; 0x02
+ 4d2:	3b 81       	ldd	r19, Y+3	; 0x03
+ 4d4:	8c 81       	ldd	r24, Y+4	; 0x04
+ 4d6:	9d 81       	ldd	r25, Y+5	; 0x05
+ 4d8:	28 17       	cp	r18, r24
+ 4da:	39 07       	cpc	r19, r25
+ 4dc:	18 f4       	brcc	.+6      	; 0x4e4 <main+0x1a0>
+            {
+                mainState = STATE_SUPPLY_OFF;                   
+ 4de:	84 e0       	ldi	r24, 0x04	; 4
+ 4e0:	89 83       	std	Y+1, r24	; 0x01
+                    /* if the time measurement is active -> count time up  */
+                    elapsedTimeS += TIME_10_SEC;
+                }                
+            }
+        }              	
+    } 
+ 4e2:	44 cf       	rjmp	.-376    	; 0x36c <main+0x28>
+            }
+            else
+            {               
+                /* the solar voltage is still greater than the battery voltage 
+                    -> sleep for one second and then check again */ 
+                leftSleepingTimeMs = TIME_1_SEC;                  
+ 4e4:	88 ee       	ldi	r24, 0xE8	; 232
+ 4e6:	93 e0       	ldi	r25, 0x03	; 3
+ 4e8:	a0 e0       	ldi	r26, 0x00	; 0
+ 4ea:	b0 e0       	ldi	r27, 0x00	; 0
+ 4ec:	80 93 61 00 	sts	0x0061, r24
+ 4f0:	90 93 62 00 	sts	0x0062, r25
+ 4f4:	a0 93 63 00 	sts	0x0063, r26
+ 4f8:	b0 93 64 00 	sts	0x0064, r27
+                    /* if the time measurement is active -> count time up  */
+                    elapsedTimeS += TIME_10_SEC;
+                }                
+            }
+        }              	
+    } 
+ 4fc:	37 cf       	rjmp	.-402    	; 0x36c <main+0x28>
+                    -> sleep for one second and then check again */ 
+                leftSleepingTimeMs = TIME_1_SEC;                  
+            }
+        }              
+        /*****************************************************************************************/
+        else if (mainState == STATE_SUPPLY_OFF) 
+ 4fe:	89 81       	ldd	r24, Y+1	; 0x01
+ 500:	84 30       	cpi	r24, 0x04	; 4
+ 502:	09 f0       	breq	.+2      	; 0x506 <main+0x1c2>
+ 504:	33 cf       	rjmp	.-410    	; 0x36c <main+0x28>
+        {
+            /* state actions */
+            POWERTRANSFER_SWITCH_OFF;
+ 506:	88 e3       	ldi	r24, 0x38	; 56
+ 508:	90 e0       	ldi	r25, 0x00	; 0
+ 50a:	28 e3       	ldi	r18, 0x38	; 56
+ 50c:	30 e0       	ldi	r19, 0x00	; 0
+ 50e:	f9 01       	movw	r30, r18
+ 510:	20 81       	ld	r18, Z
+ 512:	2b 7f       	andi	r18, 0xFB	; 251
+ 514:	fc 01       	movw	r30, r24
+ 516:	20 83       	st	Z, r18
+            /* measure the solar voltage and the battery voltage */
+            uSolarNow = adcRead(SOLAR_VOLTAGE);
+ 518:	83 e0       	ldi	r24, 0x03	; 3
+ 51a:	d4 dd       	rcall	.-1112   	; 0xc4 <adcRead>
+ 51c:	9b 83       	std	Y+3, r25	; 0x03
+ 51e:	8a 83       	std	Y+2, r24	; 0x02
+            uBatteryNow = adcRead(BATTERY_VOLTAGE);
+ 520:	80 e0       	ldi	r24, 0x00	; 0
+ 522:	d0 dd       	rcall	.-1120   	; 0xc4 <adcRead>
+ 524:	9d 83       	std	Y+5, r25	; 0x05
+ 526:	8c 83       	std	Y+4, r24	; 0x04
+   
+            leftSleepingTimeMs = 0;
+ 528:	10 92 61 00 	sts	0x0061, r1
+ 52c:	10 92 62 00 	sts	0x0062, r1
+ 530:	10 92 63 00 	sts	0x0063, r1
+ 534:	10 92 64 00 	sts	0x0064, r1
+                    -> find again the best servo position 
+                        
+                if the sun comes back and the solar voltage rises 
+                to a value greater than the battery voltage
+                    -> connect the solar voltage to the battery*/
+            if (uSolarNow > uBatteryNow)
+ 538:	2a 81       	ldd	r18, Y+2	; 0x02
+ 53a:	3b 81       	ldd	r19, Y+3	; 0x03
+ 53c:	8c 81       	ldd	r24, Y+4	; 0x04
+ 53e:	9d 81       	ldd	r25, Y+5	; 0x05
+ 540:	82 17       	cp	r24, r18
+ 542:	93 07       	cpc	r25, r19
+ 544:	18 f4       	brcc	.+6      	; 0x54c <main+0x208>
+            {
+                mainState = STATE_SUPPLY_ON;
+ 546:	83 e0       	ldi	r24, 0x03	; 3
+ 548:	89 83       	std	Y+1, r24	; 0x01
+                    /* if the time measurement is active -> count time up  */
+                    elapsedTimeS += TIME_10_SEC;
+                }                
+            }
+        }              	
+    } 
+ 54a:	10 cf       	rjmp	.-480    	; 0x36c <main+0x28>
+            {
+                mainState = STATE_SUPPLY_ON;
+            }
+            else
+            {
+                if (elapsedTimeS > TIME_5_MIN)
+ 54c:	8d 85       	ldd	r24, Y+13	; 0x0d
+ 54e:	9e 85       	ldd	r25, Y+14	; 0x0e
+ 550:	af 85       	ldd	r26, Y+15	; 0x0f
+ 552:	b8 89       	ldd	r27, Y+16	; 0x10
+ 554:	81 3e       	cpi	r24, 0xE1	; 225
+ 556:	f3 e9       	ldi	r31, 0x93	; 147
+ 558:	9f 07       	cpc	r25, r31
+ 55a:	f4 e0       	ldi	r31, 0x04	; 4
+ 55c:	af 07       	cpc	r26, r31
+ 55e:	f0 e0       	ldi	r31, 0x00	; 0
+ 560:	bf 07       	cpc	r27, r31
+ 562:	30 f0       	brcs	.+12     	; 0x570 <main+0x22c>
+                {
+                    elapsedTimeS = 0;
+ 564:	1d 86       	std	Y+13, r1	; 0x0d
+ 566:	1e 86       	std	Y+14, r1	; 0x0e
+ 568:	1f 86       	std	Y+15, r1	; 0x0f
+ 56a:	18 8a       	std	Y+16, r1	; 0x10
+                    mainState = STATE_START;
+ 56c:	19 82       	std	Y+1, r1	; 0x01
+                    /* if the time measurement is active -> count time up  */
+                    elapsedTimeS += TIME_10_SEC;
+                }                
+            }
+        }              	
+    } 
+ 56e:	fe ce       	rjmp	.-516    	; 0x36c <main+0x28>
+                    elapsedTimeS = 0;
+                    mainState = STATE_START;
+                }
+                else
+                {
+                    leftSleepingTimeMs = TIME_10_SEC;
+ 570:	80 e1       	ldi	r24, 0x10	; 16
+ 572:	97 e2       	ldi	r25, 0x27	; 39
+ 574:	a0 e0       	ldi	r26, 0x00	; 0
+ 576:	b0 e0       	ldi	r27, 0x00	; 0
+ 578:	80 93 61 00 	sts	0x0061, r24
+ 57c:	90 93 62 00 	sts	0x0062, r25
+ 580:	a0 93 63 00 	sts	0x0063, r26
+ 584:	b0 93 64 00 	sts	0x0064, r27
+                    /* if the time measurement is active -> count time up  */
+                    elapsedTimeS += TIME_10_SEC;
+ 588:	8d 85       	ldd	r24, Y+13	; 0x0d
+ 58a:	9e 85       	ldd	r25, Y+14	; 0x0e
+ 58c:	af 85       	ldd	r26, Y+15	; 0x0f
+ 58e:	b8 89       	ldd	r27, Y+16	; 0x10
+ 590:	80 5f       	subi	r24, 0xF0	; 240
+ 592:	98 4d       	sbci	r25, 0xD8	; 216
+ 594:	af 4f       	sbci	r26, 0xFF	; 255
+ 596:	bf 4f       	sbci	r27, 0xFF	; 255
+ 598:	8d 87       	std	Y+13, r24	; 0x0d
+ 59a:	9e 87       	std	Y+14, r25	; 0x0e
+ 59c:	af 87       	std	Y+15, r26	; 0x0f
+ 59e:	b8 8b       	std	Y+16, r27	; 0x10
+                }                
+            }
+        }              	
+    } 
+ 5a0:	e5 ce       	rjmp	.-566    	; 0x36c <main+0x28>
+
+000005a2 <gotoServoPos>:
+#define SERVO_DRIVE_ANTI_CLOCKWISE  1
+
+
+
+void gotoServoPos(uint8_t servoCurrentPos, uint8_t servoTargetPos)
+{
+ 5a2:	cf 93       	push	r28
+ 5a4:	df 93       	push	r29
+ 5a6:	cd b7       	in	r28, 0x3d	; 61
+ 5a8:	de b7       	in	r29, 0x3e	; 62
+ 5aa:	2a 97       	sbiw	r28, 0x0a	; 10
+ 5ac:	0f b6       	in	r0, 0x3f	; 63
+ 5ae:	f8 94       	cli
+ 5b0:	de bf       	out	0x3e, r29	; 62
+ 5b2:	0f be       	out	0x3f, r0	; 63
+ 5b4:	cd bf       	out	0x3d, r28	; 61
+ 5b6:	89 87       	std	Y+9, r24	; 0x09
+ 5b8:	6a 87       	std	Y+10, r22	; 0x0a
+    /* holds the current state of the goto servo position state machine */
+    volatile uint8_t subState = SUBSTATE_START;
+ 5ba:	19 82       	std	Y+1, r1	; 0x01
+ 
+    volatile uint16_t uSolarNow;
+    volatile uint16_t uSolarBase;
+    
+    volatile uint8_t stateMachineExecuting = 1;
+ 5bc:	81 e0       	ldi	r24, 0x01	; 1
+ 5be:	8e 83       	std	Y+6, r24	; 0x06
+    
+    volatile uint8_t servoDriveDirection;
+    
+    volatile uint8_t servoCurrentPosition = servoCurrentPos;
+ 5c0:	89 85       	ldd	r24, Y+9	; 0x09
+ 5c2:	88 87       	std	Y+8, r24	; 0x08
+    
+    
+    /* determine servo drive direction */
+    if (servoTargetPos >= servoCurrentPosition)
+ 5c4:	88 85       	ldd	r24, Y+8	; 0x08
+ 5c6:	9a 85       	ldd	r25, Y+10	; 0x0a
+ 5c8:	98 17       	cp	r25, r24
+ 5ca:	10 f0       	brcs	.+4      	; 0x5d0 <gotoServoPos+0x2e>
+    {
+        servoDriveDirection = SERVO_DRIVE_CLOCKWISE;
+ 5cc:	1f 82       	std	Y+7, r1	; 0x07
+ 5ce:	02 c0       	rjmp	.+4      	; 0x5d4 <gotoServoPos+0x32>
+    }
+    else
+    {
+        servoDriveDirection = SERVO_DRIVE_ANTI_CLOCKWISE;
+ 5d0:	81 e0       	ldi	r24, 0x01	; 1
+ 5d2:	8f 83       	std	Y+7, r24	; 0x07
+    }
+    
+    enablePwm();
+ 5d4:	6e de       	rcall	.-804    	; 0x2b2 <enablePwm>
+    
+    while (stateMachineExecuting == 1)
+ 5d6:	db c0       	rjmp	.+438    	; 0x78e <gotoServoPos+0x1ec>
+    {
+        /* check if a waiting time needs to be applied before the state machine is executed again */
+        sleepDeeplyMs();
+ 5d8:	7c de       	rcall	.-776    	; 0x2d2 <sleepDeeplyMs>
+        SERVO_SWITCH_OFF;
+ 5da:	88 e3       	ldi	r24, 0x38	; 56
+ 5dc:	90 e0       	ldi	r25, 0x00	; 0
+ 5de:	28 e3       	ldi	r18, 0x38	; 56
+ 5e0:	30 e0       	ldi	r19, 0x00	; 0
+ 5e2:	f9 01       	movw	r30, r18
+ 5e4:	20 81       	ld	r18, Z
+ 5e6:	2e 7f       	andi	r18, 0xFE	; 254
+ 5e8:	fc 01       	movw	r30, r24
+ 5ea:	20 83       	st	Z, r18
+        
+        
+        /*****************************************************************************************/
+        if (subState == SUBSTATE_START)
+ 5ec:	89 81       	ldd	r24, Y+1	; 0x01
+ 5ee:	88 23       	and	r24, r24
+ 5f0:	b9 f5       	brne	.+110    	; 0x660 <gotoServoPos+0xbe>
+        {
+            /* state actions */
+            SERVO_SWITCH_OFF;
+ 5f2:	88 e3       	ldi	r24, 0x38	; 56
+ 5f4:	90 e0       	ldi	r25, 0x00	; 0
+ 5f6:	28 e3       	ldi	r18, 0x38	; 56
+ 5f8:	30 e0       	ldi	r19, 0x00	; 0
+ 5fa:	f9 01       	movw	r30, r18
+ 5fc:	20 81       	ld	r18, Z
+ 5fe:	2e 7f       	andi	r18, 0xFE	; 254
+ 600:	fc 01       	movw	r30, r24
+ 602:	20 83       	st	Z, r18
+            uSolarNow = adcRead(SOLAR_VOLTAGE);
+ 604:	83 e0       	ldi	r24, 0x03	; 3
+ 606:	5e dd       	rcall	.-1348   	; 0xc4 <adcRead>
+ 608:	9b 83       	std	Y+3, r25	; 0x03
+ 60a:	8a 83       	std	Y+2, r24	; 0x02
+            uSolarBase = uSolarNow;
+ 60c:	8a 81       	ldd	r24, Y+2	; 0x02
+ 60e:	9b 81       	ldd	r25, Y+3	; 0x03
+ 610:	9d 83       	std	Y+5, r25	; 0x05
+ 612:	8c 83       	std	Y+4, r24	; 0x04
+            leftSleepingTimeMs = 0;
+ 614:	10 92 61 00 	sts	0x0061, r1
+ 618:	10 92 62 00 	sts	0x0062, r1
+ 61c:	10 92 63 00 	sts	0x0063, r1
+ 620:	10 92 64 00 	sts	0x0064, r1
+            
+            /* state transitions */
+            /* if the solar voltage is greater than 5V than it is high enough to drive the
+                servo immediately 
+                -> otherwise it needs to be checked if the capacitors are still charging up */
+            if (servoCurrentPosition == servoTargetPos)
+ 624:	98 85       	ldd	r25, Y+8	; 0x08
+ 626:	8a 85       	ldd	r24, Y+10	; 0x0a
+ 628:	98 17       	cp	r25, r24
+ 62a:	11 f4       	brne	.+4      	; 0x630 <gotoServoPos+0x8e>
+            {
+                stateMachineExecuting = 0;
+ 62c:	1e 82       	std	Y+6, r1	; 0x06
+ 62e:	af c0       	rjmp	.+350    	; 0x78e <gotoServoPos+0x1ec>
+            }
+            else if (uSolarNow > VOLT_5V)
+ 630:	8a 81       	ldd	r24, Y+2	; 0x02
+ 632:	9b 81       	ldd	r25, Y+3	; 0x03
+ 634:	f3 e1       	ldi	r31, 0x13	; 19
+ 636:	89 38       	cpi	r24, 0x89	; 137
+ 638:	9f 07       	cpc	r25, r31
+ 63a:	18 f0       	brcs	.+6      	; 0x642 <gotoServoPos+0xa0>
+            {
+                subState = SUBSTATE_VOLTAGE_READY;
+ 63c:	82 e0       	ldi	r24, 0x02	; 2
+ 63e:	89 83       	std	Y+1, r24	; 0x01
+ 640:	a6 c0       	rjmp	.+332    	; 0x78e <gotoServoPos+0x1ec>
+            }
+            else
+            {
+                leftSleepingTimeMs = 100;
+ 642:	84 e6       	ldi	r24, 0x64	; 100
+ 644:	90 e0       	ldi	r25, 0x00	; 0
+ 646:	a0 e0       	ldi	r26, 0x00	; 0
+ 648:	b0 e0       	ldi	r27, 0x00	; 0
+ 64a:	80 93 61 00 	sts	0x0061, r24
+ 64e:	90 93 62 00 	sts	0x0062, r25
+ 652:	a0 93 63 00 	sts	0x0063, r26
+ 656:	b0 93 64 00 	sts	0x0064, r27
+                subState = SUBSTATE_CHARGING;
+ 65a:	81 e0       	ldi	r24, 0x01	; 1
+ 65c:	89 83       	std	Y+1, r24	; 0x01
+ 65e:	97 c0       	rjmp	.+302    	; 0x78e <gotoServoPos+0x1ec>
+            }
+        }
+        /*****************************************************************************************/
+        else if (subState == SUBSTATE_CHARGING)
+ 660:	89 81       	ldd	r24, Y+1	; 0x01
+ 662:	81 30       	cpi	r24, 0x01	; 1
+ 664:	49 f5       	brne	.+82     	; 0x6b8 <gotoServoPos+0x116>
+        {
+            /* state actions */
+            uSolarNow = adcRead(SOLAR_VOLTAGE);
+ 666:	83 e0       	ldi	r24, 0x03	; 3
+ 668:	2d dd       	rcall	.-1446   	; 0xc4 <adcRead>
+ 66a:	9b 83       	std	Y+3, r25	; 0x03
+ 66c:	8a 83       	std	Y+2, r24	; 0x02
+            leftSleepingTimeMs = 0;
+ 66e:	10 92 61 00 	sts	0x0061, r1
+ 672:	10 92 62 00 	sts	0x0062, r1
+ 676:	10 92 63 00 	sts	0x0063, r1
+ 67a:	10 92 64 00 	sts	0x0064, r1
+            
+            /* state transitions */
+            /* if the charging process is still ongoing -> wait and execute same state again */
+            if (uSolarNow > uSolarBase)
+ 67e:	2a 81       	ldd	r18, Y+2	; 0x02
+ 680:	3b 81       	ldd	r19, Y+3	; 0x03
+ 682:	8c 81       	ldd	r24, Y+4	; 0x04
+ 684:	9d 81       	ldd	r25, Y+5	; 0x05
+ 686:	82 17       	cp	r24, r18
+ 688:	93 07       	cpc	r25, r19
+ 68a:	98 f4       	brcc	.+38     	; 0x6b2 <gotoServoPos+0x110>
+            {
+                leftSleepingTimeMs = 200;
+ 68c:	88 ec       	ldi	r24, 0xC8	; 200
+ 68e:	90 e0       	ldi	r25, 0x00	; 0
+ 690:	a0 e0       	ldi	r26, 0x00	; 0
+ 692:	b0 e0       	ldi	r27, 0x00	; 0
+ 694:	80 93 61 00 	sts	0x0061, r24
+ 698:	90 93 62 00 	sts	0x0062, r25
+ 69c:	a0 93 63 00 	sts	0x0063, r26
+ 6a0:	b0 93 64 00 	sts	0x0064, r27
+                uSolarBase = uSolarNow;
+ 6a4:	8a 81       	ldd	r24, Y+2	; 0x02
+ 6a6:	9b 81       	ldd	r25, Y+3	; 0x03
+ 6a8:	9d 83       	std	Y+5, r25	; 0x05
+ 6aa:	8c 83       	std	Y+4, r24	; 0x04
+                subState = SUBSTATE_CHARGING;
+ 6ac:	81 e0       	ldi	r24, 0x01	; 1
+ 6ae:	89 83       	std	Y+1, r24	; 0x01
+ 6b0:	6e c0       	rjmp	.+220    	; 0x78e <gotoServoPos+0x1ec>
+            }
+            else
+            {
+                /* the charging process is stagnating
+                    -> try to drive the servo, even if the solar voltage is too low */
+                subState = SUBSTATE_VOLTAGE_READY;
+ 6b2:	82 e0       	ldi	r24, 0x02	; 2
+ 6b4:	89 83       	std	Y+1, r24	; 0x01
+ 6b6:	6b c0       	rjmp	.+214    	; 0x78e <gotoServoPos+0x1ec>
+            }
+        }
+        /*****************************************************************************************/        
+        else if (subState == SUBSTATE_VOLTAGE_READY)
+ 6b8:	89 81       	ldd	r24, Y+1	; 0x01
+ 6ba:	82 30       	cpi	r24, 0x02	; 2
+ 6bc:	e1 f4       	brne	.+56     	; 0x6f6 <gotoServoPos+0x154>
+        {
+            /* state actions */
+            leftSleepingTimeMs = 0;
+ 6be:	10 92 61 00 	sts	0x0061, r1
+ 6c2:	10 92 62 00 	sts	0x0062, r1
+ 6c6:	10 92 63 00 	sts	0x0063, r1
+ 6ca:	10 92 64 00 	sts	0x0064, r1
+            
+            /* state transitions */
+            /* analyze the current servo position and determine if the target position
+                has already been reached */
+            if ((servoDriveDirection == SERVO_DRIVE_CLOCKWISE && servoCurrentPosition >= servoTargetPos) ||
+ 6ce:	8f 81       	ldd	r24, Y+7	; 0x07
+ 6d0:	88 23       	and	r24, r24
+ 6d2:	21 f4       	brne	.+8      	; 0x6dc <gotoServoPos+0x13a>
+ 6d4:	98 85       	ldd	r25, Y+8	; 0x08
+ 6d6:	8a 85       	ldd	r24, Y+10	; 0x0a
+ 6d8:	98 17       	cp	r25, r24
+ 6da:	38 f4       	brcc	.+14     	; 0x6ea <gotoServoPos+0x148>
+                (servoDriveDirection == SERVO_DRIVE_ANTI_CLOCKWISE && servoCurrentPosition <= servoTargetPos))
+ 6dc:	8f 81       	ldd	r24, Y+7	; 0x07
+            leftSleepingTimeMs = 0;
+            
+            /* state transitions */
+            /* analyze the current servo position and determine if the target position
+                has already been reached */
+            if ((servoDriveDirection == SERVO_DRIVE_CLOCKWISE && servoCurrentPosition >= servoTargetPos) ||
+ 6de:	81 30       	cpi	r24, 0x01	; 1
+ 6e0:	39 f4       	brne	.+14     	; 0x6f0 <gotoServoPos+0x14e>
+                (servoDriveDirection == SERVO_DRIVE_ANTI_CLOCKWISE && servoCurrentPosition <= servoTargetPos))
+ 6e2:	98 85       	ldd	r25, Y+8	; 0x08
+ 6e4:	8a 85       	ldd	r24, Y+10	; 0x0a
+ 6e6:	89 17       	cp	r24, r25
+ 6e8:	18 f0       	brcs	.+6      	; 0x6f0 <gotoServoPos+0x14e>
+            {
+                subState = SUBSTATE_TARGETPOS_REACHED;
+ 6ea:	84 e0       	ldi	r24, 0x04	; 4
+ 6ec:	89 83       	std	Y+1, r24	; 0x01
+ 6ee:	4f c0       	rjmp	.+158    	; 0x78e <gotoServoPos+0x1ec>
+            }                    
+            else
+            {
+                subState = SUBSTATE_DRIVE_SERVO;                    
+ 6f0:	83 e0       	ldi	r24, 0x03	; 3
+ 6f2:	89 83       	std	Y+1, r24	; 0x01
+ 6f4:	4c c0       	rjmp	.+152    	; 0x78e <gotoServoPos+0x1ec>
+            }                    
+        }
+        /*****************************************************************************************/
+        else if (subState == SUBSTATE_DRIVE_SERVO)
+ 6f6:	89 81       	ldd	r24, Y+1	; 0x01
+ 6f8:	83 30       	cpi	r24, 0x03	; 3
+ 6fa:	a1 f5       	brne	.+104    	; 0x764 <gotoServoPos+0x1c2>
+        {
+            /* state actions */
+            leftSleepingTimeMs = 200;
+ 6fc:	88 ec       	ldi	r24, 0xC8	; 200
+ 6fe:	90 e0       	ldi	r25, 0x00	; 0
+ 700:	a0 e0       	ldi	r26, 0x00	; 0
+ 702:	b0 e0       	ldi	r27, 0x00	; 0
+ 704:	80 93 61 00 	sts	0x0061, r24
+ 708:	90 93 62 00 	sts	0x0062, r25
+ 70c:	a0 93 63 00 	sts	0x0063, r26
+ 710:	b0 93 64 00 	sts	0x0064, r27
+            /* drive the servo 1 step (20 degrees) into the target position direction */
+            if (servoDriveDirection == SERVO_DRIVE_CLOCKWISE)
+ 714:	8f 81       	ldd	r24, Y+7	; 0x07
+ 716:	88 23       	and	r24, r24
+ 718:	21 f4       	brne	.+8      	; 0x722 <gotoServoPos+0x180>
+            {
+                servoCurrentPosition += 1;   
+ 71a:	88 85       	ldd	r24, Y+8	; 0x08
+ 71c:	8f 5f       	subi	r24, 0xFF	; 255
+ 71e:	88 87       	std	Y+8, r24	; 0x08
+ 720:	03 c0       	rjmp	.+6      	; 0x728 <gotoServoPos+0x186>
+            }
+            else
+            {
+                servoCurrentPosition -= 1;
+ 722:	88 85       	ldd	r24, Y+8	; 0x08
+ 724:	81 50       	subi	r24, 0x01	; 1
+ 726:	88 87       	std	Y+8, r24	; 0x08
+            }
+            pwmSetDutyCycle(servoCurrentPosition);
+ 728:	88 85       	ldd	r24, Y+8	; 0x08
+ 72a:	a4 dd       	rcall	.-1208   	; 0x274 <pwmSetDutyCycle>
+            SERVO_SWITCH_ON;
+ 72c:	88 e3       	ldi	r24, 0x38	; 56
+ 72e:	90 e0       	ldi	r25, 0x00	; 0
+ 730:	28 e3       	ldi	r18, 0x38	; 56
+ 732:	30 e0       	ldi	r19, 0x00	; 0
+ 734:	f9 01       	movw	r30, r18
+ 736:	20 81       	ld	r18, Z
+ 738:	21 60       	ori	r18, 0x01	; 1
+ 73a:	fc 01       	movw	r30, r24
+ 73c:	20 83       	st	Z, r18
+            
+            /* state transitions */
+            /* check if target position has already been reached 
+                -> if not start again from the beginning of the state machine */
+            if ((servoDriveDirection == SERVO_DRIVE_CLOCKWISE && servoCurrentPosition >= servoTargetPos) ||
+ 73e:	8f 81       	ldd	r24, Y+7	; 0x07
+ 740:	88 23       	and	r24, r24
+ 742:	21 f4       	brne	.+8      	; 0x74c <gotoServoPos+0x1aa>
+ 744:	98 85       	ldd	r25, Y+8	; 0x08
+ 746:	8a 85       	ldd	r24, Y+10	; 0x0a
+ 748:	98 17       	cp	r25, r24
+ 74a:	38 f4       	brcc	.+14     	; 0x75a <gotoServoPos+0x1b8>
+            (servoDriveDirection == SERVO_DRIVE_ANTI_CLOCKWISE && servoCurrentPosition <= servoTargetPos))
+ 74c:	8f 81       	ldd	r24, Y+7	; 0x07
+            SERVO_SWITCH_ON;
+            
+            /* state transitions */
+            /* check if target position has already been reached 
+                -> if not start again from the beginning of the state machine */
+            if ((servoDriveDirection == SERVO_DRIVE_CLOCKWISE && servoCurrentPosition >= servoTargetPos) ||
+ 74e:	81 30       	cpi	r24, 0x01	; 1
+ 750:	39 f4       	brne	.+14     	; 0x760 <gotoServoPos+0x1be>
+            (servoDriveDirection == SERVO_DRIVE_ANTI_CLOCKWISE && servoCurrentPosition <= servoTargetPos))
+ 752:	98 85       	ldd	r25, Y+8	; 0x08
+ 754:	8a 85       	ldd	r24, Y+10	; 0x0a
+ 756:	89 17       	cp	r24, r25
+ 758:	18 f0       	brcs	.+6      	; 0x760 <gotoServoPos+0x1be>
+            {
+                subState = SUBSTATE_TARGETPOS_REACHED;
+ 75a:	84 e0       	ldi	r24, 0x04	; 4
+ 75c:	89 83       	std	Y+1, r24	; 0x01
+ 75e:	17 c0       	rjmp	.+46     	; 0x78e <gotoServoPos+0x1ec>
+            }
+            else
+            {
+                subState = SUBSTATE_START;
+ 760:	19 82       	std	Y+1, r1	; 0x01
+ 762:	15 c0       	rjmp	.+42     	; 0x78e <gotoServoPos+0x1ec>
+            }
+        }
+        /*****************************************************************************************/
+        else if (subState == SUBSTATE_TARGETPOS_REACHED)
+ 764:	89 81       	ldd	r24, Y+1	; 0x01
+ 766:	84 30       	cpi	r24, 0x04	; 4
+ 768:	91 f4       	brne	.+36     	; 0x78e <gotoServoPos+0x1ec>
+        {
+            /* state actions */
+            leftSleepingTimeMs = 0;
+ 76a:	10 92 61 00 	sts	0x0061, r1
+ 76e:	10 92 62 00 	sts	0x0062, r1
+ 772:	10 92 63 00 	sts	0x0063, r1
+ 776:	10 92 64 00 	sts	0x0064, r1
+            
+            /* state transitions */
+            /* stop the state machine execution*/
+            stateMachineExecuting = 0;
+ 77a:	1e 82       	std	Y+6, r1	; 0x06
+            SERVO_SWITCH_OFF;
+ 77c:	88 e3       	ldi	r24, 0x38	; 56
+ 77e:	90 e0       	ldi	r25, 0x00	; 0
+ 780:	28 e3       	ldi	r18, 0x38	; 56
+ 782:	30 e0       	ldi	r19, 0x00	; 0
+ 784:	f9 01       	movw	r30, r18
+ 786:	20 81       	ld	r18, Z
+ 788:	2e 7f       	andi	r18, 0xFE	; 254
+ 78a:	fc 01       	movw	r30, r24
+ 78c:	20 83       	st	Z, r18
+        servoDriveDirection = SERVO_DRIVE_ANTI_CLOCKWISE;
+    }
+    
+    enablePwm();
+    
+    while (stateMachineExecuting == 1)
+ 78e:	8e 81       	ldd	r24, Y+6	; 0x06
+ 790:	81 30       	cpi	r24, 0x01	; 1
+ 792:	09 f4       	brne	.+2      	; 0x796 <gotoServoPos+0x1f4>
+ 794:	21 cf       	rjmp	.-446    	; 0x5d8 <gotoServoPos+0x36>
+            stateMachineExecuting = 0;
+            SERVO_SWITCH_OFF;
+        }
+    }   
+    
+    disablePwm();
+ 796:	7d dd       	rcall	.-1286   	; 0x292 <disablePwm>
+ 798:	2a 96       	adiw	r28, 0x0a	; 10
+ 79a:	0f b6       	in	r0, 0x3f	; 63
+ 79c:	f8 94       	cli
+ 79e:	de bf       	out	0x3e, r29	; 62
+ 7a0:	0f be       	out	0x3f, r0	; 63
+ 7a2:	cd bf       	out	0x3d, r28	; 61
+ 7a4:	df 91       	pop	r29
+ 7a6:	cf 91       	pop	r28
+ 7a8:	08 95       	ret
+
+000007aa <__mulsi3>:
+ 7aa:	ff 27       	eor	r31, r31
+ 7ac:	ee 27       	eor	r30, r30
+ 7ae:	bb 27       	eor	r27, r27
+ 7b0:	aa 27       	eor	r26, r26
+
+000007b2 <__mulsi3_loop>:
+ 7b2:	60 ff       	sbrs	r22, 0
+ 7b4:	04 c0       	rjmp	.+8      	; 0x7be <__mulsi3_skip1>
+ 7b6:	a2 0f       	add	r26, r18
+ 7b8:	b3 1f       	adc	r27, r19
+ 7ba:	e4 1f       	adc	r30, r20
+ 7bc:	f5 1f       	adc	r31, r21
+
+000007be <__mulsi3_skip1>:
+ 7be:	22 0f       	add	r18, r18
+ 7c0:	33 1f       	adc	r19, r19
+ 7c2:	44 1f       	adc	r20, r20
+ 7c4:	55 1f       	adc	r21, r21
+ 7c6:	96 95       	lsr	r25
+ 7c8:	87 95       	ror	r24
+ 7ca:	77 95       	ror	r23
+ 7cc:	67 95       	ror	r22
+ 7ce:	89 f7       	brne	.-30     	; 0x7b2 <__mulsi3_loop>
+ 7d0:	00 97       	sbiw	r24, 0x00	; 0
+ 7d2:	76 07       	cpc	r23, r22
+ 7d4:	71 f7       	brne	.-36     	; 0x7b2 <__mulsi3_loop>
+
+000007d6 <__mulsi3_exit>:
+ 7d6:	cf 01       	movw	r24, r30
+ 7d8:	bd 01       	movw	r22, r26
+ 7da:	08 95       	ret
+
+000007dc <__udivmodsi4>:
+ 7dc:	a1 e2       	ldi	r26, 0x21	; 33
+ 7de:	1a 2e       	mov	r1, r26
+ 7e0:	aa 1b       	sub	r26, r26
+ 7e2:	bb 1b       	sub	r27, r27
+ 7e4:	fd 01       	movw	r30, r26
+ 7e6:	0d c0       	rjmp	.+26     	; 0x802 <__udivmodsi4_ep>
+
+000007e8 <__udivmodsi4_loop>:
+ 7e8:	aa 1f       	adc	r26, r26
+ 7ea:	bb 1f       	adc	r27, r27
+ 7ec:	ee 1f       	adc	r30, r30
+ 7ee:	ff 1f       	adc	r31, r31
+ 7f0:	a2 17       	cp	r26, r18
+ 7f2:	b3 07       	cpc	r27, r19
+ 7f4:	e4 07       	cpc	r30, r20
+ 7f6:	f5 07       	cpc	r31, r21
+ 7f8:	20 f0       	brcs	.+8      	; 0x802 <__udivmodsi4_ep>
+ 7fa:	a2 1b       	sub	r26, r18
+ 7fc:	b3 0b       	sbc	r27, r19
+ 7fe:	e4 0b       	sbc	r30, r20
+ 800:	f5 0b       	sbc	r31, r21
+
+00000802 <__udivmodsi4_ep>:
+ 802:	66 1f       	adc	r22, r22
+ 804:	77 1f       	adc	r23, r23
+ 806:	88 1f       	adc	r24, r24
+ 808:	99 1f       	adc	r25, r25
+ 80a:	1a 94       	dec	r1
+ 80c:	69 f7       	brne	.-38     	; 0x7e8 <__udivmodsi4_loop>
+ 80e:	60 95       	com	r22
+ 810:	70 95       	com	r23
+ 812:	80 95       	com	r24
+ 814:	90 95       	com	r25
+ 816:	9b 01       	movw	r18, r22
+ 818:	ac 01       	movw	r20, r24
+ 81a:	bd 01       	movw	r22, r26
+ 81c:	cf 01       	movw	r24, r30
+ 81e:	08 95       	ret
+
+00000820 <_exit>:
+ 820:	f8 94       	cli
+
+00000822 <__stop_program>:
+ 822:	ff cf       	rjmp	.-2      	; 0x822 <__stop_program>

@@ -1,0 +1,260 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>5.0</ProjectVersion>
+    <ProjectGuid>{d2fb2d53-ee1d-4f23-bea6-ed7ed26e899b}</ProjectGuid>
+    <avrdevice>ATmega32</avrdevice>
+    <avrdeviceseries>none</avrdeviceseries>
+    <OutputType>Executable</OutputType>
+    <Language>C</Language>
+    <OutputFile>$(MSBuildProjectName).elf</OutputFile>
+    <OutputDirectory>$(MSBuildProjectDirectory)\$(Configuration)</OutputDirectory>
+    <UseGlobalToolchain>True</UseGlobalToolchain>
+    <ToolchainDirPath>
+    </ToolchainDirPath>
+    <MakeDirPath>
+    </MakeDirPath>
+    <GlobalToolchainPath>C:\Program Files (x86)\Atmel\AVR Studio 5.0\AVR ToolChain\bin</GlobalToolchainPath>
+    <AvrGccProjectExtensions>
+    </AvrGccProjectExtensions>
+    <AssemblyName>femtoOsTest</AssemblyName>
+    <Name>femtoOsTest</Name>
+    <RootNamespace>femtoOsTest</RootNamespace>
+    <avrtool>com.atmel.avrdbg.tool.simulator</avrtool>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <ToolchainSettings>
+      <AvrGcc>
+        <avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>
+        <avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>
+        <avrgcc.compiler.optimization.level>Optimize for size (-Os)</avrgcc.compiler.optimization.level>
+        <avrgcc.compiler.optimization.PackStructureMembers>True</avrgcc.compiler.optimization.PackStructureMembers>
+        <avrgcc.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcc.compiler.optimization.AllocateBytesNeededForEnum>
+        <avrgcc.compiler.optimization.DebugLevel>None</avrgcc.compiler.optimization.DebugLevel>
+        <avrgcc.compiler.warnings.AllWarnings>True</avrgcc.compiler.warnings.AllWarnings>
+      </AvrGcc>
+    </ToolchainSettings>
+    <MemorySettings>
+    </MemorySettings>
+    <GenerateHexFile>True</GenerateHexFile>
+    <GenerateMapFile>True</GenerateMapFile>
+    <GenerateListFile>True</GenerateListFile>
+    <GenerateEepFile>True</GenerateEepFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <ToolchainSettings>
+      <AvrGcc>
+  <avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>
+  <avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>
+  <avrgcc.compiler.symbols.DefSymbols>
+    <ListValues>
+      <Value>F_CPU=8000000</Value>
+    </ListValues>
+  </avrgcc.compiler.symbols.DefSymbols>
+  <avrgcc.compiler.directories.IncludePaths>
+    <ListValues>
+      <Value>..</Value>
+      <Value>../lcdFiles</Value>
+      <Value>../lcdFonts</Value>
+      <Value>../osHeaders</Value>
+      <Value>../osSources</Value>
+      <Value>../initFiles</Value>
+      <Value>../twiBus</Value>
+    </ListValues>
+  </avrgcc.compiler.directories.IncludePaths>
+  <avrgcc.compiler.optimization.level>Optimize (-O1)</avrgcc.compiler.optimization.level>
+  <avrgcc.compiler.optimization.PackStructureMembers>True</avrgcc.compiler.optimization.PackStructureMembers>
+  <avrgcc.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcc.compiler.optimization.AllocateBytesNeededForEnum>
+  <avrgcc.compiler.optimization.DebugLevel>Default (-g2)</avrgcc.compiler.optimization.DebugLevel>
+  <avrgcc.compiler.warnings.AllWarnings>True</avrgcc.compiler.warnings.AllWarnings>
+  <avrgcc.assembler.general.IncludePaths>
+    <ListValues>
+      <Value>../dogmLcdFiles</Value>
+      <Value>../initFiles</Value>
+      <Value>..</Value>
+    </ListValues>
+  </avrgcc.assembler.general.IncludePaths>
+  <avrgcc.assembler.debugging.DebugLevel>Default (-g2)</avrgcc.assembler.debugging.DebugLevel>
+</AvrGcc>
+    </ToolchainSettings>
+    <MemorySettings>
+      <MemorySegments>
+        <InitialStack IsEnabled="0">
+          <Address>0x800</Address>
+        </InitialStack>
+      </MemorySegments>
+    </MemorySettings>
+    <GenerateHexFile>True</GenerateHexFile>
+    <GenerateMapFile>True</GenerateMapFile>
+    <GenerateListFile>True</GenerateListFile>
+    <GenerateEepFile>True</GenerateEepFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="barometricSensor\bmp085.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="barometricSensor\bmp085.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="code_TestHelloWorld.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="config_Application.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="femtoos_startup.s">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="globals.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="globals.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="initFiles\adcInit.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="initFiles\adcInit.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="initFiles\interrupt.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="initFiles\interrupt.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="initFiles\myInit.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="initFiles\myInit.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="initFiles\pwmInit.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="initFiles\pwmInit.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="initFiles\timerInit.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="initFiles\timerInit.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lcdFiles\dogm-graphic.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lcdFiles\dogm-graphic.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lcdFiles\font.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lcdFiles\font.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lcdFonts\digits_24px.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lcdFonts\font_fixed_8px.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lcdFonts\font_proportional_16px.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lcdFonts\font_proportional_8px.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lcdFonts\symbols_16px.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lcdFonts\symbols_8px.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lcdFonts\template_simplefont.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="osHeaders\femtoos_check.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="osHeaders\femtoos_code.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="osHeaders\femtoos_constants.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="osHeaders\femtoos_core.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="osHeaders\femtoos_device.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="osHeaders\femtoos_globals.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="osHeaders\femtoos_locals.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="osHeaders\femtoos_order.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="osHeaders\femtoos_port.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="osHeaders\femtoos_shared.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="osHeaders\femtoos_types.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="osSources\femtoos_app.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="osSources\femtoos_core.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="osSources\femtoos_port.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="osSources\femtoos_shared.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="twiBus\TWI_Master.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="twiBus\TWI_Master.h">
+      <SubType>compile</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="initFiles" />
+    <Folder Include="lcdFiles" />
+    <Folder Include="lcdFonts" />
+    <Folder Include="barometricSensor" />
+    <Folder Include="twiBus" />
+    <Folder Include="osHeaders" />
+    <Folder Include="osSources" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="femtoos_ATmega32A.asm">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="lcdFonts\digits_24px.font">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="lcdFonts\font_proportional_16px.font">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="lcdFonts\font_proportional_8px.font">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="lcdFonts\symbols_16px.font">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="lcdFonts\symbols_8px.font">
+      <SubType>compile</SubType>
+    </None>
+  </ItemGroup>
+  <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\AvrGCC.targets" />
+</Project>

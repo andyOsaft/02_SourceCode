@@ -1,0 +1,1 @@
+https://github.com/arduino/Arduino/tree/11281ec77ece61aeab64d047ed899d47221dd4a7/libraries

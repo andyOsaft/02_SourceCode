@@ -1,0 +1,262 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>6.0</ProjectVersion>
+    <ToolchainName>com.Atmel.AVRGCC8</ToolchainName>
+    <ProjectGuid>{d7aadc07-4669-4bef-bbcd-6f2996d01fc1}</ProjectGuid>
+    <avrdevice>ATmega1284P</avrdevice>
+    <avrdeviceseries>none</avrdeviceseries>
+    <OutputType>Executable</OutputType>
+    <Language>C</Language>
+    <OutputFileName>$(MSBuildProjectName)</OutputFileName>
+    <OutputFileExtension>.elf</OutputFileExtension>
+    <OutputDirectory>$(MSBuildProjectDirectory)\$(Configuration)</OutputDirectory>
+    <AssemblyName>PowerCell</AssemblyName>
+    <Name>PowerCell</Name>
+    <RootNamespace>PowerCell</RootNamespace>
+    <ToolchainFlavour>Native</ToolchainFlavour>
+    <KeepTimersRunning>true</KeepTimersRunning>
+    <OverrideVtor>false</OverrideVtor>
+    <OverrideVtorValue />
+    <eraseonlaunchrule>0</eraseonlaunchrule>
+    <AsfVersion>2.9.0</AsfVersion>
+    <avrtoolinterface>JTAG</avrtoolinterface>
+    <avrtool>com.atmel.avrdbg.tool.avrdragon</avrtool>
+    <com_atmel_avrdbg_tool_avrdragon>
+      <ToolType>com.atmel.avrdbg.tool.avrdragon</ToolType>
+      <ToolName>AVR Dragon</ToolName>
+      <ToolNumber>00A20003675C</ToolNumber>
+      <KeepTimersRunning>false</KeepTimersRunning>
+      <OverrideVtor>false</OverrideVtor>
+      <OverrideVtorValue>
+      </OverrideVtorValue>
+      <Channel>
+        <host>127.0.0.1</host>
+        <port>1192</port>
+        <ssl>False</ssl>
+      </Channel>
+      <ToolOptions>
+        <InterfaceName>JTAG</InterfaceName>
+        <InterfaceProperties>
+          <JtagDbgClock>250000</JtagDbgClock>
+          <JtagProgClock>1000000</JtagProgClock>
+          <IspClock>150000</IspClock>
+          <JtagInChain>false</JtagInChain>
+          <JtagEnableExtResetOnStartSession>false</JtagEnableExtResetOnStartSession>
+          <JtagDevicesBefore>0</JtagDevicesBefore>
+          <JtagDevicesAfter>0</JtagDevicesAfter>
+          <JtagInstrBitsBefore>0</JtagInstrBitsBefore>
+          <JtagInstrBitsAfter>0</JtagInstrBitsAfter>
+        </InterfaceProperties>
+      </ToolOptions>
+    </com_atmel_avrdbg_tool_avrdragon>
+    <com_atmel_avrdbg_tool_simulator>
+      <ToolType>com.atmel.avrdbg.tool.simulator</ToolType>
+      <ToolName>AVR Simulator</ToolName>
+      <ToolNumber>
+      </ToolNumber>
+      <KeepTimersRunning>false</KeepTimersRunning>
+      <OverrideVtor>false</OverrideVtor>
+      <OverrideVtorValue>
+      </OverrideVtorValue>
+      <Channel>
+        <host>127.0.0.1</host>
+        <port>1163</port>
+        <ssl>False</ssl>
+      </Channel>
+    </com_atmel_avrdbg_tool_simulator>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <ToolchainSettings>
+      <AvrGcc>
+        <avrgcc.common.outputfiles.hex>True</avrgcc.common.outputfiles.hex>
+        <avrgcc.common.outputfiles.lss>True</avrgcc.common.outputfiles.lss>
+        <avrgcc.common.outputfiles.eep>True</avrgcc.common.outputfiles.eep>
+        <avrgcc.common.outputfiles.srec>True</avrgcc.common.outputfiles.srec>
+        <avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>
+        <avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>
+        <avrgcc.compiler.optimization.level>Optimize for size (-Os)</avrgcc.compiler.optimization.level>
+        <avrgcc.compiler.optimization.PackStructureMembers>True</avrgcc.compiler.optimization.PackStructureMembers>
+        <avrgcc.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcc.compiler.optimization.AllocateBytesNeededForEnum>
+        <avrgcc.compiler.warnings.AllWarnings>True</avrgcc.compiler.warnings.AllWarnings>
+        <avrgcc.linker.libraries.Libraries>
+          <ListValues>
+            <Value>m</Value>
+          </ListValues>
+        </avrgcc.linker.libraries.Libraries>
+      </AvrGcc>
+    </ToolchainSettings>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <ToolchainSettings>
+      <AvrGcc>
+        <avrgcc.common.outputfiles.hex>True</avrgcc.common.outputfiles.hex>
+        <avrgcc.common.outputfiles.lss>True</avrgcc.common.outputfiles.lss>
+        <avrgcc.common.outputfiles.eep>True</avrgcc.common.outputfiles.eep>
+        <avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>
+        <avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>
+        <avrgcc.compiler.directories.IncludePaths>
+          <ListValues>
+            <Value>../../../../freeRTOS/FreeRTOSV7.4.0/FreeRTOSV7.4.0/FreeRTOS/Source/include</Value>
+            <Value>../../../../freeRTOS/FreeRTOSV7.4.0/FreeRTOSV7.4.0/FreeRTOS/Source/portable/GCC/ATMega323</Value>
+            <Value>..</Value>
+            <Value>../osFiles</Value>
+            <Value>../ParTest</Value>
+            <Value>../serial</Value>
+            <Value>../../../../freeRTOS/FreeRTOSV7.4.0/FreeRTOSV7.4.0/FreeRTOS/Demo/Common/Minimal</Value>
+            <Value>../../../../freeRTOS/FreeRTOSV7.4.0/FreeRTOSV7.4.0/FreeRTOS/Demo/Common/include</Value>
+            <Value>../taskFiles</Value>
+            <Value>../lcdFiles</Value>
+            <Value>../lcdFiles/Fonts</Value>
+          </ListValues>
+        </avrgcc.compiler.directories.IncludePaths>
+        <avrgcc.compiler.optimization.DebugLevel>Default (-g2)</avrgcc.compiler.optimization.DebugLevel>
+        <avrgcc.compiler.warnings.AllWarnings>True</avrgcc.compiler.warnings.AllWarnings>
+        <avrgcc.linker.libraries.Libraries>
+          <ListValues>
+            <Value>m</Value>
+          </ListValues>
+        </avrgcc.linker.libraries.Libraries>
+        <avrgcc.assembler.debugging.DebugLevel>Default (-Wa,-g)</avrgcc.assembler.debugging.DebugLevel>
+      </AvrGcc>
+    </ToolchainSettings>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="adc.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="adc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="FreeRTOSConfig.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lcdFiles\dogm-graphic.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lcdFiles\dogm-graphic.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lcdFiles\font.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lcdFiles\font.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lcdFiles\Fonts\digits_24px.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lcdFiles\Fonts\font_fixed_8px.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lcdFiles\Fonts\font_proportional_16px.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lcdFiles\Fonts\font_proportional_8px.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lcdFiles\Fonts\symbols_16px.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lcdFiles\Fonts\symbols_8px.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lcdFiles\Fonts\template_simplefont.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="main.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="osFiles\croutine.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="osFiles\heap_1.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="osFiles\list.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="osFiles\port.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="osFiles\portmacro.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="osFiles\queue.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="osFiles\tasks.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="osFiles\timers.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="taskFiles\comtest.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="taskFiles\integer.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="taskFiles\ParTest.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="taskFiles\PollQ.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="taskFiles\print.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="taskFiles\regtest.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="taskFiles\regtest.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="taskFiles\serial.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="taskFiles\systemControlTask.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="taskFiles\systemControlTask.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="taskFiles\systemStatusTask.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="taskFiles\systemStatusTask.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="taskFiles\userInterfaceTask.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="taskFiles\userInterfaceTask.h">
+      <SubType>compile</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="lcdFiles" />
+    <Folder Include="lcdFiles\Fonts" />
+    <Folder Include="taskFiles" />
+    <Folder Include="osFiles" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="lcdFiles\Fonts\digits_24px.font">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="lcdFiles\Fonts\font_proportional_16px.font">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="lcdFiles\Fonts\font_proportional_8px.font">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="lcdFiles\Fonts\symbols_16px.font">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="lcdFiles\Fonts\symbols_8px.font">
+      <SubType>compile</SubType>
+    </None>
+  </ItemGroup>
+  <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
+</Project>

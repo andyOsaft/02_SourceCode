@@ -1,0 +1,114 @@
+﻿Der Buildvorgang wurde am 27.10.2012 13:07:08 gestartet.
+     1>Projekt "E:\Buero_120801\Studium\Diplomarbeit\10_software\classificationClient_120820\classificationClient_120820\robokid_control\robokid_control.vcxproj" auf Knoten "2", build Ziel(e).
+     1>C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Common.Targets(1558,9): warning MSB3284: Der Dateipfad für die Typbibliothek "00020813-0000-0000-c000-000000000046" Version 1.7 kann nicht abgerufen werden. Bibliothek nicht registriert. (Ausnahme von HRESULT: 0x8002801D (TYPE_E_LIBNOTREGISTERED))
+     1>C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Common.Targets(1558,9): warning MSB3284: Der Dateipfad für die Typbibliothek "2df8d04c-5bfa-101b-bde5-00aa0044de52" Version 2.5 kann nicht abgerufen werden. Bibliothek nicht registriert. (Ausnahme von HRESULT: 0x8002801D (TYPE_E_LIBNOTREGISTERED))
+     1>InitializeBuildStatus:
+         "Debug\classificationClient.unsuccessfulbuild" wird erstellt, da "AlwaysCreate" angegeben wurde.
+       GenerateTargetFrameworkMonikerAttribute:
+       Das Ziel "GenerateTargetFrameworkMonikerAttribute" wird übersprungen, da alle Ausgabedateien hinsichtlich der Eingabedateien aktuell sind.
+       ClCompile:
+         Alle Ausgaben sind aktuell.
+         Alle Ausgaben sind aktuell.
+         Alle Ausgaben sind aktuell.
+       ManagedIncrementalBuildPostProcessDependencyGraph:
+         To improve incremental build performance for managed components, please make sure that the 'VC++ Directories->Reference Directories' points to all the paths which contain the referenced managed assemblies.
+         Die Datei oder Assembly "file:///C:\PROGRAMME\MICROSOFT VISUAL STUDIO 10.0\VC\BIN\1031\CLUI.DLL" oder eine Abhängigkeit davon wurde nicht gefunden. Das System kann die angegebene Datei nicht finden.
+         To improve incremental build performance for managed components, please make sure that the 'VC++ Directories->Reference Directories' points to all the paths which contain the referenced managed assemblies.
+         Die Datei oder Assembly "file:///C:\PROGRAMME\REFERENCE ASSEMBLIES\MICROSOFT\FRAMEWORK\.NETFRAMEWORK\V4.0\MSCORLIB.DLL" oder eine Abhängigkeit davon wurde nicht gefunden. Das System kann die angegebene Datei nicht finden.
+         To improve incremental build performance for managed components, please make sure that the 'VC++ Directories->Reference Directories' points to all the paths which contain the referenced managed assemblies.
+         Die Datei oder Assembly "file:///C:\PROGRAMME\REFERENCE ASSEMBLIES\MICROSOFT\FRAMEWORK\.NETFRAMEWORK\V4.0\SYSTEM.CORE.DLL" oder eine Abhängigkeit davon wurde nicht gefunden. Das System kann die angegebene Datei nicht finden.
+         To improve incremental build performance for managed components, please make sure that the 'VC++ Directories->Reference Directories' points to all the paths which contain the referenced managed assemblies.
+         Die Datei oder Assembly "file:///C:\PROGRAMME\REFERENCE ASSEMBLIES\MICROSOFT\FRAMEWORK\.NETFRAMEWORK\V4.0\SYSTEM.DATA.DLL" oder eine Abhängigkeit davon wurde nicht gefunden. Das System kann die angegebene Datei nicht finden.
+         To improve incremental build performance for managed components, please make sure that the 'VC++ Directories->Reference Directories' points to all the paths which contain the referenced managed assemblies.
+         Die Datei oder Assembly "file:///C:\PROGRAMME\REFERENCE ASSEMBLIES\MICROSOFT\FRAMEWORK\.NETFRAMEWORK\V4.0\SYSTEM.DLL" oder eine Abhängigkeit davon wurde nicht gefunden. Das System kann die angegebene Datei nicht finden.
+         To improve incremental build performance for managed components, please make sure that the 'VC++ Directories->Reference Directories' points to all the paths which contain the referenced managed assemblies.
+         Die Datei oder Assembly "file:///C:\PROGRAMME\REFERENCE ASSEMBLIES\MICROSOFT\FRAMEWORK\.NETFRAMEWORK\V4.0\SYSTEM.DRAWING.DLL" oder eine Abhängigkeit davon wurde nicht gefunden. Das System kann die angegebene Datei nicht finden.
+         To improve incremental build performance for managed components, please make sure that the 'VC++ Directories->Reference Directories' points to all the paths which contain the referenced managed assemblies.
+         Die Datei oder Assembly "file:///C:\PROGRAMME\REFERENCE ASSEMBLIES\MICROSOFT\FRAMEWORK\.NETFRAMEWORK\V4.0\SYSTEM.WINDOWS.FORMS.DLL" oder eine Abhängigkeit davon wurde nicht gefunden. Das System kann die angegebene Datei nicht finden.
+         To improve incremental build performance for managed components, please make sure that the 'VC++ Directories->Reference Directories' points to all the paths which contain the referenced managed assemblies.
+         Die Datei oder Assembly "file:///C:\PROGRAMME\REFERENCE ASSEMBLIES\MICROSOFT\FRAMEWORK\.NETFRAMEWORK\V4.0\SYSTEM.XML.DLL" oder eine Abhängigkeit davon wurde nicht gefunden. Das System kann die angegebene Datei nicht finden.
+         To improve incremental build performance for managed components, please make sure that the 'VC++ Directories->Reference Directories' points to all the paths which contain the referenced managed assemblies.
+         Die Datei oder Assembly "file:///D:\OHLBERG\02_DIPLOMARBEIT\30_VISUALSTUDIO\CLASSIFICATIONCLIENT_120613\ROBOKID_CONTROL\INTEROP\INTEROP.MICROSOFT.OFFICE.INTEROP.EXCEL.1.7.DLL" oder eine Abhängigkeit davon wurde nicht gefunden. Das System kann die angegebene Datei nicht finden.
+         To improve incremental build performance for managed components, please make sure that the 'VC++ Directories->Reference Directories' points to all the paths which contain the referenced managed assemblies.
+         Die Datei oder Assembly "file:///D:\OHLBERG\02_DIPLOMARBEIT\30_VISUALSTUDIO\CLASSIFICATIONCLIENT_120613\ROBOKID_CONTROL\INTEROP\INTEROP.MICROSOFT.OFFICE.CORE.2.5.DLL" oder eine Abhängigkeit davon wurde nicht gefunden. Das System kann die angegebene Datei nicht finden.
+         To improve incremental build performance for managed components, please make sure that the 'VC++ Directories->Reference Directories' points to all the paths which contain the referenced managed assemblies.
+         Die Datei oder Assembly "file:///C:\PROGRAMME\REFERENCE ASSEMBLIES\MICROSOFT\FRAMEWORK\.NETFRAMEWORK\V4.0\MICROSOFT.VISUALC.DLL" oder eine Abhängigkeit davon wurde nicht gefunden. Das System kann die angegebene Datei nicht finden.
+         To improve incremental build performance for managed components, please make sure that the 'VC++ Directories->Reference Directories' points to all the paths which contain the referenced managed assemblies.
+         Die Datei oder Assembly "file:///C:\PROGRAMME\MICROSOFT VISUAL STUDIO 10.0\COMMON7\IDE\MSPDBSRV.EXE" oder eine Abhängigkeit davon wurde nicht gefunden. Das System kann die angegebene Datei nicht finden.
+         To improve incremental build performance for managed components, please make sure that the 'VC++ Directories->Reference Directories' points to all the paths which contain the referenced managed assemblies.
+         Die Datei oder Assembly "file:///D:\OHLBERG\02_DIPLOMARBEIT\30_VISUALSTUDIO\CLASSIFICATIONCLIENT_120615\ROBOKID_CONTROL\INTEROP\INTEROP.MICROSOFT.OFFICE.INTEROP.EXCEL.1.7.DLL" oder eine Abhängigkeit davon wurde nicht gefunden. Das System kann die angegebene Datei nicht finden.
+         To improve incremental build performance for managed components, please make sure that the 'VC++ Directories->Reference Directories' points to all the paths which contain the referenced managed assemblies.
+         Die Datei oder Assembly "file:///D:\OHLBERG\02_DIPLOMARBEIT\30_VISUALSTUDIO\CLASSIFICATIONCLIENT_120615\ROBOKID_CONTROL\INTEROP\INTEROP.MICROSOFT.OFFICE.CORE.2.5.DLL" oder eine Abhängigkeit davon wurde nicht gefunden. Das System kann die angegebene Datei nicht finden.
+         To improve incremental build performance for managed components, please make sure that the 'VC++ Directories->Reference Directories' points to all the paths which contain the referenced managed assemblies.
+         Die Datei oder Assembly "file:///D:\OHLBERG\02_DIPLOMARBEIT\30_VISUALSTUDIO\CLASSIFICATIONCLIENT_120618\ROBOKID_CONTROL\INTEROP\INTEROP.MICROSOFT.OFFICE.INTEROP.EXCEL.1.7.DLL" oder eine Abhängigkeit davon wurde nicht gefunden. Das System kann die angegebene Datei nicht finden.
+         To improve incremental build performance for managed components, please make sure that the 'VC++ Directories->Reference Directories' points to all the paths which contain the referenced managed assemblies.
+         Die Datei oder Assembly "file:///D:\OHLBERG\02_DIPLOMARBEIT\30_VISUALSTUDIO\CLASSIFICATIONCLIENT_120618\ROBOKID_CONTROL\INTEROP\INTEROP.MICROSOFT.OFFICE.CORE.2.5.DLL" oder eine Abhängigkeit davon wurde nicht gefunden. Das System kann die angegebene Datei nicht finden.
+         To improve incremental build performance for managed components, please make sure that the 'VC++ Directories->Reference Directories' points to all the paths which contain the referenced managed assemblies.
+         Die Datei oder Assembly "file:///D:\OHLBERG\02_DIPLOMARBEIT\30_VISUALSTUDIO\CLASSIFICATIONCLIENT_120619\ROBOKID_CONTROL\INTEROP\INTEROP.MICROSOFT.OFFICE.INTEROP.EXCEL.1.7.DLL" oder eine Abhängigkeit davon wurde nicht gefunden. Das System kann die angegebene Datei nicht finden.
+         To improve incremental build performance for managed components, please make sure that the 'VC++ Directories->Reference Directories' points to all the paths which contain the referenced managed assemblies.
+         Die Datei oder Assembly "file:///D:\OHLBERG\02_DIPLOMARBEIT\30_VISUALSTUDIO\CLASSIFICATIONCLIENT_120619\ROBOKID_CONTROL\INTEROP\INTEROP.MICROSOFT.OFFICE.CORE.2.5.DLL" oder eine Abhängigkeit davon wurde nicht gefunden. Das System kann die angegebene Datei nicht finden.
+         To improve incremental build performance for managed components, please make sure that the 'VC++ Directories->Reference Directories' points to all the paths which contain the referenced managed assemblies.
+         Die Datei oder Assembly "file:///D:\OHLBERG\02_DIPLOMARBEIT\30_VISUALSTUDIO\CLASSIFICATIONCLIENT_120620\ROBOKID_CONTROL\INTEROP\INTEROP.MICROSOFT.OFFICE.INTEROP.EXCEL.1.7.DLL" oder eine Abhängigkeit davon wurde nicht gefunden. Das System kann die angegebene Datei nicht finden.
+         To improve incremental build performance for managed components, please make sure that the 'VC++ Directories->Reference Directories' points to all the paths which contain the referenced managed assemblies.
+         Die Datei oder Assembly "file:///D:\OHLBERG\02_DIPLOMARBEIT\30_VISUALSTUDIO\CLASSIFICATIONCLIENT_120620\ROBOKID_CONTROL\INTEROP\INTEROP.MICROSOFT.OFFICE.CORE.2.5.DLL" oder eine Abhängigkeit davon wurde nicht gefunden. Das System kann die angegebene Datei nicht finden.
+         To improve incremental build performance for managed components, please make sure that the 'VC++ Directories->Reference Directories' points to all the paths which contain the referenced managed assemblies.
+         Die Datei oder Assembly "file:///D:\OHLBERG\02_DIPLOMARBEIT\30_VISUALSTUDIO\CLASSIFICATIONCLIENT_120621\ROBOKID_CONTROL\INTEROP\INTEROP.MICROSOFT.OFFICE.INTEROP.EXCEL.1.7.DLL" oder eine Abhängigkeit davon wurde nicht gefunden. Das System kann die angegebene Datei nicht finden.
+         To improve incremental build performance for managed components, please make sure that the 'VC++ Directories->Reference Directories' points to all the paths which contain the referenced managed assemblies.
+         Die Datei oder Assembly "file:///D:\OHLBERG\02_DIPLOMARBEIT\30_VISUALSTUDIO\CLASSIFICATIONCLIENT_120621\ROBOKID_CONTROL\INTEROP\INTEROP.MICROSOFT.OFFICE.CORE.2.5.DLL" oder eine Abhängigkeit davon wurde nicht gefunden. Das System kann die angegebene Datei nicht finden.
+         To improve incremental build performance for managed components, please make sure that the 'VC++ Directories->Reference Directories' points to all the paths which contain the referenced managed assemblies.
+         Die Datei oder Assembly "file:///D:\OHLBERG\02_DIPLOMARBEIT\30_VISUALSTUDIO\CLASSIFICATIONCLIENT_120622\ROBOKID_CONTROL\INTEROP\INTEROP.MICROSOFT.OFFICE.INTEROP.EXCEL.1.7.DLL" oder eine Abhängigkeit davon wurde nicht gefunden. Das System kann die angegebene Datei nicht finden.
+         To improve incremental build performance for managed components, please make sure that the 'VC++ Directories->Reference Directories' points to all the paths which contain the referenced managed assemblies.
+         Die Datei oder Assembly "file:///D:\OHLBERG\02_DIPLOMARBEIT\30_VISUALSTUDIO\CLASSIFICATIONCLIENT_120622\ROBOKID_CONTROL\INTEROP\INTEROP.MICROSOFT.OFFICE.CORE.2.5.DLL" oder eine Abhängigkeit davon wurde nicht gefunden. Das System kann die angegebene Datei nicht finden.
+         To improve incremental build performance for managed components, please make sure that the 'VC++ Directories->Reference Directories' points to all the paths which contain the referenced managed assemblies.
+         Die Datei oder Assembly "file:///D:\OHLBERG\02_DIPLOMARBEIT\30_VISUALSTUDIO\CLASSIFICATIONCLIENT_120625\ROBOKID_CONTROL\INTEROP\INTEROP.MICROSOFT.OFFICE.INTEROP.EXCEL.1.7.DLL" oder eine Abhängigkeit davon wurde nicht gefunden. Das System kann die angegebene Datei nicht finden.
+         To improve incremental build performance for managed components, please make sure that the 'VC++ Directories->Reference Directories' points to all the paths which contain the referenced managed assemblies.
+         Die Datei oder Assembly "file:///D:\OHLBERG\02_DIPLOMARBEIT\30_VISUALSTUDIO\CLASSIFICATIONCLIENT_120625\ROBOKID_CONTROL\INTEROP\INTEROP.MICROSOFT.OFFICE.CORE.2.5.DLL" oder eine Abhängigkeit davon wurde nicht gefunden. Das System kann die angegebene Datei nicht finden.
+         To improve incremental build performance for managed components, please make sure that the 'VC++ Directories->Reference Directories' points to all the paths which contain the referenced managed assemblies.
+         Die Datei oder Assembly "file:///D:\OHLBERG\02_DIPLOMARBEIT\30_VISUALSTUDIO\CLASSIFICATIONCLIENT_120626\ROBOKID_CONTROL\INTEROP\INTEROP.MICROSOFT.OFFICE.INTEROP.EXCEL.1.7.DLL" oder eine Abhängigkeit davon wurde nicht gefunden. Das System kann die angegebene Datei nicht finden.
+         To improve incremental build performance for managed components, please make sure that the 'VC++ Directories->Reference Directories' points to all the paths which contain the referenced managed assemblies.
+         Die Datei oder Assembly "file:///D:\OHLBERG\02_DIPLOMARBEIT\30_VISUALSTUDIO\CLASSIFICATIONCLIENT_120626\ROBOKID_CONTROL\INTEROP\INTEROP.MICROSOFT.OFFICE.CORE.2.5.DLL" oder eine Abhängigkeit davon wurde nicht gefunden. Das System kann die angegebene Datei nicht finden.
+         To improve incremental build performance for managed components, please make sure that the 'VC++ Directories->Reference Directories' points to all the paths which contain the referenced managed assemblies.
+         Die Datei oder Assembly "file:///D:\OHLBERG\02_DIPLOMARBEIT\30_VISUALSTUDIO\CLASSIFICATIONCLIENT_120704\ROBOKID_CONTROL\INTEROP\INTEROP.MICROSOFT.OFFICE.INTEROP.EXCEL.1.7.DLL" oder eine Abhängigkeit davon wurde nicht gefunden. Das System kann die angegebene Datei nicht finden.
+         To improve incremental build performance for managed components, please make sure that the 'VC++ Directories->Reference Directories' points to all the paths which contain the referenced managed assemblies.
+         Die Datei oder Assembly "file:///D:\OHLBERG\02_DIPLOMARBEIT\30_VISUALSTUDIO\CLASSIFICATIONCLIENT_120704\ROBOKID_CONTROL\INTEROP\INTEROP.MICROSOFT.OFFICE.CORE.2.5.DLL" oder eine Abhängigkeit davon wurde nicht gefunden. Das System kann die angegebene Datei nicht finden.
+         To improve incremental build performance for managed components, please make sure that the 'VC++ Directories->Reference Directories' points to all the paths which contain the referenced managed assemblies.
+         Die Datei oder Assembly "file:///D:\OHLBERG\02_DIPLOMARBEIT\30_VISUALSTUDIO\CLASSIFICATIONCLIENT_120705\ROBOKID_CONTROL\INTEROP\INTEROP.MICROSOFT.OFFICE.INTEROP.EXCEL.1.7.DLL" oder eine Abhängigkeit davon wurde nicht gefunden. Das System kann die angegebene Datei nicht finden.
+         To improve incremental build performance for managed components, please make sure that the 'VC++ Directories->Reference Directories' points to all the paths which contain the referenced managed assemblies.
+         Die Datei oder Assembly "file:///D:\OHLBERG\02_DIPLOMARBEIT\30_VISUALSTUDIO\CLASSIFICATIONCLIENT_120705\ROBOKID_CONTROL\INTEROP\INTEROP.MICROSOFT.OFFICE.CORE.2.5.DLL" oder eine Abhängigkeit davon wurde nicht gefunden. Das System kann die angegebene Datei nicht finden.
+         To improve incremental build performance for managed components, please make sure that the 'VC++ Directories->Reference Directories' points to all the paths which contain the referenced managed assemblies.
+         Die Datei oder Assembly "file:///D:\OHLBERG\02_DIPLOMARBEIT\30_VISUALSTUDIO\CLASSIFICATIONCLIENT_120709\ROBOKID_CONTROL\INTEROP\INTEROP.MICROSOFT.OFFICE.INTEROP.EXCEL.1.7.DLL" oder eine Abhängigkeit davon wurde nicht gefunden. Das System kann die angegebene Datei nicht finden.
+         To improve incremental build performance for managed components, please make sure that the 'VC++ Directories->Reference Directories' points to all the paths which contain the referenced managed assemblies.
+         Die Datei oder Assembly "file:///D:\OHLBERG\02_DIPLOMARBEIT\30_VISUALSTUDIO\CLASSIFICATIONCLIENT_120709\ROBOKID_CONTROL\INTEROP\INTEROP.MICROSOFT.OFFICE.CORE.2.5.DLL" oder eine Abhängigkeit davon wurde nicht gefunden. Das System kann die angegebene Datei nicht finden.
+         To improve incremental build performance for managed components, please make sure that the 'VC++ Directories->Reference Directories' points to all the paths which contain the referenced managed assemblies.
+         Die Datei oder Assembly "file:///D:\OHLBERG\02_DIPLOMARBEIT\30_VISUALSTUDIO\CLASSIFICATIONCLIENT_120731\ROBOKID_CONTROL\INTEROP\INTEROP.MICROSOFT.OFFICE.INTEROP.EXCEL.1.7.DLL" oder eine Abhängigkeit davon wurde nicht gefunden. Das System kann die angegebene Datei nicht finden.
+         To improve incremental build performance for managed components, please make sure that the 'VC++ Directories->Reference Directories' points to all the paths which contain the referenced managed assemblies.
+         Die Datei oder Assembly "file:///D:\OHLBERG\02_DIPLOMARBEIT\30_VISUALSTUDIO\CLASSIFICATIONCLIENT_120731\ROBOKID_CONTROL\INTEROP\INTEROP.MICROSOFT.OFFICE.CORE.2.5.DLL" oder eine Abhängigkeit davon wurde nicht gefunden. Das System kann die angegebene Datei nicht finden.
+         To improve incremental build performance for managed components, please make sure that the 'VC++ Directories->Reference Directories' points to all the paths which contain the referenced managed assemblies.
+         Die Datei oder Assembly "file:///D:\OHLBERG\02_DIPLOMARBEIT\30_VISUALSTUDIO\CLASSIFICATIONCLIENT_120801\ROBOKID_CONTROL\INTEROP\INTEROP.MICROSOFT.OFFICE.INTEROP.EXCEL.1.7.DLL" oder eine Abhängigkeit davon wurde nicht gefunden. Das System kann die angegebene Datei nicht finden.
+         To improve incremental build performance for managed components, please make sure that the 'VC++ Directories->Reference Directories' points to all the paths which contain the referenced managed assemblies.
+         Die Datei oder Assembly "file:///D:\OHLBERG\02_DIPLOMARBEIT\30_VISUALSTUDIO\CLASSIFICATIONCLIENT_120801\ROBOKID_CONTROL\INTEROP\INTEROP.MICROSOFT.OFFICE.CORE.2.5.DLL" oder eine Abhängigkeit davon wurde nicht gefunden. Das System kann die angegebene Datei nicht finden.
+         To improve incremental build performance for managed components, please make sure that the 'VC++ Directories->Reference Directories' points to all the paths which contain the referenced managed assemblies.
+         Die Datei oder Assembly "file:///D:\OHLBERG\02_DIPLOMARBEIT\30_VISUALSTUDIO\CLASSIFICATIONCLIENT_120816\ROBOKID_CONTROL\INTEROP\INTEROP.MICROSOFT.OFFICE.INTEROP.EXCEL.1.7.DLL" oder eine Abhängigkeit davon wurde nicht gefunden. Das System kann die angegebene Datei nicht finden.
+         To improve incremental build performance for managed components, please make sure that the 'VC++ Directories->Reference Directories' points to all the paths which contain the referenced managed assemblies.
+         Die Datei oder Assembly "file:///D:\OHLBERG\02_DIPLOMARBEIT\30_VISUALSTUDIO\CLASSIFICATIONCLIENT_120816\ROBOKID_CONTROL\INTEROP\INTEROP.MICROSOFT.OFFICE.CORE.2.5.DLL" oder eine Abhängigkeit davon wurde nicht gefunden. Das System kann die angegebene Datei nicht finden.
+         To improve incremental build performance for managed components, please make sure that the 'VC++ Directories->Reference Directories' points to all the paths which contain the referenced managed assemblies.
+         Die Datei oder Assembly "file:///D:\OHLBERG\02_DIPLOMARBEIT\30_VISUALSTUDIO\CLASSIFICATIONCLIENT_120820\ROBOKID_CONTROL\INTEROP\INTEROP.MICROSOFT.OFFICE.INTEROP.EXCEL.1.7.DLL" oder eine Abhängigkeit davon wurde nicht gefunden. Das System kann die angegebene Datei nicht finden.
+         To improve incremental build performance for managed components, please make sure that the 'VC++ Directories->Reference Directories' points to all the paths which contain the referenced managed assemblies.
+         Die Datei oder Assembly "file:///D:\OHLBERG\02_DIPLOMARBEIT\30_VISUALSTUDIO\CLASSIFICATIONCLIENT_120820\ROBOKID_CONTROL\INTEROP\INTEROP.MICROSOFT.OFFICE.CORE.2.5.DLL" oder eine Abhängigkeit davon wurde nicht gefunden. Das System kann die angegebene Datei nicht finden.
+       CoreResGen:
+         Alle Ausgaben sind aktuell.
+       ResourceCompile:
+         Alle Ausgaben sind aktuell.
+       Link:
+         Alle Ausgaben sind aktuell.
+         robokid_control.vcxproj -> E:\Buero_120801\Studium\Diplomarbeit\10_software\classificationClient_120820\classificationClient_120820\Debug\classificationClient.exe
+       MetaGen:
+       Das Ziel "MetaGen" wird übersprungen, da alle Ausgabedateien hinsichtlich der Eingabedateien aktuell sind.
+       FinalizeBuildStatus:
+         Die Datei "Debug\classificationClient.unsuccessfulbuild" wird gelöscht.
+         Aktualisieren des Timestamps von "Debug\classificationClient.lastbuildstate".
+     1>Die Erstellung des Projekts "E:\Buero_120801\Studium\Diplomarbeit\10_software\classificationClient_120820\classificationClient_120820\robokid_control\robokid_control.vcxproj" ist abgeschlossen, build Ziel(e).
+
+Das Erstellen war erfolgreich.
+
+Verstrichene Zeit 00:00:00.61

@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Atmel Studio Solution File, Format Version 11.00
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "sunTracker", "sunTracker\sunTracker.cproj", "{E554A81E-0A66-4BBA-9802-ECF9B0E14EDF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AVR = Debug|AVR
+		Release|AVR = Release|AVR
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E554A81E-0A66-4BBA-9802-ECF9B0E14EDF}.Debug|AVR.ActiveCfg = Debug|AVR
+		{E554A81E-0A66-4BBA-9802-ECF9B0E14EDF}.Debug|AVR.Build.0 = Debug|AVR
+		{E554A81E-0A66-4BBA-9802-ECF9B0E14EDF}.Release|AVR.ActiveCfg = Release|AVR
+		{E554A81E-0A66-4BBA-9802-ECF9B0E14EDF}.Release|AVR.Build.0 = Release|AVR
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

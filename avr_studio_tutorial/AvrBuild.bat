@@ -1,0 +1,2 @@
+@ECHO OFF
+"C:\Program Files\AVRstudio\AvrAssembler2\avrasm2.exe" -S "E:\Buero\Mikrocontroller\2. Quellcode\avr_studio_tutorial\labels.tmp" -fI -W+ie -C V2E -o "E:\Buero\Mikrocontroller\2. Quellcode\avr_studio_tutorial\Leds.hex" -d "E:\Buero\Mikrocontroller\2. Quellcode\avr_studio_tutorial\Leds.obj" -e "E:\Buero\Mikrocontroller\2. Quellcode\avr_studio_tutorial\Leds.eep" -m "E:\Buero\Mikrocontroller\2. Quellcode\avr_studio_tutorial\Leds.map" "E:\Buero\Mikrocontroller\2. Quellcode\avr_studio_tutorial\Leds.asm"

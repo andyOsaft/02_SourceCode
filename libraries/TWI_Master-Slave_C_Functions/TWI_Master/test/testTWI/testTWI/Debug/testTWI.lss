@@ -1,0 +1,1103 @@
+
+testTWI.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00000584  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         0000000e  00800060  00000584  00000618  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          00000008  0080006e  0080006e  00000626  2**0
+                  ALLOC
+  3 .stab         000006cc  00000000  00000000  00000628  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  4 .stabstr      00000085  00000000  00000000  00000cf4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_aranges 00000080  00000000  00000000  00000d79  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_pubnames 00000179  00000000  00000000  00000df9  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_info   00000719  00000000  00000000  00000f72  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_abbrev 000003ad  00000000  00000000  0000168b  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_line   000007d1  00000000  00000000  00001a38  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_frame  00000120  00000000  00000000  0000220c  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_str    0000029e  00000000  00000000  0000232c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_pubtypes 000000e1  00000000  00000000  000025ca  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 2a 00 	jmp	0x54	; 0x54 <__ctors_end>
+   4:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+   8:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+   c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  10:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  14:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  18:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  1c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  20:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  24:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  28:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  2c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  30:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  34:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  38:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  3c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  40:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  44:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  48:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  4c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  50:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+
+00000054 <__ctors_end>:
+  54:	11 24       	eor	r1, r1
+  56:	1f be       	out	0x3f, r1	; 63
+  58:	cf e5       	ldi	r28, 0x5F	; 95
+  5a:	d8 e0       	ldi	r29, 0x08	; 8
+  5c:	de bf       	out	0x3e, r29	; 62
+  5e:	cd bf       	out	0x3d, r28	; 61
+
+00000060 <__do_copy_data>:
+  60:	10 e0       	ldi	r17, 0x00	; 0
+  62:	a0 e6       	ldi	r26, 0x60	; 96
+  64:	b0 e0       	ldi	r27, 0x00	; 0
+  66:	e4 e8       	ldi	r30, 0x84	; 132
+  68:	f5 e0       	ldi	r31, 0x05	; 5
+  6a:	02 c0       	rjmp	.+4      	; 0x70 <__do_copy_data+0x10>
+  6c:	05 90       	lpm	r0, Z+
+  6e:	0d 92       	st	X+, r0
+  70:	ae 36       	cpi	r26, 0x6E	; 110
+  72:	b1 07       	cpc	r27, r17
+  74:	d9 f7       	brne	.-10     	; 0x6c <__do_copy_data+0xc>
+
+00000076 <__do_clear_bss>:
+  76:	10 e0       	ldi	r17, 0x00	; 0
+  78:	ae e6       	ldi	r26, 0x6E	; 110
+  7a:	b0 e0       	ldi	r27, 0x00	; 0
+  7c:	01 c0       	rjmp	.+2      	; 0x80 <.do_clear_bss_start>
+
+0000007e <.do_clear_bss_loop>:
+  7e:	1d 92       	st	X+, r1
+
+00000080 <.do_clear_bss_start>:
+  80:	a6 37       	cpi	r26, 0x76	; 118
+  82:	b1 07       	cpc	r27, r17
+  84:	e1 f7       	brne	.-8      	; 0x7e <.do_clear_bss_loop>
+  86:	0e 94 34 02 	call	0x468	; 0x468 <main>
+  8a:	0c 94 c0 02 	jmp	0x580	; 0x580 <_exit>
+
+0000008e <__bad_interrupt>:
+  8e:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+00000092 <Delayloop32>:
+   See also delay.h.
+   
+   Inspired by the avr-libc's loop-code
+*/
+void Delayloop32(uint32_t loops) 
+{
+  92:	df 93       	push	r29
+  94:	cf 93       	push	r28
+  96:	00 d0       	rcall	.+0      	; 0x98 <Delayloop32+0x6>
+  98:	00 d0       	rcall	.+0      	; 0x9a <Delayloop32+0x8>
+  9a:	cd b7       	in	r28, 0x3d	; 61
+  9c:	de b7       	in	r29, 0x3e	; 62
+  9e:	69 83       	std	Y+1, r22	; 0x01
+  a0:	7a 83       	std	Y+2, r23	; 0x02
+  a2:	8b 83       	std	Y+3, r24	; 0x03
+  a4:	9c 83       	std	Y+4, r25	; 0x04
+  __asm__ volatile ( "cp  %A0,__zero_reg__ \n\t"  \
+  a6:	89 81       	ldd	r24, Y+1	; 0x01
+  a8:	9a 81       	ldd	r25, Y+2	; 0x02
+  aa:	ab 81       	ldd	r26, Y+3	; 0x03
+  ac:	bc 81       	ldd	r27, Y+4	; 0x04
+  ae:	81 15       	cp	r24, r1
+  b0:	91 05       	cpc	r25, r1
+  b2:	a1 05       	cpc	r26, r1
+  b4:	b1 05       	cpc	r27, r1
+  b6:	29 f0       	breq	.+10     	; 0xc2 <L_Exit_10>
+
+000000b8 <L_LOOP_10>:
+  b8:	81 50       	subi	r24, 0x01	; 1
+  ba:	90 40       	sbci	r25, 0x00	; 0
+  bc:	a0 40       	sbci	r26, 0x00	; 0
+  be:	b0 40       	sbci	r27, 0x00	; 0
+  c0:	d9 f7       	brne	.-10     	; 0xb8 <L_LOOP_10>
+
+000000c2 <L_Exit_10>:
+  c2:	89 83       	std	Y+1, r24	; 0x01
+  c4:	9a 83       	std	Y+2, r25	; 0x02
+  c6:	ab 83       	std	Y+3, r26	; 0x03
+  c8:	bc 83       	std	Y+4, r27	; 0x04
+                     : "=w" (loops)              \
+					 : "0"  (loops)              \
+                   );                             \
+    
+	return;
+}
+  ca:	0f 90       	pop	r0
+  cc:	0f 90       	pop	r0
+  ce:	0f 90       	pop	r0
+  d0:	0f 90       	pop	r0
+  d2:	cf 91       	pop	r28
+  d4:	df 91       	pop	r29
+  d6:	08 95       	ret
+
+000000d8 <RS232_Init>:
+
+ Return Value: None
+
+*******************************************************/
+void RS232_Init (void)
+	{
+  d8:	df 93       	push	r29
+  da:	cf 93       	push	r28
+  dc:	cd b7       	in	r28, 0x3d	; 61
+  de:	de b7       	in	r29, 0x3e	; 62
+/*
+** Enable TXEN and RXEN in register UCSRB
+*/
+	UCSRB |= (1 << TXEN);
+  e0:	8a e2       	ldi	r24, 0x2A	; 42
+  e2:	90 e0       	ldi	r25, 0x00	; 0
+  e4:	2a e2       	ldi	r18, 0x2A	; 42
+  e6:	30 e0       	ldi	r19, 0x00	; 0
+  e8:	f9 01       	movw	r30, r18
+  ea:	20 81       	ld	r18, Z
+  ec:	28 60       	ori	r18, 0x08	; 8
+  ee:	fc 01       	movw	r30, r24
+  f0:	20 83       	st	Z, r18
+	UCSRB |= (1 << RXEN);
+  f2:	8a e2       	ldi	r24, 0x2A	; 42
+  f4:	90 e0       	ldi	r25, 0x00	; 0
+  f6:	2a e2       	ldi	r18, 0x2A	; 42
+  f8:	30 e0       	ldi	r19, 0x00	; 0
+  fa:	f9 01       	movw	r30, r18
+  fc:	20 81       	ld	r18, Z
+  fe:	20 61       	ori	r18, 0x10	; 16
+ 100:	fc 01       	movw	r30, r24
+ 102:	20 83       	st	Z, r18
+/*
+** Set transmission type, Asynchron 8N1
+*/
+	UCSRC |= (1 << URSEL)|(3<<UCSZ0);
+ 104:	80 e4       	ldi	r24, 0x40	; 64
+ 106:	90 e0       	ldi	r25, 0x00	; 0
+ 108:	20 e4       	ldi	r18, 0x40	; 64
+ 10a:	30 e0       	ldi	r19, 0x00	; 0
+ 10c:	f9 01       	movw	r30, r18
+ 10e:	20 81       	ld	r18, Z
+ 110:	26 68       	ori	r18, 0x86	; 134
+ 112:	fc 01       	movw	r30, r24
+ 114:	20 83       	st	Z, r18
+/*
+** Set baud rate
+*/
+    UBRRH = (uint8_t) ((SYSCLOCK / (BAUD_RATE * 16L) - 1)>>8);
+ 116:	80 e4       	ldi	r24, 0x40	; 64
+ 118:	90 e0       	ldi	r25, 0x00	; 0
+ 11a:	fc 01       	movw	r30, r24
+ 11c:	10 82       	st	Z, r1
+    UBRRL = (uint8_t) (SYSCLOCK / (BAUD_RATE * 16L) - 1);
+ 11e:	89 e2       	ldi	r24, 0x29	; 41
+ 120:	90 e0       	ldi	r25, 0x00	; 0
+ 122:	23 e3       	ldi	r18, 0x33	; 51
+ 124:	fc 01       	movw	r30, r24
+ 126:	20 83       	st	Z, r18
+/*
+** Open a channel for printf
+*/
+	stdout = &uart_str;
+ 128:	80 e6       	ldi	r24, 0x60	; 96
+ 12a:	90 e0       	ldi	r25, 0x00	; 0
+ 12c:	90 93 73 00 	sts	0x0073, r25
+ 130:	80 93 72 00 	sts	0x0072, r24
+//	fdevopen (RS232_putchar, NULL);
+/*
+** Set the UART CMD bytes
+*/
+	UART_Byte = 0;
+ 134:	10 92 6e 00 	sts	0x006E, r1
+	UART_Byte_Status = 0;
+ 138:	10 92 6f 00 	sts	0x006F, r1
+	}
+ 13c:	cf 91       	pop	r28
+ 13e:	df 91       	pop	r29
+ 140:	08 95       	ret
+
+00000142 <RS232_putchar>:
+ Return Value:
+ 	Value = 0
+
+*******************************************************/
+int RS232_putchar (char c, FILE *stream)
+	{
+ 142:	df 93       	push	r29
+ 144:	cf 93       	push	r28
+ 146:	00 d0       	rcall	.+0      	; 0x148 <RS232_putchar+0x6>
+ 148:	0f 92       	push	r0
+ 14a:	cd b7       	in	r28, 0x3d	; 61
+ 14c:	de b7       	in	r29, 0x3e	; 62
+ 14e:	89 83       	std	Y+1, r24	; 0x01
+ 150:	7b 83       	std	Y+3, r23	; 0x03
+ 152:	6a 83       	std	Y+2, r22	; 0x02
+/*
+** Check on NEWLINE
+*/
+	if (c == '\n')
+ 154:	89 81       	ldd	r24, Y+1	; 0x01
+ 156:	8a 30       	cpi	r24, 0x0A	; 10
+ 158:	31 f4       	brne	.+12     	; 0x166 <RS232_putchar+0x24>
+  		{
+		RS232_putchar ('\r', stream);
+ 15a:	2a 81       	ldd	r18, Y+2	; 0x02
+ 15c:	3b 81       	ldd	r19, Y+3	; 0x03
+ 15e:	8d e0       	ldi	r24, 0x0D	; 13
+ 160:	b9 01       	movw	r22, r18
+ 162:	0e 94 a1 00 	call	0x142	; 0x142 <RS232_putchar>
+		}
+/*
+** Wait until previous character is sent
+*/  
+	loop_until_bit_is_set(UCSRA, UDRE);
+ 166:	8b e2       	ldi	r24, 0x2B	; 43
+ 168:	90 e0       	ldi	r25, 0x00	; 0
+ 16a:	fc 01       	movw	r30, r24
+ 16c:	80 81       	ld	r24, Z
+ 16e:	88 2f       	mov	r24, r24
+ 170:	90 e0       	ldi	r25, 0x00	; 0
+ 172:	80 72       	andi	r24, 0x20	; 32
+ 174:	90 70       	andi	r25, 0x00	; 0
+ 176:	00 97       	sbiw	r24, 0x00	; 0
+ 178:	b1 f3       	breq	.-20     	; 0x166 <RS232_putchar+0x24>
+/*
+** Send character to UART
+*/
+	UDR = c;
+ 17a:	8c e2       	ldi	r24, 0x2C	; 44
+ 17c:	90 e0       	ldi	r25, 0x00	; 0
+ 17e:	29 81       	ldd	r18, Y+1	; 0x01
+ 180:	fc 01       	movw	r30, r24
+ 182:	20 83       	st	Z, r18
+
+	return 0;
+ 184:	80 e0       	ldi	r24, 0x00	; 0
+ 186:	90 e0       	ldi	r25, 0x00	; 0
+	}
+ 188:	0f 90       	pop	r0
+ 18a:	0f 90       	pop	r0
+ 18c:	0f 90       	pop	r0
+ 18e:	cf 91       	pop	r28
+ 190:	df 91       	pop	r29
+ 192:	08 95       	ret
+
+00000194 <RS232_PutByte>:
+ Return Value: None
+ 	Value = 0
+
+*******************************************************/
+void RS232_PutByte (uint8_t Byte)
+	{
+ 194:	df 93       	push	r29
+ 196:	cf 93       	push	r28
+ 198:	0f 92       	push	r0
+ 19a:	cd b7       	in	r28, 0x3d	; 61
+ 19c:	de b7       	in	r29, 0x3e	; 62
+ 19e:	89 83       	std	Y+1, r24	; 0x01
+/*
+** Wait until previous character is sent
+*/
+	while (!(UCSRA & (1<<UDRE)));
+ 1a0:	00 00       	nop
+ 1a2:	8b e2       	ldi	r24, 0x2B	; 43
+ 1a4:	90 e0       	ldi	r25, 0x00	; 0
+ 1a6:	fc 01       	movw	r30, r24
+ 1a8:	80 81       	ld	r24, Z
+ 1aa:	88 2f       	mov	r24, r24
+ 1ac:	90 e0       	ldi	r25, 0x00	; 0
+ 1ae:	80 72       	andi	r24, 0x20	; 32
+ 1b0:	90 70       	andi	r25, 0x00	; 0
+ 1b2:	00 97       	sbiw	r24, 0x00	; 0
+ 1b4:	b1 f3       	breq	.-20     	; 0x1a2 <RS232_PutByte+0xe>
+/*
+** Send byte to UART
+*/
+	UDR = Byte;
+ 1b6:	8c e2       	ldi	r24, 0x2C	; 44
+ 1b8:	90 e0       	ldi	r25, 0x00	; 0
+ 1ba:	29 81       	ldd	r18, Y+1	; 0x01
+ 1bc:	fc 01       	movw	r30, r24
+ 1be:	20 83       	st	Z, r18
+
+	return;
+	}
+ 1c0:	0f 90       	pop	r0
+ 1c2:	cf 91       	pop	r28
+ 1c4:	df 91       	pop	r29
+ 1c6:	08 95       	ret
+
+000001c8 <RS232_Put_unit16>:
+
+ Return Value: None
+
+*******************************************************/
+void RS232_Put_unit16 (uint16_t *Word)
+	{
+ 1c8:	df 93       	push	r29
+ 1ca:	cf 93       	push	r28
+ 1cc:	00 d0       	rcall	.+0      	; 0x1ce <RS232_Put_unit16+0x6>
+ 1ce:	00 d0       	rcall	.+0      	; 0x1d0 <RS232_Put_unit16+0x8>
+ 1d0:	0f 92       	push	r0
+ 1d2:	cd b7       	in	r28, 0x3d	; 61
+ 1d4:	de b7       	in	r29, 0x3e	; 62
+ 1d6:	9d 83       	std	Y+5, r25	; 0x05
+ 1d8:	8c 83       	std	Y+4, r24	; 0x04
+	uint8_t 	i;
+	uint8_t		*py;
+
+	py = (uint8_t*) Word;
+ 1da:	8c 81       	ldd	r24, Y+4	; 0x04
+ 1dc:	9d 81       	ldd	r25, Y+5	; 0x05
+ 1de:	9b 83       	std	Y+3, r25	; 0x03
+ 1e0:	8a 83       	std	Y+2, r24	; 0x02
+	for (i=0;i<2;i++)
+ 1e2:	19 82       	std	Y+1, r1	; 0x01
+ 1e4:	0f c0       	rjmp	.+30     	; 0x204 <RS232_Put_unit16+0x3c>
+		{
+		RS232_PutByte (*py++);
+ 1e6:	8a 81       	ldd	r24, Y+2	; 0x02
+ 1e8:	9b 81       	ldd	r25, Y+3	; 0x03
+ 1ea:	fc 01       	movw	r30, r24
+ 1ec:	20 81       	ld	r18, Z
+ 1ee:	8a 81       	ldd	r24, Y+2	; 0x02
+ 1f0:	9b 81       	ldd	r25, Y+3	; 0x03
+ 1f2:	01 96       	adiw	r24, 0x01	; 1
+ 1f4:	9b 83       	std	Y+3, r25	; 0x03
+ 1f6:	8a 83       	std	Y+2, r24	; 0x02
+ 1f8:	82 2f       	mov	r24, r18
+ 1fa:	0e 94 ca 00 	call	0x194	; 0x194 <RS232_PutByte>
+	{
+	uint8_t 	i;
+	uint8_t		*py;
+
+	py = (uint8_t*) Word;
+	for (i=0;i<2;i++)
+ 1fe:	89 81       	ldd	r24, Y+1	; 0x01
+ 200:	8f 5f       	subi	r24, 0xFF	; 255
+ 202:	89 83       	std	Y+1, r24	; 0x01
+ 204:	89 81       	ldd	r24, Y+1	; 0x01
+ 206:	82 30       	cpi	r24, 0x02	; 2
+ 208:	70 f3       	brcs	.-36     	; 0x1e6 <RS232_Put_unit16+0x1e>
+		{
+		RS232_PutByte (*py++);
+		}
+
+	return;
+	}
+ 20a:	0f 90       	pop	r0
+ 20c:	0f 90       	pop	r0
+ 20e:	0f 90       	pop	r0
+ 210:	0f 90       	pop	r0
+ 212:	0f 90       	pop	r0
+ 214:	cf 91       	pop	r28
+ 216:	df 91       	pop	r29
+ 218:	08 95       	ret
+
+0000021a <RS232_Put_unit32>:
+
+ Return Value: None
+ 
+*******************************************************/
+void RS232_Put_unit32 (uint32_t *DWord)
+	{
+ 21a:	df 93       	push	r29
+ 21c:	cf 93       	push	r28
+ 21e:	00 d0       	rcall	.+0      	; 0x220 <RS232_Put_unit32+0x6>
+ 220:	00 d0       	rcall	.+0      	; 0x222 <RS232_Put_unit32+0x8>
+ 222:	0f 92       	push	r0
+ 224:	cd b7       	in	r28, 0x3d	; 61
+ 226:	de b7       	in	r29, 0x3e	; 62
+ 228:	9d 83       	std	Y+5, r25	; 0x05
+ 22a:	8c 83       	std	Y+4, r24	; 0x04
+	uint8_t 	i;
+	uint8_t		*py;
+
+	py = (uint8_t*) DWord;
+ 22c:	8c 81       	ldd	r24, Y+4	; 0x04
+ 22e:	9d 81       	ldd	r25, Y+5	; 0x05
+ 230:	9b 83       	std	Y+3, r25	; 0x03
+ 232:	8a 83       	std	Y+2, r24	; 0x02
+
+	for (i=0;i<4;i++)
+ 234:	19 82       	std	Y+1, r1	; 0x01
+ 236:	0f c0       	rjmp	.+30     	; 0x256 <RS232_Put_unit32+0x3c>
+		{
+		RS232_PutByte (*py++);
+ 238:	8a 81       	ldd	r24, Y+2	; 0x02
+ 23a:	9b 81       	ldd	r25, Y+3	; 0x03
+ 23c:	fc 01       	movw	r30, r24
+ 23e:	20 81       	ld	r18, Z
+ 240:	8a 81       	ldd	r24, Y+2	; 0x02
+ 242:	9b 81       	ldd	r25, Y+3	; 0x03
+ 244:	01 96       	adiw	r24, 0x01	; 1
+ 246:	9b 83       	std	Y+3, r25	; 0x03
+ 248:	8a 83       	std	Y+2, r24	; 0x02
+ 24a:	82 2f       	mov	r24, r18
+ 24c:	0e 94 ca 00 	call	0x194	; 0x194 <RS232_PutByte>
+	uint8_t 	i;
+	uint8_t		*py;
+
+	py = (uint8_t*) DWord;
+
+	for (i=0;i<4;i++)
+ 250:	89 81       	ldd	r24, Y+1	; 0x01
+ 252:	8f 5f       	subi	r24, 0xFF	; 255
+ 254:	89 83       	std	Y+1, r24	; 0x01
+ 256:	89 81       	ldd	r24, Y+1	; 0x01
+ 258:	84 30       	cpi	r24, 0x04	; 4
+ 25a:	70 f3       	brcs	.-36     	; 0x238 <RS232_Put_unit32+0x1e>
+		{
+		RS232_PutByte (*py++);
+		}
+
+	return;
+	}
+ 25c:	0f 90       	pop	r0
+ 25e:	0f 90       	pop	r0
+ 260:	0f 90       	pop	r0
+ 262:	0f 90       	pop	r0
+ 264:	0f 90       	pop	r0
+ 266:	cf 91       	pop	r28
+ 268:	df 91       	pop	r29
+ 26a:	08 95       	ret
+
+0000026c <RS232_GetByte>:
+
+ Return Value: The UART byte
+
+*******************************************************/
+uint8_t RS232_GetByte (void)
+	{
+ 26c:	df 93       	push	r29
+ 26e:	cf 93       	push	r28
+ 270:	cd b7       	in	r28, 0x3d	; 61
+ 272:	de b7       	in	r29, 0x3e	; 62
+/*
+** Wait until byte is available
+*/
+	while (!(UCSRA &(1<<RXC)));
+ 274:	00 00       	nop
+ 276:	8b e2       	ldi	r24, 0x2B	; 43
+ 278:	90 e0       	ldi	r25, 0x00	; 0
+ 27a:	fc 01       	movw	r30, r24
+ 27c:	80 81       	ld	r24, Z
+ 27e:	88 23       	and	r24, r24
+ 280:	d4 f7       	brge	.-12     	; 0x276 <RS232_GetByte+0xa>
+/*
+** Get and return the byte from UART
+*/	
+	return UDR;
+ 282:	8c e2       	ldi	r24, 0x2C	; 44
+ 284:	90 e0       	ldi	r25, 0x00	; 0
+ 286:	fc 01       	movw	r30, r24
+ 288:	80 81       	ld	r24, Z
+	}
+ 28a:	cf 91       	pop	r28
+ 28c:	df 91       	pop	r29
+ 28e:	08 95       	ret
+
+00000290 <TWIM_Init>:
+ 	- FALSE:	Bitrate too high
+ 	- TRUE:		Bitrate OK
+
+*******************************************************/
+uint8_t TWIM_Init (uint32_t TWI_Bitrate)
+	{
+ 290:	0f 93       	push	r16
+ 292:	1f 93       	push	r17
+ 294:	df 93       	push	r29
+ 296:	cf 93       	push	r28
+ 298:	00 d0       	rcall	.+0      	; 0x29a <TWIM_Init+0xa>
+ 29a:	00 d0       	rcall	.+0      	; 0x29c <TWIM_Init+0xc>
+ 29c:	cd b7       	in	r28, 0x3d	; 61
+ 29e:	de b7       	in	r29, 0x3e	; 62
+ 2a0:	69 83       	std	Y+1, r22	; 0x01
+ 2a2:	7a 83       	std	Y+2, r23	; 0x02
+ 2a4:	8b 83       	std	Y+3, r24	; 0x03
+ 2a6:	9c 83       	std	Y+4, r25	; 0x04
+/*
+** Set TWI bitrate
+** If bitrate is too high, then error return
+*/
+	TWBR = ((F_CPU/TWI_Bitrate)-16)/2;
+ 2a8:	00 e2       	ldi	r16, 0x20	; 32
+ 2aa:	10 e0       	ldi	r17, 0x00	; 0
+ 2ac:	80 e0       	ldi	r24, 0x00	; 0
+ 2ae:	92 e1       	ldi	r25, 0x12	; 18
+ 2b0:	aa e7       	ldi	r26, 0x7A	; 122
+ 2b2:	b0 e0       	ldi	r27, 0x00	; 0
+ 2b4:	29 81       	ldd	r18, Y+1	; 0x01
+ 2b6:	3a 81       	ldd	r19, Y+2	; 0x02
+ 2b8:	4b 81       	ldd	r20, Y+3	; 0x03
+ 2ba:	5c 81       	ldd	r21, Y+4	; 0x04
+ 2bc:	bc 01       	movw	r22, r24
+ 2be:	cd 01       	movw	r24, r26
+ 2c0:	0e 94 9e 02 	call	0x53c	; 0x53c <__udivmodsi4>
+ 2c4:	da 01       	movw	r26, r20
+ 2c6:	c9 01       	movw	r24, r18
+ 2c8:	40 97       	sbiw	r24, 0x10	; 16
+ 2ca:	a1 09       	sbc	r26, r1
+ 2cc:	b1 09       	sbc	r27, r1
+ 2ce:	b6 95       	lsr	r27
+ 2d0:	a7 95       	ror	r26
+ 2d2:	97 95       	ror	r25
+ 2d4:	87 95       	ror	r24
+ 2d6:	f8 01       	movw	r30, r16
+ 2d8:	80 83       	st	Z, r24
+	if (TWBR < 11) return FALSE;
+ 2da:	80 e2       	ldi	r24, 0x20	; 32
+ 2dc:	90 e0       	ldi	r25, 0x00	; 0
+ 2de:	fc 01       	movw	r30, r24
+ 2e0:	80 81       	ld	r24, Z
+ 2e2:	8b 30       	cpi	r24, 0x0B	; 11
+ 2e4:	10 f4       	brcc	.+4      	; 0x2ea <TWIM_Init+0x5a>
+ 2e6:	80 e0       	ldi	r24, 0x00	; 0
+ 2e8:	01 c0       	rjmp	.+2      	; 0x2ec <TWIM_Init+0x5c>
+
+	return TRUE;
+ 2ea:	81 e0       	ldi	r24, 0x01	; 1
+	}
+ 2ec:	0f 90       	pop	r0
+ 2ee:	0f 90       	pop	r0
+ 2f0:	0f 90       	pop	r0
+ 2f2:	0f 90       	pop	r0
+ 2f4:	cf 91       	pop	r28
+ 2f6:	df 91       	pop	r29
+ 2f8:	1f 91       	pop	r17
+ 2fa:	0f 91       	pop	r16
+ 2fc:	08 95       	ret
+
+000002fe <TWIM_Start>:
+  	- TRUE:		OK, TWI Master accessible
+ 	- FALSE:	Error in starting TWI Master
+
+*******************************************************/
+uint8_t TWIM_Start (uint8_t Address, uint8_t TWIM_Type)
+	{
+ 2fe:	df 93       	push	r29
+ 300:	cf 93       	push	r28
+ 302:	00 d0       	rcall	.+0      	; 0x304 <TWIM_Start+0x6>
+ 304:	0f 92       	push	r0
+ 306:	cd b7       	in	r28, 0x3d	; 61
+ 308:	de b7       	in	r29, 0x3e	; 62
+ 30a:	8a 83       	std	Y+2, r24	; 0x02
+ 30c:	6b 83       	std	Y+3, r22	; 0x03
+	uint8_t		twst;
+/*
+** Send START condition
+*/
+	TWCR = (1<<TWINT)|(1<<TWSTA)|(1<<TWEN);
+ 30e:	86 e5       	ldi	r24, 0x56	; 86
+ 310:	90 e0       	ldi	r25, 0x00	; 0
+ 312:	24 ea       	ldi	r18, 0xA4	; 164
+ 314:	fc 01       	movw	r30, r24
+ 316:	20 83       	st	Z, r18
+/*
+** Wait until transmission completed
+*/
+	while (!(TWCR & (1<<TWINT)));
+ 318:	00 00       	nop
+ 31a:	86 e5       	ldi	r24, 0x56	; 86
+ 31c:	90 e0       	ldi	r25, 0x00	; 0
+ 31e:	fc 01       	movw	r30, r24
+ 320:	80 81       	ld	r24, Z
+ 322:	88 23       	and	r24, r24
+ 324:	d4 f7       	brge	.-12     	; 0x31a <TWIM_Start+0x1c>
+/*
+** Check value of TWI Status Register. Mask prescaler bits.
+*/
+	twst = TWSR & 0xF8;
+ 326:	81 e2       	ldi	r24, 0x21	; 33
+ 328:	90 e0       	ldi	r25, 0x00	; 0
+ 32a:	fc 01       	movw	r30, r24
+ 32c:	80 81       	ld	r24, Z
+ 32e:	88 7f       	andi	r24, 0xF8	; 248
+ 330:	89 83       	std	Y+1, r24	; 0x01
+	if ((twst != TWI_START) && (twst != TWI_REP_START)) return FALSE;
+ 332:	89 81       	ldd	r24, Y+1	; 0x01
+ 334:	88 30       	cpi	r24, 0x08	; 8
+ 336:	29 f0       	breq	.+10     	; 0x342 <TWIM_Start+0x44>
+ 338:	89 81       	ldd	r24, Y+1	; 0x01
+ 33a:	80 31       	cpi	r24, 0x10	; 16
+ 33c:	11 f0       	breq	.+4      	; 0x342 <TWIM_Start+0x44>
+ 33e:	80 e0       	ldi	r24, 0x00	; 0
+ 340:	24 c0       	rjmp	.+72     	; 0x38a <TWIM_Start+0x8c>
+/*
+** Send device address
+*/
+	TWDR = (Address<<1) + TWIM_Type;
+ 342:	83 e2       	ldi	r24, 0x23	; 35
+ 344:	90 e0       	ldi	r25, 0x00	; 0
+ 346:	2a 81       	ldd	r18, Y+2	; 0x02
+ 348:	32 2f       	mov	r19, r18
+ 34a:	33 0f       	add	r19, r19
+ 34c:	2b 81       	ldd	r18, Y+3	; 0x03
+ 34e:	23 0f       	add	r18, r19
+ 350:	fc 01       	movw	r30, r24
+ 352:	20 83       	st	Z, r18
+	TWCR = (1<<TWINT)|(1<<TWEN);
+ 354:	86 e5       	ldi	r24, 0x56	; 86
+ 356:	90 e0       	ldi	r25, 0x00	; 0
+ 358:	24 e8       	ldi	r18, 0x84	; 132
+ 35a:	fc 01       	movw	r30, r24
+ 35c:	20 83       	st	Z, r18
+/*
+** Wait until transmission completed and ACK/NACK has been received
+*/
+	while (!(TWCR & (1<<TWINT)));
+ 35e:	00 00       	nop
+ 360:	86 e5       	ldi	r24, 0x56	; 86
+ 362:	90 e0       	ldi	r25, 0x00	; 0
+ 364:	fc 01       	movw	r30, r24
+ 366:	80 81       	ld	r24, Z
+ 368:	88 23       	and	r24, r24
+ 36a:	d4 f7       	brge	.-12     	; 0x360 <TWIM_Start+0x62>
+/*
+** Check value of TWI Status Register. Mask prescaler bits.
+*/
+	twst = TWSR & 0xF8;
+ 36c:	81 e2       	ldi	r24, 0x21	; 33
+ 36e:	90 e0       	ldi	r25, 0x00	; 0
+ 370:	fc 01       	movw	r30, r24
+ 372:	80 81       	ld	r24, Z
+ 374:	88 7f       	andi	r24, 0xF8	; 248
+ 376:	89 83       	std	Y+1, r24	; 0x01
+	if ((twst != TWI_MTX_ADR_ACK) && (twst != TWI_MRX_ADR_ACK)) return FALSE;
+ 378:	89 81       	ldd	r24, Y+1	; 0x01
+ 37a:	88 31       	cpi	r24, 0x18	; 24
+ 37c:	29 f0       	breq	.+10     	; 0x388 <TWIM_Start+0x8a>
+ 37e:	89 81       	ldd	r24, Y+1	; 0x01
+ 380:	80 34       	cpi	r24, 0x40	; 64
+ 382:	11 f0       	breq	.+4      	; 0x388 <TWIM_Start+0x8a>
+ 384:	80 e0       	ldi	r24, 0x00	; 0
+ 386:	01 c0       	rjmp	.+2      	; 0x38a <TWIM_Start+0x8c>
+
+	return TRUE;
+ 388:	81 e0       	ldi	r24, 0x01	; 1
+	}
+ 38a:	0f 90       	pop	r0
+ 38c:	0f 90       	pop	r0
+ 38e:	0f 90       	pop	r0
+ 390:	cf 91       	pop	r28
+ 392:	df 91       	pop	r29
+ 394:	08 95       	ret
+
+00000396 <TWIM_Stop>:
+
+ Return Value: None
+
+*******************************************************/
+void TWIM_Stop (void)
+	{
+ 396:	df 93       	push	r29
+ 398:	cf 93       	push	r28
+ 39a:	cd b7       	in	r28, 0x3d	; 61
+ 39c:	de b7       	in	r29, 0x3e	; 62
+/*
+** Send stop condition
+*/
+	TWCR = (1<<TWINT)|(1<<TWEN)|(1<<TWSTO);
+ 39e:	86 e5       	ldi	r24, 0x56	; 86
+ 3a0:	90 e0       	ldi	r25, 0x00	; 0
+ 3a2:	24 e9       	ldi	r18, 0x94	; 148
+ 3a4:	fc 01       	movw	r30, r24
+ 3a6:	20 83       	st	Z, r18
+/*
+** Wait until stop condition is executed and bus released
+*/
+	while (TWCR & (1<<TWINT));
+ 3a8:	00 00       	nop
+ 3aa:	86 e5       	ldi	r24, 0x56	; 86
+ 3ac:	90 e0       	ldi	r25, 0x00	; 0
+ 3ae:	fc 01       	movw	r30, r24
+ 3b0:	80 81       	ld	r24, Z
+ 3b2:	88 23       	and	r24, r24
+ 3b4:	d4 f3       	brlt	.-12     	; 0x3aa <TWIM_Stop+0x14>
+	}
+ 3b6:	cf 91       	pop	r28
+ 3b8:	df 91       	pop	r29
+ 3ba:	08 95       	ret
+
+000003bc <TWIM_Write>:
+  	- TRUE:		OK, Byte sent
+ 	- FALSE:	Error in byte transmission
+
+*******************************************************/
+uint8_t TWIM_Write (uint8_t byte)
+	{
+ 3bc:	df 93       	push	r29
+ 3be:	cf 93       	push	r28
+ 3c0:	00 d0       	rcall	.+0      	; 0x3c2 <TWIM_Write+0x6>
+ 3c2:	cd b7       	in	r28, 0x3d	; 61
+ 3c4:	de b7       	in	r29, 0x3e	; 62
+ 3c6:	8a 83       	std	Y+2, r24	; 0x02
+	uint8_t   twst;
+/*
+** Send data to the previously addressed device
+*/
+	TWDR = byte;
+ 3c8:	83 e2       	ldi	r24, 0x23	; 35
+ 3ca:	90 e0       	ldi	r25, 0x00	; 0
+ 3cc:	2a 81       	ldd	r18, Y+2	; 0x02
+ 3ce:	fc 01       	movw	r30, r24
+ 3d0:	20 83       	st	Z, r18
+	TWCR = (1<<TWINT)|(1<<TWEN);
+ 3d2:	86 e5       	ldi	r24, 0x56	; 86
+ 3d4:	90 e0       	ldi	r25, 0x00	; 0
+ 3d6:	24 e8       	ldi	r18, 0x84	; 132
+ 3d8:	fc 01       	movw	r30, r24
+ 3da:	20 83       	st	Z, r18
+/*
+** Wait until transmission completed
+*/
+	while (!(TWCR & (1<<TWINT)));
+ 3dc:	00 00       	nop
+ 3de:	86 e5       	ldi	r24, 0x56	; 86
+ 3e0:	90 e0       	ldi	r25, 0x00	; 0
+ 3e2:	fc 01       	movw	r30, r24
+ 3e4:	80 81       	ld	r24, Z
+ 3e6:	88 23       	and	r24, r24
+ 3e8:	d4 f7       	brge	.-12     	; 0x3de <TWIM_Write+0x22>
+/*
+** Check value of TWI Status Register. Mask prescaler bits
+*/
+	twst = TWSR & 0xF8;
+ 3ea:	81 e2       	ldi	r24, 0x21	; 33
+ 3ec:	90 e0       	ldi	r25, 0x00	; 0
+ 3ee:	fc 01       	movw	r30, r24
+ 3f0:	80 81       	ld	r24, Z
+ 3f2:	88 7f       	andi	r24, 0xF8	; 248
+ 3f4:	89 83       	std	Y+1, r24	; 0x01
+	if (twst != TWI_MTX_DATA_ACK) return 1;
+ 3f6:	89 81       	ldd	r24, Y+1	; 0x01
+ 3f8:	88 32       	cpi	r24, 0x28	; 40
+ 3fa:	11 f0       	breq	.+4      	; 0x400 <TWIM_Write+0x44>
+ 3fc:	81 e0       	ldi	r24, 0x01	; 1
+ 3fe:	01 c0       	rjmp	.+2      	; 0x402 <TWIM_Write+0x46>
+
+	return 0;
+ 400:	80 e0       	ldi	r24, 0x00	; 0
+	}
+ 402:	0f 90       	pop	r0
+ 404:	0f 90       	pop	r0
+ 406:	cf 91       	pop	r28
+ 408:	df 91       	pop	r29
+ 40a:	08 95       	ret
+
+0000040c <TWIM_ReadAck>:
+ Return Value: uint8_t
+  	- uint8_t	Read byte
+
+*******************************************************/
+uint8_t TWIM_ReadAck (void)
+	{
+ 40c:	df 93       	push	r29
+ 40e:	cf 93       	push	r28
+ 410:	cd b7       	in	r28, 0x3d	; 61
+ 412:	de b7       	in	r29, 0x3e	; 62
+	TWCR = (1<<TWINT)|(1<<TWEN)|(1<<TWEA);
+ 414:	86 e5       	ldi	r24, 0x56	; 86
+ 416:	90 e0       	ldi	r25, 0x00	; 0
+ 418:	24 ec       	ldi	r18, 0xC4	; 196
+ 41a:	fc 01       	movw	r30, r24
+ 41c:	20 83       	st	Z, r18
+	while (!(TWCR & (1<<TWINT)));    
+ 41e:	00 00       	nop
+ 420:	86 e5       	ldi	r24, 0x56	; 86
+ 422:	90 e0       	ldi	r25, 0x00	; 0
+ 424:	fc 01       	movw	r30, r24
+ 426:	80 81       	ld	r24, Z
+ 428:	88 23       	and	r24, r24
+ 42a:	d4 f7       	brge	.-12     	; 0x420 <TWIM_ReadAck+0x14>
+
+	return TWDR;
+ 42c:	83 e2       	ldi	r24, 0x23	; 35
+ 42e:	90 e0       	ldi	r25, 0x00	; 0
+ 430:	fc 01       	movw	r30, r24
+ 432:	80 81       	ld	r24, Z
+	}
+ 434:	cf 91       	pop	r28
+ 436:	df 91       	pop	r29
+ 438:	08 95       	ret
+
+0000043a <TWIM_ReadNack>:
+ Return Value: uint8_t
+  	- uint8_t	Read byte
+
+*******************************************************/
+uint8_t TWIM_ReadNack (void)
+	{
+ 43a:	df 93       	push	r29
+ 43c:	cf 93       	push	r28
+ 43e:	cd b7       	in	r28, 0x3d	; 61
+ 440:	de b7       	in	r29, 0x3e	; 62
+	TWCR = (1<<TWINT)|(1<<TWEN);
+ 442:	86 e5       	ldi	r24, 0x56	; 86
+ 444:	90 e0       	ldi	r25, 0x00	; 0
+ 446:	24 e8       	ldi	r18, 0x84	; 132
+ 448:	fc 01       	movw	r30, r24
+ 44a:	20 83       	st	Z, r18
+	while(!(TWCR & (1<<TWINT)));
+ 44c:	00 00       	nop
+ 44e:	86 e5       	ldi	r24, 0x56	; 86
+ 450:	90 e0       	ldi	r25, 0x00	; 0
+ 452:	fc 01       	movw	r30, r24
+ 454:	80 81       	ld	r24, Z
+ 456:	88 23       	and	r24, r24
+ 458:	d4 f7       	brge	.-12     	; 0x44e <TWIM_ReadNack+0x14>
+	
+	return TWDR;
+ 45a:	83 e2       	ldi	r24, 0x23	; 35
+ 45c:	90 e0       	ldi	r25, 0x00	; 0
+ 45e:	fc 01       	movw	r30, r24
+ 460:	80 81       	ld	r24, Z
+	}
+ 462:	cf 91       	pop	r28
+ 464:	df 91       	pop	r29
+ 466:	08 95       	ret
+
+00000468 <main>:
+** connect GND between Master and Slave!)
+**
+** Used uC for Master is ATMega32
+*/
+int main (void)
+	{
+ 468:	0f 93       	push	r16
+ 46a:	1f 93       	push	r17
+ 46c:	df 93       	push	r29
+ 46e:	cf 93       	push	r28
+ 470:	cd b7       	in	r28, 0x3d	; 61
+ 472:	de b7       	in	r29, 0x3e	; 62
+ 474:	2b 97       	sbiw	r28, 0x0b	; 11
+ 476:	0f b6       	in	r0, 0x3f	; 63
+ 478:	f8 94       	cli
+ 47a:	de bf       	out	0x3e, r29	; 62
+ 47c:	0f be       	out	0x3f, r0	; 63
+ 47e:	cd bf       	out	0x3d, r28	; 61
+	uint8_t		i;
+	uint8_t		j=0;
+ 480:	1a 82       	std	Y+2, r1	; 0x02
+	uint8_t		Data[8];
+	uint8_t		SlaveAddress = 15;
+ 482:	8f e0       	ldi	r24, 0x0F	; 15
+ 484:	8b 83       	std	Y+3, r24	; 0x03
+/*
+** Clear any interrupt
+*/
+	cli ();
+ 486:	f8 94       	cli
+/*
+** Wait 1 second for POR
+*/
+	Delay_ms (1000);
+ 488:	68 e0       	ldi	r22, 0x08	; 8
+ 48a:	77 e5       	ldi	r23, 0x57	; 87
+ 48c:	84 e1       	ldi	r24, 0x14	; 20
+ 48e:	90 e0       	ldi	r25, 0x00	; 0
+ 490:	0e 94 49 00 	call	0x92	; 0x92 <Delayloop32>
+	//RS232_Init ();
+	//printf ("Hello world...\n");
+/*
+** Initiate TWI Master Interface with bitrate of 100000 Hz
+*/
+	if (!TWIM_Init (100000))
+ 494:	60 ea       	ldi	r22, 0xA0	; 160
+ 496:	76 e8       	ldi	r23, 0x86	; 134
+ 498:	81 e0       	ldi	r24, 0x01	; 1
+ 49a:	90 e0       	ldi	r25, 0x00	; 0
+ 49c:	0e 94 48 01 	call	0x290	; 0x290 <TWIM_Init>
+ 4a0:	88 23       	and	r24, r24
+ 4a2:	09 f4       	brne	.+2      	; 0x4a6 <main+0x3e>
+		{
+		//printf ("Error in initiating TWI interface\n");
+		while (1);
+ 4a4:	ff cf       	rjmp	.-2      	; 0x4a4 <main+0x3c>
+/*
+** Read byte(s) from the slave.
+** It is implicitely assumed, that the slave will send
+** 8 bytes
+*/
+    	if (!TWIM_Start (SlaveAddress, TWIM_READ))
+ 4a6:	8b 81       	ldd	r24, Y+3	; 0x03
+ 4a8:	61 e0       	ldi	r22, 0x01	; 1
+ 4aa:	0e 94 7f 01 	call	0x2fe	; 0x2fe <TWIM_Start>
+ 4ae:	88 23       	and	r24, r24
+ 4b0:	19 f4       	brne	.+6      	; 0x4b8 <main+0x50>
+			{
+			TWIM_Stop ();
+ 4b2:	0e 94 cb 01 	call	0x396	; 0x396 <TWIM_Stop>
+ 4b6:	1f c0       	rjmp	.+62     	; 0x4f6 <main+0x8e>
+			//printf ("Could not start TWI Bus for READ\n");
+	    	}
+		else
+			{
+			for (i=0;i<7;i++)
+ 4b8:	19 82       	std	Y+1, r1	; 0x01
+ 4ba:	0f c0       	rjmp	.+30     	; 0x4da <main+0x72>
+				{
+	        	Data[i] = TWIM_ReadAck ();
+ 4bc:	89 81       	ldd	r24, Y+1	; 0x01
+ 4be:	08 2f       	mov	r16, r24
+ 4c0:	10 e0       	ldi	r17, 0x00	; 0
+ 4c2:	0e 94 06 02 	call	0x40c	; 0x40c <TWIM_ReadAck>
+ 4c6:	28 2f       	mov	r18, r24
+ 4c8:	ce 01       	movw	r24, r28
+ 4ca:	04 96       	adiw	r24, 0x04	; 4
+ 4cc:	80 0f       	add	r24, r16
+ 4ce:	91 1f       	adc	r25, r17
+ 4d0:	fc 01       	movw	r30, r24
+ 4d2:	20 83       	st	Z, r18
+			TWIM_Stop ();
+			//printf ("Could not start TWI Bus for READ\n");
+	    	}
+		else
+			{
+			for (i=0;i<7;i++)
+ 4d4:	89 81       	ldd	r24, Y+1	; 0x01
+ 4d6:	8f 5f       	subi	r24, 0xFF	; 255
+ 4d8:	89 83       	std	Y+1, r24	; 0x01
+ 4da:	89 81       	ldd	r24, Y+1	; 0x01
+ 4dc:	87 30       	cpi	r24, 0x07	; 7
+ 4de:	70 f3       	brcs	.-36     	; 0x4bc <main+0x54>
+				{
+	        	Data[i] = TWIM_ReadAck ();
+				//printf ("Reading Byte %d: %d\n", i, Data[i]);
+				}
+        	Data[7] = TWIM_ReadNack ();
+ 4e0:	0e 94 1d 02 	call	0x43a	; 0x43a <TWIM_ReadNack>
+ 4e4:	8b 87       	std	Y+11, r24	; 0x0b
+			//printf ("Reading Byte %d: %d\n", i, Data[7]);
+			TWIM_Stop ();
+ 4e6:	0e 94 cb 01 	call	0x396	; 0x396 <TWIM_Stop>
+			Delay_ms (1000);
+ 4ea:	68 e0       	ldi	r22, 0x08	; 8
+ 4ec:	77 e5       	ldi	r23, 0x57	; 87
+ 4ee:	84 e1       	ldi	r24, 0x14	; 20
+ 4f0:	90 e0       	ldi	r25, 0x00	; 0
+ 4f2:	0e 94 49 00 	call	0x92	; 0x92 <Delayloop32>
+/*
+** Write byte(s) to the slave.
+** It is implicitely assumed, that the slave will
+** accepts 8 bytes
+*/
+    	if (!TWIM_Start (SlaveAddress, TWIM_WRITE))
+ 4f6:	8b 81       	ldd	r24, Y+3	; 0x03
+ 4f8:	60 e0       	ldi	r22, 0x00	; 0
+ 4fa:	0e 94 7f 01 	call	0x2fe	; 0x2fe <TWIM_Start>
+ 4fe:	88 23       	and	r24, r24
+ 500:	19 f4       	brne	.+6      	; 0x508 <main+0xa0>
+			{
+			TWIM_Stop ();
+ 502:	0e 94 cb 01 	call	0x396	; 0x396 <TWIM_Stop>
+ 506:	16 c0       	rjmp	.+44     	; 0x534 <main+0xcc>
+			//printf ("Could not start TWI Bus for WRITE\n");
+	    	}
+		else
+			{
+			for (i=0;i<8;i++)
+ 508:	19 82       	std	Y+1, r1	; 0x01
+ 50a:	09 c0       	rjmp	.+18     	; 0x51e <main+0xb6>
+				{
+	        	TWIM_Write (j++);
+ 50c:	8a 81       	ldd	r24, Y+2	; 0x02
+ 50e:	9a 81       	ldd	r25, Y+2	; 0x02
+ 510:	9f 5f       	subi	r25, 0xFF	; 255
+ 512:	9a 83       	std	Y+2, r25	; 0x02
+ 514:	0e 94 de 01 	call	0x3bc	; 0x3bc <TWIM_Write>
+			TWIM_Stop ();
+			//printf ("Could not start TWI Bus for WRITE\n");
+	    	}
+		else
+			{
+			for (i=0;i<8;i++)
+ 518:	89 81       	ldd	r24, Y+1	; 0x01
+ 51a:	8f 5f       	subi	r24, 0xFF	; 255
+ 51c:	89 83       	std	Y+1, r24	; 0x01
+ 51e:	89 81       	ldd	r24, Y+1	; 0x01
+ 520:	88 30       	cpi	r24, 0x08	; 8
+ 522:	a0 f3       	brcs	.-24     	; 0x50c <main+0xa4>
+				{
+	        	TWIM_Write (j++);
+				//printf ("Byte %d sent: %d\n", i, j);
+				}
+			TWIM_Stop ();
+ 524:	0e 94 cb 01 	call	0x396	; 0x396 <TWIM_Stop>
+			Delay_ms (1000);
+ 528:	68 e0       	ldi	r22, 0x08	; 8
+ 52a:	77 e5       	ldi	r23, 0x57	; 87
+ 52c:	84 e1       	ldi	r24, 0x14	; 20
+ 52e:	90 e0       	ldi	r25, 0x00	; 0
+ 530:	0e 94 49 00 	call	0x92	; 0x92 <Delayloop32>
+			}
+/*
+** Do something else
+*/
+		i++;
+ 534:	89 81       	ldd	r24, Y+1	; 0x01
+ 536:	8f 5f       	subi	r24, 0xFF	; 255
+ 538:	89 83       	std	Y+1, r24	; 0x01
+		}
+ 53a:	b5 cf       	rjmp	.-150    	; 0x4a6 <main+0x3e>
+
+0000053c <__udivmodsi4>:
+ 53c:	a1 e2       	ldi	r26, 0x21	; 33
+ 53e:	1a 2e       	mov	r1, r26
+ 540:	aa 1b       	sub	r26, r26
+ 542:	bb 1b       	sub	r27, r27
+ 544:	fd 01       	movw	r30, r26
+ 546:	0d c0       	rjmp	.+26     	; 0x562 <__udivmodsi4_ep>
+
+00000548 <__udivmodsi4_loop>:
+ 548:	aa 1f       	adc	r26, r26
+ 54a:	bb 1f       	adc	r27, r27
+ 54c:	ee 1f       	adc	r30, r30
+ 54e:	ff 1f       	adc	r31, r31
+ 550:	a2 17       	cp	r26, r18
+ 552:	b3 07       	cpc	r27, r19
+ 554:	e4 07       	cpc	r30, r20
+ 556:	f5 07       	cpc	r31, r21
+ 558:	20 f0       	brcs	.+8      	; 0x562 <__udivmodsi4_ep>
+ 55a:	a2 1b       	sub	r26, r18
+ 55c:	b3 0b       	sbc	r27, r19
+ 55e:	e4 0b       	sbc	r30, r20
+ 560:	f5 0b       	sbc	r31, r21
+
+00000562 <__udivmodsi4_ep>:
+ 562:	66 1f       	adc	r22, r22
+ 564:	77 1f       	adc	r23, r23
+ 566:	88 1f       	adc	r24, r24
+ 568:	99 1f       	adc	r25, r25
+ 56a:	1a 94       	dec	r1
+ 56c:	69 f7       	brne	.-38     	; 0x548 <__udivmodsi4_loop>
+ 56e:	60 95       	com	r22
+ 570:	70 95       	com	r23
+ 572:	80 95       	com	r24
+ 574:	90 95       	com	r25
+ 576:	9b 01       	movw	r18, r22
+ 578:	ac 01       	movw	r20, r24
+ 57a:	bd 01       	movw	r22, r26
+ 57c:	cf 01       	movw	r24, r30
+ 57e:	08 95       	ret
+
+00000580 <_exit>:
+ 580:	f8 94       	cli
+
+00000582 <__stop_program>:
+ 582:	ff cf       	rjmp	.-2      	; 0x582 <__stop_program>

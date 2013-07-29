@@ -1,0 +1,8 @@
+To do Liste für die Interpreter Client Software:
+
+
+- Dateiauswahldialog für das Excel Sheet einfügen
+
+- Alle Schreibbefehle für das Excel Sheet kontrollieren und Schreibzugriffe auf nicht mehr vorhandene Tabellenseiten entfernen
+
+- Die Funktionen in Datei "Form1.h" je nach Hintergrund in eigene c und h Files organisieren.

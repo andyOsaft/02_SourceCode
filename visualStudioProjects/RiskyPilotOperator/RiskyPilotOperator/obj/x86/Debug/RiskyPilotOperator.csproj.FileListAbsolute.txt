@@ -1,0 +1,9 @@
+E:\Buero_120801\Mikrocontroller\02_Quellcode\visualStudioProjects\RiskyPilotOperator\RiskyPilotOperator\bin\Debug\RiskyPilotOperator.exe
+E:\Buero_120801\Mikrocontroller\02_Quellcode\visualStudioProjects\RiskyPilotOperator\RiskyPilotOperator\bin\Debug\RiskyPilotOperator.pdb
+E:\Buero_120801\Mikrocontroller\02_Quellcode\visualStudioProjects\RiskyPilotOperator\RiskyPilotOperator\obj\x86\Debug\ResolveAssemblyReference.cache
+E:\Buero_120801\Mikrocontroller\02_Quellcode\visualStudioProjects\RiskyPilotOperator\RiskyPilotOperator\obj\x86\Debug\RiskyPilotOperator.Properties.Resources.resources
+E:\Buero_120801\Mikrocontroller\02_Quellcode\visualStudioProjects\RiskyPilotOperator\RiskyPilotOperator\obj\x86\Debug\GenerateResource.read.1.tlog
+E:\Buero_120801\Mikrocontroller\02_Quellcode\visualStudioProjects\RiskyPilotOperator\RiskyPilotOperator\obj\x86\Debug\GenerateResource.write.1.tlog
+E:\Buero_120801\Mikrocontroller\02_Quellcode\visualStudioProjects\RiskyPilotOperator\RiskyPilotOperator\obj\x86\Debug\RiskyPilotOperator.exe
+E:\Buero_120801\Mikrocontroller\02_Quellcode\visualStudioProjects\RiskyPilotOperator\RiskyPilotOperator\obj\x86\Debug\RiskyPilotOperator.pdb
+E:\Buero_120801\Mikrocontroller\02_Quellcode\visualStudioProjects\RiskyPilotOperator\RiskyPilotOperator\obj\x86\Debug\RiskyPilotOperator.riskyPilotOperatorForm.resources

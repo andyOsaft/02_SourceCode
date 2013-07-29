@@ -1,0 +1,83 @@
+  robokid_control.Form1.resources - Embedded, ContainedInManifestFile, 
+  robokid_control.mapForm.resources - Embedded, ContainedInManifestFile, 
+  robokid_control.showStatisticsForm.resources - Embedded, ContainedInManifestFile, 
+  robokid_control.toeControl.resources - Embedded, ContainedInManifestFile, 
+ImageRuntimeVersion: v4.0.30319
+Assembly classificationClient, Version=1.0.*, Culture=Invariante Sprache (Invariantes Land): 
+	hash=SHA1, flags=PublicKey
+Assembly mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a: 
+	hash=None, flags=None
+Assembly System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly Microsoft.VisualC, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a: 
+	hash=None, flags=None
+Struct accessExcel: AutoLayout, AnsiClass, Class, Public, SequentialLayout, Sealed, BeforeFieldInit
+  :System.ValueType
+Class robokid_control.controlForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class robokid_control.mapForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Int32 startFlag : Public
+    Int32[,] globalMap : Public
+    Int32[,] tempGlobalMap : Public
+    Int32[,] pathVector : Public
+    Int32 obstacleUpdateFlag : Public
+    Int32 obstacleSetFlag : Public
+    Int32 mapXSize : Public
+    Int32 mapYSize : Public
+  Methods:
+    setFrontSensorData(Int32, Int32, Int32, Int32): PrivateScope, Public, HideBySig
+    setRobotPose(Int32, Int32, Int32): PrivateScope, Public, HideBySig
+    setTargetPosition(Int32, Int32): PrivateScope, Public, HideBySig
+    convertIncomingData(): PrivateScope, Public, HideBySig
+    registerObstaclesGlobal(): PrivateScope, Public, HideBySig
+    useIncomingMap(): PrivateScope, Public, HideBySig
+    loadMapFile(): PrivateScope, Public, HideBySig
+    InitializeComponent(): PrivateScope, Public, HideBySig
+Class robokid_control.showStatisticsForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class robokid_control.toeControl: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    nextIterationNotify(Int32): PrivateScope, Public, HideBySig
+    initToeModule(): PrivateScope, Public, HideBySig
+    getCurrentOutputVoltage(): PrivateScope, Public, HideBySig
+Class robokid_control.Form1: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.Windows.Forms.TextBox commLogBox : Public
+    System.String incomingData : Public
+    updateComLogBox updateComLogBoxDelegate : Public
+  Methods:
+    updateComLogBoxMethod(): PrivateScope, Public, HideBySig
+    incomingMsgHandler(): PrivateScope, Public, HideBySig
+    processC1Message(Int32, Int32): PrivateScope, Public, HideBySig
+    processILMessage(Int32, Int32): PrivateScope, Public, HideBySig
+    processREMessage(Int32): PrivateScope, Public, HideBySig
+    processOLMessage(Int32, Int32): PrivateScope, Public, HideBySig
+    stateMachineHandler(): PrivateScope, Public, HideBySig
+    sendHpmMessage(): PrivateScope, Public, HideBySig
+    InitializeComponent(): PrivateScope, Public, HideBySig
+Class robokid_control.Form1+updateComLogBox: AutoLayout, AnsiClass, Class, NestedPublic, Sealed, BeforeFieldInit
+  :System.MulticastDelegate
+    Void .ctor(System.Object, IntPtr): PrivateScope, Public, SpecialName, RTSpecialName
+  Methods:
+    Invoke(): PrivateScope, Public, Final, Virtual, VtableLayoutMask
+    BeginInvoke(AsyncCallback, Object): PrivateScope, Public, Final, Virtual, VtableLayoutMask
+    EndInvoke(IAsyncResult): PrivateScope, Public, Final, Virtual, VtableLayoutMask

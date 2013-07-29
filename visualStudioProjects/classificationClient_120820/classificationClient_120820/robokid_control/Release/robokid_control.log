@@ -1,0 +1,44 @@
+﻿Der Buildvorgang wurde am 20.08.2011 13:02:26 gestartet.
+     1>Projekt "E:\Buero_02_05_10\MScEmbeddedSystems\Dissertation\visualStudio\robokid_control_110820\robokid_control\robokid_control.vcxproj" auf Knoten "2", build Ziel(e).
+     1>InitializeBuildStatus:
+         "Release\robokid_control.unsuccessfulbuild" wird erstellt, da "AlwaysCreate" angegeben wurde.
+       GenerateTargetFrameworkMonikerAttribute:
+       Das Ziel "GenerateTargetFrameworkMonikerAttribute" wird übersprungen, da alle Ausgabedateien hinsichtlich der Eingabedateien aktuell sind.
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0" /Zi /clr:pure /nologo /W3 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D _UNICODE /D UNICODE /EHa /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"StdAfx.h" /Fp"Release\robokid_control.pch" /Fo"Release\\" /Fd"Release\vc100.pdb" /TP /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Core.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Data.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Drawing.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Windows.Forms.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Xml.dll" /analyze- /errorReport:prompt stdafx.cpp /clr:nostdlib 
+         stdafx.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0" /Zi /clr:pure /nologo /W3 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D _UNICODE /D UNICODE /EHa /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Release\robokid_control.pch" /Fo"Release\\" /Fd"Release\vc100.pdb" /TP /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Core.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Data.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Drawing.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Windows.Forms.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Xml.dll" /analyze- /errorReport:prompt AssemblyInfo.cpp controlForm.cpp mapForm.cpp robokid_control.cpp showStatisticsForm.cpp /clr:nostdlib 
+         AssemblyInfo.cpp
+         controlForm.cpp
+         mapForm.cpp
+         robokid_control.cpp
+         showStatisticsForm.cpp
+         Code wird generiert...
+         Alle Ausgaben sind aktuell.
+       CoreResGen:
+         "C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\NETFX 4.0 Tools\resgen.exe" /useSourcePath /r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Core.dll" /r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Data.dll" /r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.dll" /r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Drawing.dll" /r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Windows.Forms.dll" /r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Xml.dll" /compile Form1.resX,Release\robokid_control.Form1.resources mapForm.resx,Release\robokid_control.mapForm.resources showStatisticsForm.resx,Release\robokid_control.showStatisticsForm.resources
+         Die Ressourcendatei "Form1.resX" wird zu "Release\robokid_control.Form1.resources" verarbeitet.
+         Die Ressourcendatei "mapForm.resx" wird zu "Release\robokid_control.mapForm.resources" verarbeitet.
+         Die Ressourcendatei "showStatisticsForm.resx" wird zu "Release\robokid_control.showStatisticsForm.resources" verarbeitet.
+       ResourceCompile:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /D _UNICODE /D UNICODE /l"0x0409" /nologo /fo"Release\app.res" app.rc 
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"E:\Buero_02_05_10\MScEmbeddedSystems\Dissertation\visualStudio\robokid_control_110820\Release\robokid_control.exe" /INCREMENTAL:NO /NOLOGO /ASSEMBLYRESOURCE:Release\robokid_control.Form1.resources /ASSEMBLYRESOURCE:Release\robokid_control.mapForm.resources /ASSEMBLYRESOURCE:Release\robokid_control.showStatisticsForm.resources /MANIFEST /ManifestFile:"Release\robokid_control.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"E:\Buero_02_05_10\MScEmbeddedSystems\Dissertation\visualStudio\robokid_control_110820\Release\robokid_control.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /ENTRY:"main" /DYNAMICBASE /FIXED:NO /NXCOMPAT /MACHINE:X86 Release\app.res
+         Release\AssemblyInfo.obj
+         Release\controlForm.obj
+         Release\mapForm.obj
+         Release\robokid_control.obj
+         Release\showStatisticsForm.obj
+         Release\stdafx.obj
+         "Release\.NETFramework,Version=v4.0.AssemblyAttributes.obj"
+         robokid_control.vcxproj -> E:\Buero_02_05_10\MScEmbeddedSystems\Dissertation\visualStudio\robokid_control_110820\Release\robokid_control.exe
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"E:\Buero_02_05_10\MScEmbeddedSystems\Dissertation\visualStudio\robokid_control_110820\Release\robokid_control.exe;#1" /manifest Release\robokid_control.exe.intermediate.manifest
+       FinalizeBuildStatus:
+         Die Datei "Release\robokid_control.unsuccessfulbuild" wird gelöscht.
+         Aktualisieren des Timestamps von "Release\robokid_control.lastbuildstate".
+     1>Die Erstellung des Projekts "E:\Buero_02_05_10\MScEmbeddedSystems\Dissertation\visualStudio\robokid_control_110820\robokid_control\robokid_control.vcxproj" ist abgeschlossen, build Ziel(e).
+
+Das Erstellen war erfolgreich.
+
+Verstrichene Zeit 00:00:06.08

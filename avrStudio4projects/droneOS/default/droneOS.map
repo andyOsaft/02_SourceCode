@@ -1,0 +1,576 @@
+Archive member included because of file (symbol)
+
+c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodhi4.o)
+                              adcInit.o (__udivmodhi4)
+c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+                              c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o (exit)
+c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
+                              dogm-graphic.o (__do_clear_bss)
+c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(itoa.o)
+                              font.o (itoa)
+c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(ltoa.o)
+                              font.o (ltoa)
+c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(utoa.o)
+                              font.o (utoa)
+c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(strrev.o)
+                              c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(itoa.o) (strrev)
+c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodsi4.o)
+                              c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(ltoa.o) (__udivmodsi4)
+
+Allocating common symbols
+Common symbol       size              file
+
+global_font_style   0x1               font.o
+global_font_select  0x2               font.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+text             0x00000000         0x00020000         xr
+data             0x00800060         0x0000ffa0         rw !x
+eeprom           0x00810000         0x00010000         rw !x
+fuse             0x00820000         0x00000400         rw !x
+lock             0x00830000         0x00000400         rw !x
+signature        0x00840000         0x00000400         rw !x
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
+LOAD main.o
+LOAD globals.o
+LOAD adcInit.o
+LOAD interrupt.o
+LOAD myInit.o
+LOAD pwmInit.o
+LOAD timerInit.o
+LOAD dogm-graphic.o
+LOAD font.o
+LOAD font_fixed_8px.o
+LOAD c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
+LOAD c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a
+LOAD c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
+
+.hash
+ *(.hash)
+
+.dynsym
+ *(.dynsym)
+
+.dynstr
+ *(.dynstr)
+
+.gnu.version
+ *(.gnu.version)
+
+.gnu.version_d
+ *(.gnu.version_d)
+
+.gnu.version_r
+ *(.gnu.version_r)
+
+.rel.init
+ *(.rel.init)
+
+.rela.init
+ *(.rela.init)
+
+.rel.text
+ *(.rel.text)
+ *(.rel.text.*)
+ *(.rel.gnu.linkonce.t*)
+
+.rela.text
+ *(.rela.text)
+ *(.rela.text.*)
+ *(.rela.gnu.linkonce.t*)
+
+.rel.fini
+ *(.rel.fini)
+
+.rela.fini
+ *(.rela.fini)
+
+.rel.rodata
+ *(.rel.rodata)
+ *(.rel.rodata.*)
+ *(.rel.gnu.linkonce.r*)
+
+.rela.rodata
+ *(.rela.rodata)
+ *(.rela.rodata.*)
+ *(.rela.gnu.linkonce.r*)
+
+.rel.data
+ *(.rel.data)
+ *(.rel.data.*)
+ *(.rel.gnu.linkonce.d*)
+
+.rela.data
+ *(.rela.data)
+ *(.rela.data.*)
+ *(.rela.gnu.linkonce.d*)
+
+.rel.ctors
+ *(.rel.ctors)
+
+.rela.ctors
+ *(.rela.ctors)
+
+.rel.dtors
+ *(.rel.dtors)
+
+.rela.dtors
+ *(.rela.dtors)
+
+.rel.got
+ *(.rel.got)
+
+.rela.got
+ *(.rela.got)
+
+.rel.bss
+ *(.rel.bss)
+
+.rela.bss
+ *(.rela.bss)
+
+.rel.plt
+ *(.rel.plt)
+
+.rela.plt
+ *(.rela.plt)
+
+.text           0x00000000     0x1454
+ *(.vectors)
+ .vectors       0x00000000       0x54 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
+                0x00000000                __vectors
+                0x00000000                __vector_default
+ *(.vectors)
+ *(.progmem.gcc*)
+ *(.progmem*)
+ .progmem.data  0x00000054        0xb main.o
+ .progmem.data  0x0000005f      0x60a font_fixed_8px.o
+                0x0000065f                font_fixed_8px
+                0x0000005f                font_fixed_8px_data
+                0x0000066a                . = ALIGN (0x2)
+ *fill*         0x00000669        0x1 00
+                0x0000066a                __trampolines_start = .
+ *(.trampolines)
+ .trampolines   0x0000066a        0x0 linker stubs
+ *(.trampolines*)
+                0x0000066a                __trampolines_end = .
+ *(.jumptables)
+ *(.jumptables*)
+ *(.lowtext)
+ *(.lowtext*)
+                0x0000066a                __ctors_start = .
+ *(.ctors)
+                0x0000066a                __ctors_end = .
+                0x0000066a                __dtors_start = .
+ *(.dtors)
+                0x0000066a                __dtors_end = .
+ SORT(*)(.ctors)
+ SORT(*)(.dtors)
+ *(.init0)
+ .init0         0x0000066a        0x0 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
+                0x0000066a                __init
+ *(.init0)
+ *(.init1)
+ *(.init1)
+ *(.init2)
+ .init2         0x0000066a        0xc c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
+ *(.init2)
+ *(.init3)
+ *(.init3)
+ *(.init4)
+ .init4         0x00000676       0x10 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
+                0x00000676                __do_clear_bss
+ *(.init4)
+ *(.init5)
+ *(.init5)
+ *(.init6)
+ *(.init6)
+ *(.init7)
+ *(.init7)
+ *(.init8)
+ *(.init8)
+ *(.init9)
+ .init9         0x00000686        0x8 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
+ *(.init9)
+ *(.text)
+ .text          0x0000068e        0x4 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
+                0x0000068e                __vector_1
+                0x0000068e                __vector_12
+                0x0000068e                __bad_interrupt
+                0x0000068e                __vector_6
+                0x0000068e                __vector_3
+                0x0000068e                __vector_11
+                0x0000068e                __vector_13
+                0x0000068e                __vector_17
+                0x0000068e                __vector_19
+                0x0000068e                __vector_7
+                0x0000068e                __vector_5
+                0x0000068e                __vector_4
+                0x0000068e                __vector_9
+                0x0000068e                __vector_2
+                0x0000068e                __vector_15
+                0x0000068e                __vector_8
+                0x0000068e                __vector_14
+                0x0000068e                __vector_10
+                0x0000068e                __vector_16
+                0x0000068e                __vector_18
+                0x0000068e                __vector_20
+ .text          0x00000692       0x44 main.o
+                0x00000692                main
+ .text          0x000006d6        0x0 globals.o
+ .text          0x000006d6       0x88 adcInit.o
+                0x00000726                adcRead5
+                0x000006d6                adcInit
+                0x000006ee                adcRead15
+ .text          0x0000075e        0x0 interrupt.o
+ .text          0x0000075e        0xa myInit.o
+                0x0000075e                myInit
+ .text          0x00000768       0x4a pwmInit.o
+                0x000007ac                pwmUpdate
+                0x00000768                pwmInit
+ .text          0x000007b2       0x12 timerInit.o
+                0x000007b2                timer_init
+ .text          0x000007c4      0x440 dogm-graphic.o
+                0x00000810                lcd_data
+                0x00000866                lcd_move_xy
+                0x000007c4                lcd_inc_page
+                0x00000a96                lcd_clear_area
+                0x00000b46                init_spi_lcd
+                0x00000b1c                lcd_clear_area_xy
+                0x00000b62                lcd_init
+                0x000007d4                lcd_inc_column
+                0x00000910                lcd_draw_image_xy_P
+                0x00000834                lcd_moveto_xy
+                0x00000886                lcd_draw_image_P
+                0x00000826                lcd_command
+ .text          0x00000c04      0x6ea font.o
+                0x000010aa                lcd_put_string
+                0x00001006                lcd_put_char_xy
+                0x000011e2                lcd_put_long
+                0x00000c1e                font_widthtable
+                0x00001246                lcd_put_string_P
+                0x00001192                lcd_put_int
+                0x0000128a                lcd_putstr_P
+                0x00001232                lcd_putstr
+                0x000012d0                lcd_putstr_xy_P
+                0x000010ec                lcd_put_short
+                0x00001052                lcd_put_string_length
+                0x00000ff2                lcd_putc
+                0x00001034                lcd_putc_xy
+                0x00000c04                lcd_set_font
+                0x00000c2a                font_get_height_bytes
+                0x00000c12                font_data
+                0x00000c3e                font_get_add_space
+                0x00000c76                font_get_char_width
+                0x0000129e                lcd_put_string_xy_P
+                0x00000c52                font_get_char_number
+                0x00001142                lcd_put_uint
+                0x00000cc2                font_get_char_position
+                0x00000dae                lcd_put_char
+ .text          0x000012ee        0x0 font_fixed_8px.o
+ .text          0x000012ee        0x0 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodhi4.o)
+ .text          0x000012ee        0x0 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .text          0x000012ee        0x0 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
+ .text          0x000012ee        0x0 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(itoa.o)
+ .text          0x000012ee        0x0 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(ltoa.o)
+ .text          0x000012ee        0x0 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(utoa.o)
+ .text          0x000012ee        0x0 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(strrev.o)
+ .text          0x000012ee        0x0 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodsi4.o)
+                0x000012ee                . = ALIGN (0x2)
+ *(.text.*)
+ .text.libgcc   0x000012ee       0x28 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodhi4.o)
+                0x000012ee                __udivmodhi4
+ .text.libgcc   0x00001316        0x0 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .text.libgcc   0x00001316        0x0 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
+ .text.avr-libc
+                0x00001316       0x42 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(itoa.o)
+                0x00001316                itoa
+ .text.avr-libc
+                0x00001358       0x68 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(ltoa.o)
+                0x00001358                ltoa
+ .text.avr-libc
+                0x000013c0       0x2c c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(utoa.o)
+                0x000013c0                utoa
+ .text.avr-libc
+                0x000013ec       0x20 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(strrev.o)
+                0x000013ec                strrev
+ .text.libgcc   0x0000140c       0x44 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodsi4.o)
+                0x0000140c                __udivmodsi4
+                0x00001450                . = ALIGN (0x2)
+ *(.fini9)
+ .fini9         0x00001450        0x0 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+                0x00001450                exit
+                0x00001450                _exit
+ *(.fini9)
+ *(.fini8)
+ *(.fini8)
+ *(.fini7)
+ *(.fini7)
+ *(.fini6)
+ *(.fini6)
+ *(.fini5)
+ *(.fini5)
+ *(.fini4)
+ *(.fini4)
+ *(.fini3)
+ *(.fini3)
+ *(.fini2)
+ *(.fini2)
+ *(.fini1)
+ *(.fini1)
+ *(.fini0)
+ .fini0         0x00001450        0x4 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ *(.fini0)
+                0x00001454                _etext = .
+
+.data           0x00800060        0x0 load address 0x00001454
+                0x00800060                PROVIDE (__data_start, .)
+ *(.data)
+ .data          0x00800060        0x0 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
+ .data          0x00800060        0x0 main.o
+ .data          0x00800060        0x0 globals.o
+ .data          0x00800060        0x0 adcInit.o
+ .data          0x00800060        0x0 interrupt.o
+ .data          0x00800060        0x0 myInit.o
+ .data          0x00800060        0x0 pwmInit.o
+ .data          0x00800060        0x0 timerInit.o
+ .data          0x00800060        0x0 dogm-graphic.o
+ .data          0x00800060        0x0 font.o
+ .data          0x00800060        0x0 font_fixed_8px.o
+ .data          0x00800060        0x0 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodhi4.o)
+ .data          0x00800060        0x0 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .data          0x00800060        0x0 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
+ .data          0x00800060        0x0 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(itoa.o)
+ .data          0x00800060        0x0 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(ltoa.o)
+ .data          0x00800060        0x0 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(utoa.o)
+ .data          0x00800060        0x0 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(strrev.o)
+ .data          0x00800060        0x0 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodsi4.o)
+ *(.data*)
+ *(.rodata)
+ *(.rodata*)
+ *(.gnu.linkonce.d*)
+                0x00800060                . = ALIGN (0x2)
+                0x00800060                _edata = .
+                0x00800060                PROVIDE (__data_end, .)
+
+.bss            0x00800060        0x5
+                0x00800060                PROVIDE (__bss_start, .)
+ *(.bss)
+ .bss           0x00800060        0x0 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
+ .bss           0x00800060        0x0 main.o
+ .bss           0x00800060        0x0 globals.o
+ .bss           0x00800060        0x0 adcInit.o
+ .bss           0x00800060        0x0 interrupt.o
+ .bss           0x00800060        0x0 myInit.o
+ .bss           0x00800060        0x0 pwmInit.o
+ .bss           0x00800060        0x0 timerInit.o
+ .bss           0x00800060        0x2 dogm-graphic.o
+                0x00800061                lcd_current_column
+                0x00800060                lcd_current_page
+ .bss           0x00800062        0x0 font.o
+ .bss           0x00800062        0x0 font_fixed_8px.o
+ .bss           0x00800062        0x0 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodhi4.o)
+ .bss           0x00800062        0x0 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .bss           0x00800062        0x0 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
+ .bss           0x00800062        0x0 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(itoa.o)
+ .bss           0x00800062        0x0 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(ltoa.o)
+ .bss           0x00800062        0x0 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(utoa.o)
+ .bss           0x00800062        0x0 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(strrev.o)
+ .bss           0x00800062        0x0 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodsi4.o)
+ *(.bss*)
+ *(COMMON)
+ COMMON         0x00800062        0x3 font.o
+                0x00800062                global_font_style
+                0x00800063                global_font_select
+                0x00800065                PROVIDE (__bss_end, .)
+                0x00001454                __data_load_start = LOADADDR (.data)
+                0x00001454                __data_load_end = (__data_load_start + SIZEOF (.data))
+
+.noinit         0x00800065        0x0
+                0x00800065                PROVIDE (__noinit_start, .)
+ *(.noinit*)
+                0x00800065                PROVIDE (__noinit_end, .)
+                0x00800065                _end = .
+                0x00800065                PROVIDE (__heap_start, .)
+
+.eeprom         0x00810000        0x0
+ *(.eeprom*)
+                0x00810000                __eeprom_end = .
+
+.fuse
+ *(.fuse)
+ *(.lfuse)
+ *(.hfuse)
+ *(.efuse)
+
+.lock
+ *(.lock*)
+
+.signature
+ *(.signature*)
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment
+ *(.comment)
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges  0x00000000       0xe0
+ *(.debug_aranges)
+ .debug_aranges
+                0x00000000       0x20 main.o
+ .debug_aranges
+                0x00000020       0x20 adcInit.o
+ .debug_aranges
+                0x00000040       0x20 myInit.o
+ .debug_aranges
+                0x00000060       0x20 pwmInit.o
+ .debug_aranges
+                0x00000080       0x20 timerInit.o
+ .debug_aranges
+                0x000000a0       0x20 dogm-graphic.o
+ .debug_aranges
+                0x000000c0       0x20 font.o
+
+.debug_pubnames
+                0x00000000      0x413
+ *(.debug_pubnames)
+ .debug_pubnames
+                0x00000000       0x1b main.o
+ .debug_pubnames
+                0x0000001b       0x39 adcInit.o
+ .debug_pubnames
+                0x00000054       0x1d myInit.o
+ .debug_pubnames
+                0x00000071       0x2c pwmInit.o
+ .debug_pubnames
+                0x0000009d       0x21 timerInit.o
+ .debug_pubnames
+                0x000000be      0x115 dogm-graphic.o
+ .debug_pubnames
+                0x000001d3      0x203 font.o
+ .debug_pubnames
+                0x000003d6       0x3d font_fixed_8px.o
+
+.debug_info     0x00000000     0x1e12
+ *(.debug_info)
+ .debug_info    0x00000000      0x290 main.o
+ .debug_info    0x00000290       0x8d globals.o
+ .debug_info    0x0000031d      0x13e adcInit.o
+ .debug_info    0x0000045b       0x8d interrupt.o
+ .debug_info    0x000004e8       0xa0 myInit.o
+ .debug_info    0x00000588       0xee pwmInit.o
+ .debug_info    0x00000676       0xc3 timerInit.o
+ .debug_info    0x00000739      0x673 dogm-graphic.o
+ .debug_info    0x00000dac      0xf02 font.o
+ .debug_info    0x00001cae      0x164 font_fixed_8px.o
+ *(.gnu.linkonce.wi.*)
+
+.debug_abbrev   0x00000000      0x979
+ *(.debug_abbrev)
+ .debug_abbrev  0x00000000      0x13c main.o
+ .debug_abbrev  0x0000013c       0x51 globals.o
+ .debug_abbrev  0x0000018d       0x9d adcInit.o
+ .debug_abbrev  0x0000022a       0x51 interrupt.o
+ .debug_abbrev  0x0000027b       0x64 myInit.o
+ .debug_abbrev  0x000002df       0x77 pwmInit.o
+ .debug_abbrev  0x00000356       0x77 timerInit.o
+ .debug_abbrev  0x000003cd      0x243 dogm-graphic.o
+ .debug_abbrev  0x00000610      0x2ad font.o
+ .debug_abbrev  0x000008bd       0xbc font_fixed_8px.o
+
+.debug_line     0x00000000     0x163d
+ *(.debug_line)
+ .debug_line    0x00000000      0x1f3 main.o
+ .debug_line    0x000001f3       0xdf globals.o
+ .debug_line    0x000002d2      0x1b1 adcInit.o
+ .debug_line    0x00000483       0xdf interrupt.o
+ .debug_line    0x00000562      0x128 myInit.o
+ .debug_line    0x0000068a      0x179 pwmInit.o
+ .debug_line    0x00000803      0x123 timerInit.o
+ .debug_line    0x00000926      0x57f dogm-graphic.o
+ .debug_line    0x00000ea5      0x647 font.o
+ .debug_line    0x000014ec      0x151 font_fixed_8px.o
+
+.debug_frame    0x00000000      0x320
+ *(.debug_frame)
+ .debug_frame   0x00000000       0x20 main.o
+ .debug_frame   0x00000020       0x40 adcInit.o
+ .debug_frame   0x00000060       0x20 myInit.o
+ .debug_frame   0x00000080       0x30 pwmInit.o
+ .debug_frame   0x000000b0       0x20 timerInit.o
+ .debug_frame   0x000000d0       0xd0 dogm-graphic.o
+ .debug_frame   0x000001a0      0x180 font.o
+
+.debug_str      0x00000000      0x61e
+ *(.debug_str)
+ .debug_str     0x00000000      0x1af main.o
+                                0x216 (size before relaxing)
+ .debug_str     0x000001af        0xd globals.o
+                                0x101 (size before relaxing)
+ .debug_str     0x000001bc       0x3a adcInit.o
+                                0x13e (size before relaxing)
+ .debug_str     0x000001f6       0x19 interrupt.o
+                                0x10d (size before relaxing)
+ .debug_str     0x0000020f       0x1d myInit.o
+                                0x111 (size before relaxing)
+ .debug_str     0x0000022c       0x31 pwmInit.o
+                                0x12e (size before relaxing)
+ .debug_str     0x0000025d       0x24 timerInit.o
+                                0x129 (size before relaxing)
+ .debug_str     0x00000281      0x125 dogm-graphic.o
+                                0x28c (size before relaxing)
+ .debug_str     0x000003a6      0x247 font.o
+                                0x40c (size before relaxing)
+ .debug_str     0x000005ed       0x31 font_fixed_8px.o
+                                0x186 (size before relaxing)
+
+.debug_loc      0x00000000     0x12c2
+ *(.debug_loc)
+ .debug_loc     0x00000000       0x50 main.o
+ .debug_loc     0x00000050       0x3c adcInit.o
+ .debug_loc     0x0000008c      0x5e2 dogm-graphic.o
+ .debug_loc     0x0000066e      0xc54 font.o
+
+.debug_macinfo
+ *(.debug_macinfo)
+OUTPUT(droneOS.elf elf32-avr)
+LOAD linker stubs
+
+.debug_ranges   0x00000000       0xb0
+ .debug_ranges  0x00000000       0x48 main.o
+ .debug_ranges  0x00000048       0x18 dogm-graphic.o
+ .debug_ranges  0x00000060       0x50 font.o
