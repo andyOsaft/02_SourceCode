@@ -1,0 +1,659 @@
+Archive member included because of file (symbol)
+
+c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_mulsi3.o)
+                              adc.o (__mulsi3)
+c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_udivmodhi4.o)
+                              taskFiles/sensorTask.o (__udivmodhi4)
+c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_udivmodsi4.o)
+                              adc.o (__udivmodsi4)
+c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_exit.o)
+                              c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5/crtm32a.o (exit)
+c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_copy_data.o)
+                              adc.o (__do_copy_data)
+c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_clear_bss.o)
+                              adc.o (__do_clear_bss)
+c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(memcpy.o)
+                              osFiles/queue.o (memcpy)
+c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(memset.o)
+                              osFiles/tasks.o (memset)
+c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(strncpy.o)
+                              osFiles/tasks.o (strncpy)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+text             0x00000000         0x00020000         xr
+data             0x00800060         0x0000ffa0         rw !x
+eeprom           0x00810000         0x00010000         rw !x
+fuse             0x00820000         0x00000400         rw !x
+lock             0x00830000         0x00000400         rw !x
+signature        0x00840000         0x00000400         rw !x
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5/crtm32a.o
+LOAD adc.o
+LOAD main.o
+LOAD osFiles/croutine.o
+LOAD osFiles/heap_1.o
+LOAD osFiles/list.o
+LOAD osFiles/port.o
+LOAD osFiles/queue.o
+LOAD osFiles/tasks.o
+LOAD osFiles/timers.o
+LOAD taskFiles/communicationTask.o
+LOAD taskFiles/navigatorTask.o
+LOAD taskFiles/sensorTask.o
+LOAD taskFiles/operatorTask.o
+START GROUP
+LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libm.a
+END GROUP
+LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a
+LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a
+LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a
+
+.hash
+ *(.hash)
+
+.dynsym
+ *(.dynsym)
+
+.dynstr
+ *(.dynstr)
+
+.gnu.version
+ *(.gnu.version)
+
+.gnu.version_d
+ *(.gnu.version_d)
+
+.gnu.version_r
+ *(.gnu.version_r)
+
+.rel.init
+ *(.rel.init)
+
+.rela.init
+ *(.rela.init)
+
+.rel.text
+ *(.rel.text)
+ *(.rel.text.*)
+ *(.rel.gnu.linkonce.t*)
+
+.rela.text
+ *(.rela.text)
+ *(.rela.text.*)
+ *(.rela.gnu.linkonce.t*)
+
+.rel.fini
+ *(.rel.fini)
+
+.rela.fini
+ *(.rela.fini)
+
+.rel.rodata
+ *(.rel.rodata)
+ *(.rel.rodata.*)
+ *(.rel.gnu.linkonce.r*)
+
+.rela.rodata
+ *(.rela.rodata)
+ *(.rela.rodata.*)
+ *(.rela.gnu.linkonce.r*)
+
+.rel.data
+ *(.rel.data)
+ *(.rel.data.*)
+ *(.rel.gnu.linkonce.d*)
+
+.rela.data
+ *(.rela.data)
+ *(.rela.data.*)
+ *(.rela.gnu.linkonce.d*)
+
+.rel.ctors
+ *(.rel.ctors)
+
+.rela.ctors
+ *(.rela.ctors)
+
+.rel.dtors
+ *(.rel.dtors)
+
+.rela.dtors
+ *(.rela.dtors)
+
+.rel.got
+ *(.rel.got)
+
+.rela.got
+ *(.rela.got)
+
+.rel.bss
+ *(.rel.bss)
+
+.rela.bss
+ *(.rela.bss)
+
+.rel.plt
+ *(.rel.plt)
+
+.rela.plt
+ *(.rela.plt)
+
+.text           0x00000000     0x1f3e
+ *(.vectors)
+ .vectors       0x00000000       0x54 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5/crtm32a.o
+                0x00000000                __vector_default
+                0x00000000                __vectors
+ *(.vectors)
+ *(.progmem.gcc*)
+ *(.progmem*)
+                0x00000054                . = ALIGN (0x2)
+                0x00000054                __trampolines_start = .
+ *(.trampolines)
+ .trampolines   0x00000054        0x0 linker stubs
+ *(.trampolines*)
+                0x00000054                __trampolines_end = .
+ *(.jumptables)
+ *(.jumptables*)
+ *(.lowtext)
+ *(.lowtext*)
+                0x00000054                __ctors_start = .
+ *(.ctors)
+                0x00000054                __ctors_end = .
+                0x00000054                __dtors_start = .
+ *(.dtors)
+                0x00000054                __dtors_end = .
+ SORT(*)(.ctors)
+ SORT(*)(.dtors)
+ *(.init0)
+ .init0         0x00000054        0x0 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5/crtm32a.o
+                0x00000054                __init
+ *(.init0)
+ *(.init1)
+ *(.init1)
+ *(.init2)
+ .init2         0x00000054        0xc c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5/crtm32a.o
+ *(.init2)
+ *(.init3)
+ *(.init3)
+ *(.init4)
+ .init4         0x00000060       0x16 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_copy_data.o)
+                0x00000060                __do_copy_data
+ .init4         0x00000076       0x10 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_clear_bss.o)
+                0x00000076                __do_clear_bss
+ *(.init4)
+ *(.init5)
+ *(.init5)
+ *(.init6)
+ *(.init6)
+ *(.init7)
+ *(.init7)
+ *(.init8)
+ *(.init8)
+ *(.init9)
+ .init9         0x00000086        0x8 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5/crtm32a.o
+ *(.init9)
+ *(.text)
+ .text          0x0000008e        0x4 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5/crtm32a.o
+                0x0000008e                __vector_1
+                0x0000008e                __vector_12
+                0x0000008e                __bad_interrupt
+                0x0000008e                __vector_6
+                0x0000008e                __vector_3
+                0x0000008e                __vector_11
+                0x0000008e                __vector_13
+                0x0000008e                __vector_17
+                0x0000008e                __vector_19
+                0x0000008e                __vector_5
+                0x0000008e                __vector_4
+                0x0000008e                __vector_9
+                0x0000008e                __vector_2
+                0x0000008e                __vector_15
+                0x0000008e                __vector_8
+                0x0000008e                __vector_14
+                0x0000008e                __vector_10
+                0x0000008e                __vector_16
+                0x0000008e                __vector_18
+                0x0000008e                __vector_20
+ .text          0x00000092       0x54 adc.o
+                0x00000092                adcInit
+                0x000000a6                adcRead
+                0x000000de                measureBattVoltage
+ .text          0x000000e6       0x5e main.o
+                0x000000e6                main
+                0x00000142                vApplicationIdleHook
+ .text          0x00000144      0x4e6 osFiles/croutine.o
+                0x00000144                xCoRoutineCreate
+                0x0000024a                vCoRoutineAddToDelayedList
+                0x000002f2                vCoRoutineSchedule
+                0x000005dc                xCoRoutineRemoveFromEventList
+ .text          0x0000062a       0x8a osFiles/heap_1.o
+                0x0000062a                pvPortMalloc
+                0x00000696                vPortFree
+                0x00000698                vPortInitialiseBlocks
+                0x000006a2                xPortGetFreeHeapSize
+ .text          0x000006b4      0x158 osFiles/list.o
+                0x000006b4                vListInitialise
+                0x000006d0                vListInitialiseItem
+                0x000006d8                vListInsertEnd
+                0x0000072a                vListInsert
+                0x000007be                uxListRemove
+ .text          0x0000080c      0x2f8 osFiles/port.o
+                0x0000080c                pxPortInitialiseStack
+                0x0000092c                xPortStartScheduler
+                0x00000994                vPortEndScheduler
+                0x00000996                vPortYield
+                0x00000a48                vPortYieldFromTick
+                0x00000afe                __vector_7
+ .text          0x00000b04      0x640 osFiles/queue.o
+                0x00000c80                xQueueGenericReset
+                0x00000d0c                xQueueGenericCreate
+                0x00000d6e                xQueueGenericSend
+                0x00000ebc                xQueueGenericSendFromISR
+                0x00000f20                xQueueGenericReceive
+                0x00001094                xQueueReceiveFromISR
+                0x000010fa                uxQueueMessagesWaiting
+                0x0000110a                uxQueueMessagesWaitingFromISR
+                0x00001110                vQueueDelete
+                0x0000112a                xQueueIsQueueEmptyFromISR
+                0x00001136                xQueueIsQueueFullFromISR
+ .text          0x00001144      0xa06 osFiles/tasks.o
+                0x000011b2                xTaskGenericCreate
+                0x000013e0                vTaskDelete
+                0x00001478                vTaskStartScheduler
+                0x000014ce                vTaskEndScheduler
+                0x000014da                vTaskSuspendAll
+                0x000014e6                xTaskGetTickCount
+                0x000014fa                xTaskGetTickCountFromISR
+                0x00001504                uxTaskGetNumberOfTasks
+                0x0000150a                vTaskIncrementTick
+                0x000016a8                xTaskResumeAll
+                0x0000184a                vTaskDelay
+                0x0000188a                vTaskDelayUntil
+                0x00001934                vTaskSwitchContext
+                0x000019ee                vTaskPlaceOnEventList
+                0x00001a28                xTaskRemoveFromEventList
+                0x00001ab8                vTaskSetTimeOutState
+                0x00001ad6                xTaskCheckForTimeOut
+                0x00001b42                vTaskMissedYield
+ .text          0x00001b4a        0x0 osFiles/timers.o
+ .text          0x00001b4a       0xc8 taskFiles/communicationTask.o
+                0x00001ba4                startCommunicationTask
+                0x00001c0e                xIsCommunicationTaskStillRunning
+ .text          0x00001c12       0x8e taskFiles/navigatorTask.o
+                0x00001c3c                startNavigatorTask
+                0x00001c9c                xIsNavigatorTaskStillRunning
+ .text          0x00001ca0      0x10c taskFiles/sensorTask.o
+                0x00001d4c                startSensorTask
+ .text          0x00001dac       0xa6 taskFiles/operatorTask.o
+                0x00001df4                startOperatorTask
+                0x00001e4e                xIsOperatorTaskStillRunning
+ .text          0x00001e52        0x0 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_mulsi3.o)
+ .text          0x00001e52        0x0 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_udivmodhi4.o)
+ .text          0x00001e52        0x0 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_udivmodsi4.o)
+ .text          0x00001e52        0x0 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_exit.o)
+ .text          0x00001e52        0x0 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_copy_data.o)
+ .text          0x00001e52        0x0 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_clear_bss.o)
+ .text          0x00001e52        0x0 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(memcpy.o)
+ .text          0x00001e52        0x0 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(memset.o)
+ .text          0x00001e52        0x0 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(strncpy.o)
+                0x00001e52                . = ALIGN (0x2)
+ *(.text.*)
+ .text.libgcc   0x00001e52       0x3e c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_mulsi3.o)
+                0x00001e52                __mulsi3
+ .text.libgcc   0x00001e90       0x28 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_udivmodhi4.o)
+                0x00001e90                __udivmodhi4
+ .text.libgcc   0x00001eb8       0x44 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_udivmodsi4.o)
+                0x00001eb8                __udivmodsi4
+ .text.libgcc   0x00001efc        0x0 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_exit.o)
+ .text.libgcc   0x00001efc        0x0 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_copy_data.o)
+ .text.libgcc   0x00001efc        0x0 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_clear_bss.o)
+ .text.avr-libc
+                0x00001efc       0x12 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(memcpy.o)
+                0x00001efc                memcpy
+ .text.avr-libc
+                0x00001f0e        0xe c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(memset.o)
+                0x00001f0e                memset
+ .text.avr-libc
+                0x00001f1c       0x1e c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(strncpy.o)
+                0x00001f1c                strncpy
+                0x00001f3a                . = ALIGN (0x2)
+ *(.fini9)
+ .fini9         0x00001f3a        0x0 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_exit.o)
+                0x00001f3a                _exit
+                0x00001f3a                exit
+ *(.fini9)
+ *(.fini8)
+ *(.fini8)
+ *(.fini7)
+ *(.fini7)
+ *(.fini6)
+ *(.fini6)
+ *(.fini5)
+ *(.fini5)
+ *(.fini4)
+ *(.fini4)
+ *(.fini3)
+ *(.fini3)
+ *(.fini2)
+ *(.fini2)
+ *(.fini1)
+ *(.fini1)
+ *(.fini0)
+ .fini0         0x00001f3a        0x4 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_exit.o)
+ *(.fini0)
+                0x00001f3e                _etext = .
+
+.data           0x00800060       0x2a load address 0x00001f3e
+                0x00800060                PROVIDE (__data_start, .)
+ *(.data)
+ .data          0x00800060        0x0 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5/crtm32a.o
+ .data          0x00800060        0x0 adc.o
+ .data          0x00800060        0x0 main.o
+ .data          0x00800060        0x0 osFiles/croutine.o
+ .data          0x00800060        0x0 osFiles/heap_1.o
+ .data          0x00800060        0x0 osFiles/list.o
+ .data          0x00800060        0x0 osFiles/port.o
+ .data          0x00800060        0x0 osFiles/queue.o
+ .data          0x00800060        0x7 osFiles/tasks.o
+ .data          0x00800067        0x0 osFiles/timers.o
+ .data          0x00800067        0x9 taskFiles/communicationTask.o
+ .data          0x00800070        0x8 taskFiles/navigatorTask.o
+ .data          0x00800078        0xb taskFiles/sensorTask.o
+ .data          0x00800083        0x7 taskFiles/operatorTask.o
+ .data          0x0080008a        0x0 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_mulsi3.o)
+ .data          0x0080008a        0x0 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_udivmodhi4.o)
+ .data          0x0080008a        0x0 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_udivmodsi4.o)
+ .data          0x0080008a        0x0 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_exit.o)
+ .data          0x0080008a        0x0 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_copy_data.o)
+ .data          0x0080008a        0x0 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_clear_bss.o)
+ .data          0x0080008a        0x0 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(memcpy.o)
+ .data          0x0080008a        0x0 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(memset.o)
+ .data          0x0080008a        0x0 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(strncpy.o)
+ *(.data*)
+ *(.rodata)
+ *(.rodata*)
+ *(.gnu.linkonce.d*)
+                0x0080008a                . = ALIGN (0x2)
+                0x0080008a                _edata = .
+                0x0080008a                PROVIDE (__data_end, .)
+
+.bss            0x0080008a      0x54f
+                0x0080008a                PROVIDE (__bss_start, .)
+ *(.bss)
+ .bss           0x0080008a        0x0 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5/crtm32a.o
+ .bss           0x0080008a        0x0 adc.o
+ .bss           0x0080008a        0x0 main.o
+ .bss           0x0080008a       0x40 osFiles/croutine.o
+                0x0080008a                pxCurrentCoRoutine
+ .bss           0x008000ca      0x4b4 osFiles/heap_1.o
+ .bss           0x0080057e        0x0 osFiles/list.o
+ .bss           0x0080057e        0x0 osFiles/port.o
+ .bss           0x0080057e        0x0 osFiles/queue.o
+ .bss           0x0080057e       0x5a osFiles/tasks.o
+                0x0080057e                pxCurrentTCB
+ .bss           0x008005d8        0x0 osFiles/timers.o
+ .bss           0x008005d8        0x0 taskFiles/communicationTask.o
+ .bss           0x008005d8        0x0 taskFiles/navigatorTask.o
+ .bss           0x008005d8        0x1 taskFiles/sensorTask.o
+ .bss           0x008005d9        0x0 taskFiles/operatorTask.o
+ .bss           0x008005d9        0x0 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_mulsi3.o)
+ .bss           0x008005d9        0x0 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_udivmodhi4.o)
+ .bss           0x008005d9        0x0 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_udivmodsi4.o)
+ .bss           0x008005d9        0x0 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_exit.o)
+ .bss           0x008005d9        0x0 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_copy_data.o)
+ .bss           0x008005d9        0x0 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_clear_bss.o)
+ .bss           0x008005d9        0x0 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(memcpy.o)
+ .bss           0x008005d9        0x0 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(memset.o)
+ .bss           0x008005d9        0x0 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(strncpy.o)
+ *(.bss*)
+ *(COMMON)
+                0x008005d9                PROVIDE (__bss_end, .)
+                0x00001f3e                __data_load_start = LOADADDR (.data)
+                0x00001f68                __data_load_end = (__data_load_start + SIZEOF (.data))
+
+.noinit         0x008005d9        0x0
+                0x008005d9                PROVIDE (__noinit_start, .)
+ *(.noinit*)
+                0x008005d9                PROVIDE (__noinit_end, .)
+                0x008005d9                _end = .
+                0x008005d9                PROVIDE (__heap_start, .)
+
+.eeprom         0x00810000        0x0
+ *(.eeprom*)
+                0x00810000                __eeprom_end = .
+
+.fuse
+ *(.fuse)
+ *(.lfuse)
+ *(.hfuse)
+ *(.efuse)
+
+.lock
+ *(.lock*)
+
+.signature
+ *(.signature*)
+
+.stab           0x00000000      0x888
+ *(.stab)
+ .stab          0x00000000      0x6cc c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5/crtm32a.o
+ .stab          0x000006cc       0x84 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(memcpy.o)
+                                 0x90 (size before relaxing)
+ .stab          0x00000750       0x6c c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(memset.o)
+                                 0x78 (size before relaxing)
+ .stab          0x000007bc       0xcc c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(strncpy.o)
+                                 0xd8 (size before relaxing)
+
+.stabstr        0x00000000      0x1ac
+ *(.stabstr)
+ .stabstr       0x00000000      0x1ac c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5/crtm32a.o
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment
+ *(.comment)
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges  0x00000000      0x240
+ *(.debug_aranges)
+ .debug_aranges
+                0x00000000       0x20 adc.o
+ .debug_aranges
+                0x00000020       0x20 main.o
+ .debug_aranges
+                0x00000040       0x20 osFiles/croutine.o
+ .debug_aranges
+                0x00000060       0x20 osFiles/heap_1.o
+ .debug_aranges
+                0x00000080       0x20 osFiles/list.o
+ .debug_aranges
+                0x000000a0       0x20 osFiles/port.o
+ .debug_aranges
+                0x000000c0       0x20 osFiles/queue.o
+ .debug_aranges
+                0x000000e0       0x20 osFiles/tasks.o
+ .debug_aranges
+                0x00000100       0x20 taskFiles/communicationTask.o
+ .debug_aranges
+                0x00000120       0x20 taskFiles/navigatorTask.o
+ .debug_aranges
+                0x00000140       0x20 taskFiles/sensorTask.o
+ .debug_aranges
+                0x00000160       0x20 taskFiles/operatorTask.o
+ .debug_aranges
+                0x00000180       0x20 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_mulsi3.o)
+ .debug_aranges
+                0x000001a0       0x20 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_udivmodhi4.o)
+ .debug_aranges
+                0x000001c0       0x20 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_udivmodsi4.o)
+ .debug_aranges
+                0x000001e0       0x20 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_exit.o)
+ .debug_aranges
+                0x00000200       0x20 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_copy_data.o)
+ .debug_aranges
+                0x00000220       0x20 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_clear_bss.o)
+
+.debug_pubnames
+ *(.debug_pubnames)
+
+.debug_info     0x00000000     0x2e26
+ *(.debug_info)
+ .debug_info    0x00000000       0xfe adc.o
+ .debug_info    0x000000fe       0xd7 main.o
+ .debug_info    0x000001d5      0x529 osFiles/croutine.o
+ .debug_info    0x000006fe      0x158 osFiles/heap_1.o
+ .debug_info    0x00000856      0x2c0 osFiles/list.o
+ .debug_info    0x00000b16      0x1dd osFiles/port.o
+ .debug_info    0x00000cf3      0x844 osFiles/queue.o
+ .debug_info    0x00001537      0xb85 osFiles/tasks.o
+ .debug_info    0x000020bc       0x6c osFiles/timers.o
+ .debug_info    0x00002128      0x255 taskFiles/communicationTask.o
+ .debug_info    0x0000237d      0x184 taskFiles/navigatorTask.o
+ .debug_info    0x00002501      0x1bb taskFiles/sensorTask.o
+ .debug_info    0x000026bc      0x23c taskFiles/operatorTask.o
+ .debug_info    0x000028f8       0xdd c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_mulsi3.o)
+ .debug_info    0x000029d5       0xdd c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_udivmodhi4.o)
+ .debug_info    0x00002ab2       0xdd c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_udivmodsi4.o)
+ .debug_info    0x00002b8f       0xdd c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_exit.o)
+ .debug_info    0x00002c6c       0xdd c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_copy_data.o)
+ .debug_info    0x00002d49       0xdd c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_clear_bss.o)
+ *(.gnu.linkonce.wi.*)
+
+.debug_abbrev   0x00000000      0xf0f
+ *(.debug_abbrev)
+ .debug_abbrev  0x00000000       0xa7 adc.o
+ .debug_abbrev  0x000000a7       0x91 main.o
+ .debug_abbrev  0x00000138      0x1dc osFiles/croutine.o
+ .debug_abbrev  0x00000314       0xf1 osFiles/heap_1.o
+ .debug_abbrev  0x00000405       0xed osFiles/list.o
+ .debug_abbrev  0x000004f2      0x11a osFiles/port.o
+ .debug_abbrev  0x0000060c      0x1b7 osFiles/queue.o
+ .debug_abbrev  0x000007c3      0x285 osFiles/tasks.o
+ .debug_abbrev  0x00000a48       0x2a osFiles/timers.o
+ .debug_abbrev  0x00000a72      0x112 taskFiles/communicationTask.o
+ .debug_abbrev  0x00000b84       0xed taskFiles/navigatorTask.o
+ .debug_abbrev  0x00000c71      0x121 taskFiles/sensorTask.o
+ .debug_abbrev  0x00000d92      0x105 taskFiles/operatorTask.o
+ .debug_abbrev  0x00000e97       0x14 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_mulsi3.o)
+ .debug_abbrev  0x00000eab       0x14 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_udivmodhi4.o)
+ .debug_abbrev  0x00000ebf       0x14 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_udivmodsi4.o)
+ .debug_abbrev  0x00000ed3       0x14 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_exit.o)
+ .debug_abbrev  0x00000ee7       0x14 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_copy_data.o)
+ .debug_abbrev  0x00000efb       0x14 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_clear_bss.o)
+
+.debug_line     0x00000000     0x1b05
+ *(.debug_line)
+ .debug_line    0x00000000       0xec adc.o
+ .debug_line    0x000000ec      0x136 main.o
+ .debug_line    0x00000222      0x240 osFiles/croutine.o
+ .debug_line    0x00000462       0xea osFiles/heap_1.o
+ .debug_line    0x0000054c      0x1ca osFiles/list.o
+ .debug_line    0x00000716      0x18d osFiles/port.o
+ .debug_line    0x000008a3      0x390 osFiles/queue.o
+ .debug_line    0x00000c33      0x475 osFiles/tasks.o
+ .debug_line    0x000010a8       0x1a osFiles/timers.o
+ .debug_line    0x000010c2      0x1f2 taskFiles/communicationTask.o
+ .debug_line    0x000012b4      0x169 taskFiles/navigatorTask.o
+ .debug_line    0x0000141d      0x175 taskFiles/sensorTask.o
+ .debug_line    0x00001592      0x1e5 taskFiles/operatorTask.o
+ .debug_line    0x00001777       0xa5 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_mulsi3.o)
+ .debug_line    0x0000181c       0x9a c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_udivmodhi4.o)
+ .debug_line    0x000018b6       0xa8 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_udivmodsi4.o)
+ .debug_line    0x0000195e       0x88 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_exit.o)
+ .debug_line    0x000019e6       0x91 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_copy_data.o)
+ .debug_line    0x00001a77       0x8e c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.0.65/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_clear_bss.o)
+
+.debug_frame    0x00000000      0x920
+ *(.debug_frame)
+ .debug_frame   0x00000000       0x44 adc.o
+ .debug_frame   0x00000044       0x44 main.o
+ .debug_frame   0x00000088       0xe4 osFiles/croutine.o
+ .debug_frame   0x0000016c       0x60 osFiles/heap_1.o
+ .debug_frame   0x000001cc       0x7c osFiles/list.o
+ .debug_frame   0x00000248       0x74 osFiles/port.o
+ .debug_frame   0x000002bc      0x1ec osFiles/queue.o
+ .debug_frame   0x000004a8      0x278 osFiles/tasks.o
+ .debug_frame   0x00000720       0x84 taskFiles/communicationTask.o
+ .debug_frame   0x000007a4       0x84 taskFiles/navigatorTask.o
+ .debug_frame   0x00000828       0x74 taskFiles/sensorTask.o
+ .debug_frame   0x0000089c       0x84 taskFiles/operatorTask.o
+
+.debug_str      0x00000000     0x12e9
+ *(.debug_str)
+ .debug_str     0x00000000       0xf4 adc.o
+                                0x128 (size before relaxing)
+ .debug_str     0x000000f4       0x6e main.o
+                                0x14c (size before relaxing)
+ .debug_str     0x00000162      0x346 osFiles/croutine.o
+                                0x446 (size before relaxing)
+ .debug_str     0x000004a8       0x96 osFiles/heap_1.o
+                                0x17f (size before relaxing)
+ .debug_str     0x0000053e       0xa6 osFiles/list.o
+                                0x223 (size before relaxing)
+ .debug_str     0x000005e4       0xe9 osFiles/port.o
+                                0x1e3 (size before relaxing)
+ .debug_str     0x000006cd      0x305 osFiles/queue.o
+                                0x4d8 (size before relaxing)
+ .debug_str     0x000009d2      0x4d5 osFiles/tasks.o
+                                0x761 (size before relaxing)
+ .debug_str     0x00000ea7       0x14 osFiles/timers.o
+                                 0xfd (size before relaxing)
+ .debug_str     0x00000ebb      0x1f6 taskFiles/communicationTask.o
+                                0x350 (size before relaxing)
+ .debug_str     0x000010b1       0xbf taskFiles/navigatorTask.o
+                                0x20d (size before relaxing)
+ .debug_str     0x00001170       0xac taskFiles/sensorTask.o
+                                0x22e (size before relaxing)
+ .debug_str     0x0000121c       0xcd taskFiles/operatorTask.o
+                                0x308 (size before relaxing)
+
+.debug_loc      0x00000000     0x25ff
+ *(.debug_loc)
+ .debug_loc     0x00000000       0x2c adc.o
+ .debug_loc     0x0000002c       0x48 main.o
+ .debug_loc     0x00000074      0x406 osFiles/croutine.o
+ .debug_loc     0x0000047a       0xb7 osFiles/heap_1.o
+ .debug_loc     0x00000531      0x1a6 osFiles/list.o
+ .debug_loc     0x000006d7      0x281 osFiles/port.o
+ .debug_loc     0x00000958      0xa91 osFiles/queue.o
+ .debug_loc     0x000013e9      0xbd2 osFiles/tasks.o
+ .debug_loc     0x00001fbb      0x1cc taskFiles/communicationTask.o
+ .debug_loc     0x00002187      0x158 taskFiles/navigatorTask.o
+ .debug_loc     0x000022df      0x17c taskFiles/sensorTask.o
+ .debug_loc     0x0000245b      0x1a4 taskFiles/operatorTask.o
+
+.debug_macinfo
+ *(.debug_macinfo)
+OUTPUT(riskyDriver.elf elf32-avr)
+LOAD linker stubs
+
+.debug_ranges   0x00000000       0xf0
+ .debug_ranges  0x00000000       0x18 osFiles/croutine.o
+ .debug_ranges  0x00000018       0xa8 osFiles/tasks.o
+ .debug_ranges  0x000000c0       0x30 taskFiles/sensorTask.o
