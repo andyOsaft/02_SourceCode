@@ -1,0 +1,25 @@
+﻿Der Buildvorgang wurde am 11.12.2011 19:22:44 gestartet.
+     1>Projekt "E:\Buero_111030\MScEmbeddedSystems\Dissertation\visualStudio\robokid_control_111120\robokid_control\robokid_control.vcxproj" auf Knoten "2", build Ziel(e).
+     1>InitializeBuildStatus:
+         "Debug\robokid_control.unsuccessfulbuild" wird erstellt, da "AlwaysCreate" angegeben wurde.
+       GenerateTargetFrameworkMonikerAttribute:
+       Das Ziel "GenerateTargetFrameworkMonikerAttribute" wird übersprungen, da alle Ausgabedateien hinsichtlich der Eingabedateien aktuell sind.
+       ClCompile:
+         Alle Ausgaben sind aktuell.
+         Alle Ausgaben sind aktuell.
+         Alle Ausgaben sind aktuell.
+       CoreResGen:
+         Alle Ausgaben sind aktuell.
+       ResourceCompile:
+         Alle Ausgaben sind aktuell.
+       Link:
+         Alle Ausgaben sind aktuell.
+         robokid_control.vcxproj -> E:\Buero_111030\MScEmbeddedSystems\Dissertation\visualStudio\robokid_control_111120\Debug\robokid_control.exe
+       FinalizeBuildStatus:
+         Die Datei "Debug\robokid_control.unsuccessfulbuild" wird gelöscht.
+         Aktualisieren des Timestamps von "Debug\robokid_control.lastbuildstate".
+     1>Die Erstellung des Projekts "E:\Buero_111030\MScEmbeddedSystems\Dissertation\visualStudio\robokid_control_111120\robokid_control\robokid_control.vcxproj" ist abgeschlossen, build Ziel(e).
+
+Das Erstellen war erfolgreich.
+
+Verstrichene Zeit 00:00:01.15
