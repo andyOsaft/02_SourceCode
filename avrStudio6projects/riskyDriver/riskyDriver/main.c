@@ -159,6 +159,7 @@ Changes from V4.0.5
 #include "navigatorTask.h"
 #include "operatorTask.h"
 #include "sensorTask.h"
+#include "globals.h"
 
 
 /* Priority definitions for most of the tasks in the demo application.  Some
@@ -218,9 +219,35 @@ int main( void )
     
     xQueueHandle measurementQueue;
     //xQueueHandle statusQueue;
+   
+	// ...for temperature and pressure sensor
+	int32_t temperature = 0;
+	int32_t pressure = 0;
+	int16_t BMP085_calibration_int16_t[8];
+	int16_t BMP085_calibration_uint16_t[3];
+	uint8_t error_code=0;   
+	volatile int32_t altitude=0;   
+   
     
     //configure time measurment pin as output
     DDRD |= (1<<PB7);
+    
+    //Initialize TWI 100KHz
+    i2cSetBitrate(1);	
+    TWIM_Init(); 
+
+    _delay_ms(100);	
+    
+    BMP085_Calibration( BMP085_calibration_int16_t, BMP085_calibration_uint16_t,&error_code );
+    
+    
+    while( 1 )
+    {
+        bmp085Convert( BMP085_calibration_int16_t, BMP085_calibration_uint16_t,&temperature, &pressure,&error_code );
+    
+        altitude = bmp085CalcAltitude ( pressure );
+        _delay_ms(100);
+    }
 
 	//prvIncrementResetCount();
     

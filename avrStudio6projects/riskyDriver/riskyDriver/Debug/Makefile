@@ -31,13 +31,24 @@ OUTPUT_FILE_DEP:=
 
 # Every subdirectory with source files must be described here
 SUBDIRS :=  \
+../barometricSensor \
+../imu3000 \
+../initFiles \
 ../taskFiles \
 ../osFiles
 
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS +=  \
-../adc.c \
+../barometricSensor/atmega_bmp085_lib.c \
+../globals.c \
+../imu3000/imu3000.c \
+../initFiles/adcInit.c \
+../initFiles/interrupt.c \
+../initFiles/myInit.c \
+../initFiles/pwmInit.c \
+../initFiles/timerInit.c \
+../initFiles/twi_lib.c \
 ../main.c \
 ../osFiles/croutine.c \
 ../osFiles/heap_1.c \
@@ -59,7 +70,15 @@ ASM_SRCS +=
 
 
 OBJS +=  \
-adc.o \
+barometricSensor/atmega_bmp085_lib.o \
+globals.o \
+imu3000/imu3000.o \
+initFiles/adcInit.o \
+initFiles/interrupt.o \
+initFiles/myInit.o \
+initFiles/pwmInit.o \
+initFiles/timerInit.o \
+initFiles/twi_lib.o \
 main.o \
 osFiles/croutine.o \
 osFiles/heap_1.o \
@@ -75,7 +94,15 @@ taskFiles/operatorTask.o
 
 
 OBJS_AS_ARGS +=  \
-adc.o \
+barometricSensor/atmega_bmp085_lib.o \
+globals.o \
+imu3000/imu3000.o \
+initFiles/adcInit.o \
+initFiles/interrupt.o \
+initFiles/myInit.o \
+initFiles/pwmInit.o \
+initFiles/timerInit.o \
+initFiles/twi_lib.o \
 main.o \
 osFiles/croutine.o \
 osFiles/heap_1.o \
@@ -91,7 +118,15 @@ taskFiles/operatorTask.o
 
 
 C_DEPS +=  \
-adc.d \
+barometricSensor/atmega_bmp085_lib.d \
+globals.d \
+imu3000/imu3000.d \
+initFiles/adcInit.d \
+initFiles/interrupt.d \
+initFiles/myInit.d \
+initFiles/pwmInit.d \
+initFiles/timerInit.d \
+initFiles/twi_lib.d \
 main.d \
 osFiles/croutine.d \
 osFiles/heap_1.d \
@@ -107,7 +142,15 @@ taskFiles/operatorTask.d
 
 
 C_DEPS_AS_ARGS +=  \
-adc.d \
+barometricSensor/atmega_bmp085_lib.d \
+globals.d \
+imu3000/imu3000.d \
+initFiles/adcInit.d \
+initFiles/interrupt.d \
+initFiles/myInit.d \
+initFiles/pwmInit.d \
+initFiles/timerInit.d \
+initFiles/twi_lib.d \
 main.d \
 osFiles/croutine.d \
 osFiles/heap_1.d \
@@ -158,22 +201,56 @@ OUTPUT_FILE_DEP:= ./makedep.mk
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+barometricSensor/%.o: ../barometricSensor/%.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : (AVR_8_bit_GNU_Toolchain_3.4.0_663) 4.6.2
+	$(QUOTE)C:\Program Files (x86)\Atmel\Atmel Studio 6.0\extensions\Atmel\AVRGCC\3.4.0.65\AVRToolchain\bin\avr-gcc.exe$(QUOTE) -funsigned-char -funsigned-bitfields -I"../../../../freeRTOS/FreeRTOSV7.4.0/FreeRTOSV7.4.0/FreeRTOS/Source/include" -I"../../../../freeRTOS/FreeRTOSV7.4.0/FreeRTOSV7.4.0/FreeRTOS/Source/portable/GCC/ATMega323" -I".." -I"../osFiles" -I"../../../../freeRTOS/FreeRTOSV7.4.0/FreeRTOSV7.4.0/FreeRTOS/Demo/Common/Minimal" -I"./../../../freeRTOS/FreeRTOSV7.4.0/FreeRTOSV7.4.0/FreeRTOS/Demo/Common/include" -I"../taskFiles" -I"../barometricSensor" -I"../imu3000" -I"../initFiles"  -O1 -fpack-struct -fshort-enums -g2 -Wall -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"  -mmcu=atmega32a   -o"$@" "$<" 
+	@echo Finished building: $<
+
 ./%.o: .././%.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : (AVR_8_bit_GNU_Toolchain_3.4.0_663) 4.6.2
-	$(QUOTE)C:\Program Files (x86)\Atmel\Atmel Studio 6.0\extensions\Atmel\AVRGCC\3.4.0.65\AVRToolchain\bin\avr-gcc.exe$(QUOTE) -funsigned-char -funsigned-bitfields -I"../../../../freeRTOS/FreeRTOSV7.4.0/FreeRTOSV7.4.0/FreeRTOS/Source/include" -I"../../../../freeRTOS/FreeRTOSV7.4.0/FreeRTOSV7.4.0/FreeRTOS/Source/portable/GCC/ATMega323" -I".." -I"../osFiles" -I"../../../../freeRTOS/FreeRTOSV7.4.0/FreeRTOSV7.4.0/FreeRTOS/Demo/Common/Minimal" -I"./../../../freeRTOS/FreeRTOSV7.4.0/FreeRTOSV7.4.0/FreeRTOS/Demo/Common/include" -I"../taskFiles"  -O1 -fpack-struct -fshort-enums -g2 -Wall -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"  -mmcu=atmega32a   -o"$@" "$<" 
+	$(QUOTE)C:\Program Files (x86)\Atmel\Atmel Studio 6.0\extensions\Atmel\AVRGCC\3.4.0.65\AVRToolchain\bin\avr-gcc.exe$(QUOTE) -funsigned-char -funsigned-bitfields -I"../../../../freeRTOS/FreeRTOSV7.4.0/FreeRTOSV7.4.0/FreeRTOS/Source/include" -I"../../../../freeRTOS/FreeRTOSV7.4.0/FreeRTOSV7.4.0/FreeRTOS/Source/portable/GCC/ATMega323" -I".." -I"../osFiles" -I"../../../../freeRTOS/FreeRTOSV7.4.0/FreeRTOSV7.4.0/FreeRTOS/Demo/Common/Minimal" -I"./../../../freeRTOS/FreeRTOSV7.4.0/FreeRTOSV7.4.0/FreeRTOS/Demo/Common/include" -I"../taskFiles" -I"../barometricSensor" -I"../imu3000" -I"../initFiles"  -O1 -fpack-struct -fshort-enums -g2 -Wall -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"  -mmcu=atmega32a   -o"$@" "$<" 
+	@echo Finished building: $<
+
+imu3000/%.o: ../imu3000/%.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : (AVR_8_bit_GNU_Toolchain_3.4.0_663) 4.6.2
+	$(QUOTE)C:\Program Files (x86)\Atmel\Atmel Studio 6.0\extensions\Atmel\AVRGCC\3.4.0.65\AVRToolchain\bin\avr-gcc.exe$(QUOTE) -funsigned-char -funsigned-bitfields -I"../../../../freeRTOS/FreeRTOSV7.4.0/FreeRTOSV7.4.0/FreeRTOS/Source/include" -I"../../../../freeRTOS/FreeRTOSV7.4.0/FreeRTOSV7.4.0/FreeRTOS/Source/portable/GCC/ATMega323" -I".." -I"../osFiles" -I"../../../../freeRTOS/FreeRTOSV7.4.0/FreeRTOSV7.4.0/FreeRTOS/Demo/Common/Minimal" -I"./../../../freeRTOS/FreeRTOSV7.4.0/FreeRTOSV7.4.0/FreeRTOS/Demo/Common/include" -I"../taskFiles" -I"../barometricSensor" -I"../imu3000" -I"../initFiles"  -O1 -fpack-struct -fshort-enums -g2 -Wall -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"  -mmcu=atmega32a   -o"$@" "$<" 
+	@echo Finished building: $<
+
+initFiles/%.o: ../initFiles/%.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : (AVR_8_bit_GNU_Toolchain_3.4.0_663) 4.6.2
+	$(QUOTE)C:\Program Files (x86)\Atmel\Atmel Studio 6.0\extensions\Atmel\AVRGCC\3.4.0.65\AVRToolchain\bin\avr-gcc.exe$(QUOTE) -funsigned-char -funsigned-bitfields -I"../../../../freeRTOS/FreeRTOSV7.4.0/FreeRTOSV7.4.0/FreeRTOS/Source/include" -I"../../../../freeRTOS/FreeRTOSV7.4.0/FreeRTOSV7.4.0/FreeRTOS/Source/portable/GCC/ATMega323" -I".." -I"../osFiles" -I"../../../../freeRTOS/FreeRTOSV7.4.0/FreeRTOSV7.4.0/FreeRTOS/Demo/Common/Minimal" -I"./../../../freeRTOS/FreeRTOSV7.4.0/FreeRTOSV7.4.0/FreeRTOS/Demo/Common/include" -I"../taskFiles" -I"../barometricSensor" -I"../imu3000" -I"../initFiles"  -O1 -fpack-struct -fshort-enums -g2 -Wall -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"  -mmcu=atmega32a   -o"$@" "$<" 
 	@echo Finished building: $<
 
 osFiles/%.o: ../osFiles/%.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : (AVR_8_bit_GNU_Toolchain_3.4.0_663) 4.6.2
-	$(QUOTE)C:\Program Files (x86)\Atmel\Atmel Studio 6.0\extensions\Atmel\AVRGCC\3.4.0.65\AVRToolchain\bin\avr-gcc.exe$(QUOTE) -funsigned-char -funsigned-bitfields -I"../../../../freeRTOS/FreeRTOSV7.4.0/FreeRTOSV7.4.0/FreeRTOS/Source/include" -I"../../../../freeRTOS/FreeRTOSV7.4.0/FreeRTOSV7.4.0/FreeRTOS/Source/portable/GCC/ATMega323" -I".." -I"../osFiles" -I"../../../../freeRTOS/FreeRTOSV7.4.0/FreeRTOSV7.4.0/FreeRTOS/Demo/Common/Minimal" -I"./../../../freeRTOS/FreeRTOSV7.4.0/FreeRTOSV7.4.0/FreeRTOS/Demo/Common/include" -I"../taskFiles"  -O1 -fpack-struct -fshort-enums -g2 -Wall -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"  -mmcu=atmega32a   -o"$@" "$<" 
+	$(QUOTE)C:\Program Files (x86)\Atmel\Atmel Studio 6.0\extensions\Atmel\AVRGCC\3.4.0.65\AVRToolchain\bin\avr-gcc.exe$(QUOTE) -funsigned-char -funsigned-bitfields -I"../../../../freeRTOS/FreeRTOSV7.4.0/FreeRTOSV7.4.0/FreeRTOS/Source/include" -I"../../../../freeRTOS/FreeRTOSV7.4.0/FreeRTOSV7.4.0/FreeRTOS/Source/portable/GCC/ATMega323" -I".." -I"../osFiles" -I"../../../../freeRTOS/FreeRTOSV7.4.0/FreeRTOSV7.4.0/FreeRTOS/Demo/Common/Minimal" -I"./../../../freeRTOS/FreeRTOSV7.4.0/FreeRTOSV7.4.0/FreeRTOS/Demo/Common/include" -I"../taskFiles" -I"../barometricSensor" -I"../imu3000" -I"../initFiles"  -O1 -fpack-struct -fshort-enums -g2 -Wall -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"  -mmcu=atmega32a   -o"$@" "$<" 
 	@echo Finished building: $<
 
 taskFiles/%.o: ../taskFiles/%.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : (AVR_8_bit_GNU_Toolchain_3.4.0_663) 4.6.2
-	$(QUOTE)C:\Program Files (x86)\Atmel\Atmel Studio 6.0\extensions\Atmel\AVRGCC\3.4.0.65\AVRToolchain\bin\avr-gcc.exe$(QUOTE) -funsigned-char -funsigned-bitfields -I"../../../../freeRTOS/FreeRTOSV7.4.0/FreeRTOSV7.4.0/FreeRTOS/Source/include" -I"../../../../freeRTOS/FreeRTOSV7.4.0/FreeRTOSV7.4.0/FreeRTOS/Source/portable/GCC/ATMega323" -I".." -I"../osFiles" -I"../../../../freeRTOS/FreeRTOSV7.4.0/FreeRTOSV7.4.0/FreeRTOS/Demo/Common/Minimal" -I"./../../../freeRTOS/FreeRTOSV7.4.0/FreeRTOSV7.4.0/FreeRTOS/Demo/Common/include" -I"../taskFiles"  -O1 -fpack-struct -fshort-enums -g2 -Wall -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"  -mmcu=atmega32a   -o"$@" "$<" 
+	$(QUOTE)C:\Program Files (x86)\Atmel\Atmel Studio 6.0\extensions\Atmel\AVRGCC\3.4.0.65\AVRToolchain\bin\avr-gcc.exe$(QUOTE) -funsigned-char -funsigned-bitfields -I"../../../../freeRTOS/FreeRTOSV7.4.0/FreeRTOSV7.4.0/FreeRTOS/Source/include" -I"../../../../freeRTOS/FreeRTOSV7.4.0/FreeRTOSV7.4.0/FreeRTOS/Source/portable/GCC/ATMega323" -I".." -I"../osFiles" -I"../../../../freeRTOS/FreeRTOSV7.4.0/FreeRTOSV7.4.0/FreeRTOS/Demo/Common/Minimal" -I"./../../../freeRTOS/FreeRTOSV7.4.0/FreeRTOSV7.4.0/FreeRTOS/Demo/Common/include" -I"../taskFiles" -I"../barometricSensor" -I"../imu3000" -I"../initFiles"  -O1 -fpack-struct -fshort-enums -g2 -Wall -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"  -mmcu=atmega32a   -o"$@" "$<" 
 	@echo Finished building: $<
 
 

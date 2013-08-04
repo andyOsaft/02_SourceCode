@@ -103,7 +103,7 @@ Changes from V2.6.0
 
 #define portPRESCALE_64							( ( unsigned char ) 0x03 )
 #define portPRESCALE_1                          ( ( unsigned char ) 0x01 )
-#define portCLOCK_PRESCALER						( ( unsigned long ) 32 )
+#define portCLOCK_PRESCALER						( ( unsigned long ) 64 )
 //MOD: atmega1284p
 //#define portCOMPARE_MATCH_A_INTERRUPT_ENABLE	( ( unsigned char ) 0x10 )
 #define portCOMPARE_MATCH_A_INTERRUPT_ENABLE	( ( unsigned char ) 0x02 )
@@ -468,8 +468,11 @@ unsigned char ucHighByte, ucLowByte;
 	 * the context is saved at the start of vPortYieldFromTick().  The tick
 	 * count is incremented after the context is saved.
 	 */
-	ISR (TIMER1_COMPA_vect) __attribute__ ( ( signal, naked ) );
-	ISR (TIMER1_COMPA_vect)
+    //Mod: atmega32A
+	//ISR (TIMER1_COMPA_vect) __attribute__ ( ( signal, naked ) );
+	//ISR (TIMER1_COMPA_vect)
+	ISR (TIMER0_COMP_vect) __attribute__ ( ( signal, naked ) );
+	ISR (TIMER0_COMP_vect)    
 	{
         //PORTB ^= (1<<PB0);
 		vPortYieldFromTick();

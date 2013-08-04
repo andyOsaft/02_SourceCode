@@ -15,7 +15,6 @@
 #define SENSOR_TASK_CYCLE	( ( uint32_t ) 100 )
 
 #define GREEN_LED_TOGGLE_CYCLE		( 500 )
-#define RED_LED_TOGGLE_CYCLE		( 200 )
 
 static portTASK_FUNCTION_PROTO( executeSensorTask, pvParameters );
 
@@ -24,8 +23,8 @@ static portBASE_TYPE prvCheckOtherTasksAreStillRunning( void );
 
 void startSensorTask( unsigned portBASE_TYPE uxPriority, xQueueHandle *statQueue )
 {
-    //set pins PB0 (green LED) & PB1 (red LED) to outputs
-    DDRB |= ( (1<<PB0) | (1<<PB1) );
+    //set pin PA7 (green LED) to be an output
+    DDRA |= (1<<PA7);
     
     sensorTaskParameters *taskParams;
     taskParams = ( sensorTaskParameters * ) pvPortMalloc( sizeof( sensorTaskParameters ) );
@@ -62,15 +61,8 @@ static portTASK_FUNCTION( executeSensorTask, pvParameters )
         //toogle the green led each 500ms
         if( ledCycleCounter % GREEN_LED_TOGGLE_CYCLE == 0 )
         {
-            PORTB ^= (1<<PB0);
+            PORTA ^= (1<<PA7);
         }
-        
-        //toogle the red led each 200ms
-        if( ledCycleCounter % RED_LED_TOGGLE_CYCLE == 0 )
-        {
-            PORTB ^= (1<<PB1);
-        }
-        
         
         if( ledCycleCounter > 65000 )
         {

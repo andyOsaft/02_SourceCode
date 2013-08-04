@@ -55,29 +55,29 @@ static portTASK_FUNCTION( executeOperatorTask, pvParameters )
         vTaskDelayUntil( &xLastWakeUpTime, OPERATOR_TASK_CYCLE );
                 
         //check if there are new items to read in the measurement value queue
-        receivedNewMessage = xQueueReceive( taskParams->measurementQueue, &( measurementMsg ), ( portTickType ) 10 );
+        //receivedNewMessage = xQueueReceive( taskParams->measurementQueue, &( measurementMsg ), ( portTickType ) 10 );
         
         //if a queue element has been successfully received -> evaluate message type and update display value      
-        if( receivedNewMessage )
-        {
-            if( measurementMsg->valueId == ID_BATTERY_VOLTAGE )
-            {
+        //if( receivedNewMessage )
+        //{
+            //if( measurementMsg->valueId == ID_BATTERY_VOLTAGE )
+            //{
                 //batteryVoltage = measurementMsg->value;
-            }
-            else if( measurementMsg->valueId == ID_SOLAR_VOLTAGE )
-            {
+            //}
+            //else if( measurementMsg->valueId == ID_SOLAR_VOLTAGE )
+            //{
                 //solarVoltage = measurementMsg->value;
-            }
-            else if( measurementMsg->valueId == ID_SOLAR_CURRENT )
-            {
+            //}
+            //else if( measurementMsg->valueId == ID_SOLAR_CURRENT )
+            //{
                 //solarCurrent = measurementMsg->value;
-            }
-            else if( measurementMsg->valueId == ID_CONSUMER_CURRENT )
-            {
+            //}
+            //else if( measurementMsg->valueId == ID_CONSUMER_CURRENT )
+            //{
                 //consumerCurrent = measurementMsg->value;
-            }
-            measurementValueUpdated = 1;
-        }
+            //}
+            //measurementValueUpdated = 1;
+        //}
     }
 }
 

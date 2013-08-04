@@ -1,6 +1,4 @@
-main.d main.o: .././main.c \
- ../../../../freeRTOS/FreeRTOSV7.4.0/FreeRTOSV7.4.0/FreeRTOS/Source/portable/GCC/ATMega323/portmacro.h \
- c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.0.65\avrtoolchain\bin\../lib/gcc/avr/4.6.2/../../../../avr/include/avr/interrupt.h \
+globals.d globals.o: .././globals.c .././globals.h \
  c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.0.65\avrtoolchain\bin\../lib/gcc/avr/4.6.2/../../../../avr/include/avr/io.h \
  c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.0.65\avrtoolchain\bin\../lib/gcc/avr/4.6.2/../../../../avr/include/avr/sfr_defs.h \
  c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.0.65\avrtoolchain\bin\../lib/gcc/avr/4.6.2/../../../../avr/include/inttypes.h \
@@ -12,26 +10,13 @@ main.d main.o: .././main.c \
  c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.0.65\avrtoolchain\bin\../lib/gcc/avr/4.6.2/../../../../avr/include/avr/version.h \
  c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.0.65\avrtoolchain\bin\../lib/gcc/avr/4.6.2/../../../../avr/include/avr/fuse.h \
  c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.0.65\avrtoolchain\bin\../lib/gcc/avr/4.6.2/../../../../avr/include/avr/lock.h \
- c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.0.65\avrtoolchain\bin\../lib/gcc/avr/4.6.2/../../../../avr/include/avr/sleep.h \
  c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.0.65\avrtoolchain\bin\../lib/gcc/avr/4.6.2/../../../../avr/include/stdlib.h \
  c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.0.65\avrtoolchain\bin\../lib/gcc/avr/4.6.2/include/stddef.h \
- c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.0.65\avrtoolchain\bin\../lib/gcc/avr/4.6.2/../../../../avr/include/string.h \
- c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.0.65\avrtoolchain\bin\../lib/gcc/avr/4.6.2/../../../../avr/include/avr/eeprom.h \
- ../../../../freeRTOS/FreeRTOSV7.4.0/FreeRTOSV7.4.0/FreeRTOS/Source/include/FreeRTOS.h \
- ../../../../freeRTOS/FreeRTOSV7.4.0/FreeRTOSV7.4.0/FreeRTOS/Source/include/projdefs.h \
- ../FreeRTOSConfig.h \
- ../../../../freeRTOS/FreeRTOSV7.4.0/FreeRTOSV7.4.0/FreeRTOS/Source/include/portable.h \
- ../../../../freeRTOS/FreeRTOSV7.4.0/FreeRTOSV7.4.0/FreeRTOS/Source/include/../portable/GCC/ATMega323/portmacro.h \
- ../../../../freeRTOS/FreeRTOSV7.4.0/FreeRTOSV7.4.0/FreeRTOS/Source/include/mpu_wrappers.h \
- ../../../../freeRTOS/FreeRTOSV7.4.0/FreeRTOSV7.4.0/FreeRTOS/Source/include/task.h \
- ../../../../freeRTOS/FreeRTOSV7.4.0/FreeRTOSV7.4.0/FreeRTOS/Source/include/list.h \
- ../../../../freeRTOS/FreeRTOSV7.4.0/FreeRTOSV7.4.0/FreeRTOS/Source/include/queue.h \
- ../taskFiles/communicationTask.h ../taskFiles/navigatorTask.h \
- ../taskFiles/communicationTask.h ../taskFiles/operatorTask.h \
- ../taskFiles/sensorTask.h .././globals.h \
  c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.0.65\avrtoolchain\bin\../lib/gcc/avr/4.6.2/../../../../avr/include/util/delay.h \
  c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.0.65\avrtoolchain\bin\../lib/gcc/avr/4.6.2/../../../../avr/include/util/delay_basic.h \
  c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.0.65\avrtoolchain\bin\../lib/gcc/avr/4.6.2/../../../../avr/include/math.h \
+ c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.0.65\avrtoolchain\bin\../lib/gcc/avr/4.6.2/../../../../avr/include/avr/interrupt.h \
+ c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.0.65\avrtoolchain\bin\../lib/gcc/avr/4.6.2/../../../../avr/include/avr/sleep.h \
  c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.0.65\avrtoolchain\bin\../lib/gcc/avr/4.6.2/../../../../avr/include/util/twi.h \
  c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.0.65\avrtoolchain\bin\../lib/gcc/avr/4.6.2/../../../../avr/include/stdio.h \
  c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.0.65\avrtoolchain\bin\../lib/gcc/avr/4.6.2/include/stdarg.h \
@@ -40,9 +25,7 @@ main.d main.o: .././main.c \
  ../initFiles/twi_lib.h ../barometricSensor/atmega_bmp085_lib.h \
  ../imu3000/imu3000.h
 
-../../../../freeRTOS/FreeRTOSV7.4.0/FreeRTOSV7.4.0/FreeRTOS/Source/portable/GCC/ATMega323/portmacro.h:
-
-c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.0.65\avrtoolchain\bin\../lib/gcc/avr/4.6.2/../../../../avr/include/avr/interrupt.h:
+.././globals.h:
 
 c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.0.65\avrtoolchain\bin\../lib/gcc/avr/4.6.2/../../../../avr/include/avr/io.h:
 
@@ -66,51 +49,19 @@ c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.0.
 
 c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.0.65\avrtoolchain\bin\../lib/gcc/avr/4.6.2/../../../../avr/include/avr/lock.h:
 
-c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.0.65\avrtoolchain\bin\../lib/gcc/avr/4.6.2/../../../../avr/include/avr/sleep.h:
-
 c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.0.65\avrtoolchain\bin\../lib/gcc/avr/4.6.2/../../../../avr/include/stdlib.h:
 
 c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.0.65\avrtoolchain\bin\../lib/gcc/avr/4.6.2/include/stddef.h:
-
-c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.0.65\avrtoolchain\bin\../lib/gcc/avr/4.6.2/../../../../avr/include/string.h:
-
-c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.0.65\avrtoolchain\bin\../lib/gcc/avr/4.6.2/../../../../avr/include/avr/eeprom.h:
-
-../../../../freeRTOS/FreeRTOSV7.4.0/FreeRTOSV7.4.0/FreeRTOS/Source/include/FreeRTOS.h:
-
-../../../../freeRTOS/FreeRTOSV7.4.0/FreeRTOSV7.4.0/FreeRTOS/Source/include/projdefs.h:
-
-../FreeRTOSConfig.h:
-
-../../../../freeRTOS/FreeRTOSV7.4.0/FreeRTOSV7.4.0/FreeRTOS/Source/include/portable.h:
-
-../../../../freeRTOS/FreeRTOSV7.4.0/FreeRTOSV7.4.0/FreeRTOS/Source/include/../portable/GCC/ATMega323/portmacro.h:
-
-../../../../freeRTOS/FreeRTOSV7.4.0/FreeRTOSV7.4.0/FreeRTOS/Source/include/mpu_wrappers.h:
-
-../../../../freeRTOS/FreeRTOSV7.4.0/FreeRTOSV7.4.0/FreeRTOS/Source/include/task.h:
-
-../../../../freeRTOS/FreeRTOSV7.4.0/FreeRTOSV7.4.0/FreeRTOS/Source/include/list.h:
-
-../../../../freeRTOS/FreeRTOSV7.4.0/FreeRTOSV7.4.0/FreeRTOS/Source/include/queue.h:
-
-../taskFiles/communicationTask.h:
-
-../taskFiles/navigatorTask.h:
-
-../taskFiles/communicationTask.h:
-
-../taskFiles/operatorTask.h:
-
-../taskFiles/sensorTask.h:
-
-.././globals.h:
 
 c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.0.65\avrtoolchain\bin\../lib/gcc/avr/4.6.2/../../../../avr/include/util/delay.h:
 
 c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.0.65\avrtoolchain\bin\../lib/gcc/avr/4.6.2/../../../../avr/include/util/delay_basic.h:
 
 c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.0.65\avrtoolchain\bin\../lib/gcc/avr/4.6.2/../../../../avr/include/math.h:
+
+c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.0.65\avrtoolchain\bin\../lib/gcc/avr/4.6.2/../../../../avr/include/avr/interrupt.h:
+
+c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.0.65\avrtoolchain\bin\../lib/gcc/avr/4.6.2/../../../../avr/include/avr/sleep.h:
 
 c:\program\ files\ (x86)\atmel\atmel\ studio\ 6.0\extensions\atmel\avrgcc\3.4.0.65\avrtoolchain\bin\../lib/gcc/avr/4.6.2/../../../../avr/include/util/twi.h:
 

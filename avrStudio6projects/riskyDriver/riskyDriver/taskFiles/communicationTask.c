@@ -1,5 +1,5 @@
 #include "communicationTask.h"
-#include "adc.h"
+#include "adcInit.h"
 
 /* Scheduler include files. */
 #include "FreeRTOS.h"
@@ -63,18 +63,18 @@ static portTASK_FUNCTION( executeCommunicationTask, pvParameters )
         vTaskDelayUntil( &xLastWakeUpTime, COMMUNICATION_TASK_CYCLE );
                 
         //Execute this task each 50ms
-        batteryVoltage_mVolt = measureBattVoltage();
+        //batteryVoltage_mVolt = measureBattVoltage();
         //solarChargeCurrent_mAmps = measureSolarChargeCurrent();
         //consumerCurrent_mAmps = measureConsumerCurrent();
         //!!measure also solar voltage!!!
         
         //send new battery voltage value via measurement queue
         //first: prepare message
-        measurementMsg->valueId = ID_BATTERY_VOLTAGE;
-        measurementMsg->value = batteryVoltage_mVolt;
+        //measurementMsg->valueId = ID_BATTERY_VOLTAGE;
+        //measurementMsg->value = batteryVoltage_mVolt;
            
         //second: send queue
-        successFlag = xQueueSend( taskParams->measurementQueue, &measurementMsg, ( portTickType ) 10  ) ;
+        //successFlag = xQueueSend( taskParams->measurementQueue, &measurementMsg, ( portTickType ) 10  ) ;
     }
 }
 
