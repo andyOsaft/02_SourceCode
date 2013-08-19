@@ -75,37 +75,37 @@
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <ToolchainSettings>
       <AvrGcc>
-  <avrgcc.common.outputfiles.hex>True</avrgcc.common.outputfiles.hex>
-  <avrgcc.common.outputfiles.lss>True</avrgcc.common.outputfiles.lss>
-  <avrgcc.common.outputfiles.eep>True</avrgcc.common.outputfiles.eep>
-  <avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>
-  <avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>
-  <avrgcc.compiler.directories.IncludePaths>
-    <ListValues>
-      <Value>../../../../freeRTOS/FreeRTOSV7.4.0/FreeRTOSV7.4.0/FreeRTOS/Source/include</Value>
-      <Value>../../../../freeRTOS/FreeRTOSV7.4.0/FreeRTOSV7.4.0/FreeRTOS/Source/portable/GCC/ATMega323</Value>
-      <Value>..</Value>
-      <Value>../osFiles</Value>
-      <Value>../../../../freeRTOS/FreeRTOSV7.4.0/FreeRTOSV7.4.0/FreeRTOS/Demo/Common/Minimal</Value>
-      <Value>./../../../freeRTOS/FreeRTOSV7.4.0/FreeRTOSV7.4.0/FreeRTOS/Demo/Common/include</Value>
-      <Value>../taskFiles</Value>
-      <Value>../barometricSensor</Value>
-      <Value>../imu3000</Value>
-      <Value>../initFiles</Value>
-    </ListValues>
-  </avrgcc.compiler.directories.IncludePaths>
-  <avrgcc.compiler.optimization.level>Optimize (-O1)</avrgcc.compiler.optimization.level>
-  <avrgcc.compiler.optimization.PackStructureMembers>True</avrgcc.compiler.optimization.PackStructureMembers>
-  <avrgcc.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcc.compiler.optimization.AllocateBytesNeededForEnum>
-  <avrgcc.compiler.optimization.DebugLevel>Default (-g2)</avrgcc.compiler.optimization.DebugLevel>
-  <avrgcc.compiler.warnings.AllWarnings>True</avrgcc.compiler.warnings.AllWarnings>
-  <avrgcc.linker.libraries.Libraries>
-    <ListValues>
-      <Value>m</Value>
-    </ListValues>
-  </avrgcc.linker.libraries.Libraries>
-  <avrgcc.assembler.debugging.DebugLevel>Default (-Wa,-g)</avrgcc.assembler.debugging.DebugLevel>
-</AvrGcc>
+        <avrgcc.common.outputfiles.hex>True</avrgcc.common.outputfiles.hex>
+        <avrgcc.common.outputfiles.lss>True</avrgcc.common.outputfiles.lss>
+        <avrgcc.common.outputfiles.eep>True</avrgcc.common.outputfiles.eep>
+        <avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>
+        <avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>
+        <avrgcc.compiler.directories.IncludePaths>
+          <ListValues>
+            <Value>../../../../freeRTOS/FreeRTOSV7.4.0/FreeRTOSV7.4.0/FreeRTOS/Source/include</Value>
+            <Value>../../../../freeRTOS/FreeRTOSV7.4.0/FreeRTOSV7.4.0/FreeRTOS/Source/portable/GCC/ATMega323</Value>
+            <Value>..</Value>
+            <Value>../osFiles</Value>
+            <Value>../../../../freeRTOS/FreeRTOSV7.4.0/FreeRTOSV7.4.0/FreeRTOS/Demo/Common/Minimal</Value>
+            <Value>./../../../freeRTOS/FreeRTOSV7.4.0/FreeRTOSV7.4.0/FreeRTOS/Demo/Common/include</Value>
+            <Value>../taskFiles</Value>
+            <Value>../barometricSensor</Value>
+            <Value>../imu3000</Value>
+            <Value>../initFiles</Value>
+          </ListValues>
+        </avrgcc.compiler.directories.IncludePaths>
+        <avrgcc.compiler.optimization.level>Optimize (-O1)</avrgcc.compiler.optimization.level>
+        <avrgcc.compiler.optimization.PackStructureMembers>True</avrgcc.compiler.optimization.PackStructureMembers>
+        <avrgcc.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcc.compiler.optimization.AllocateBytesNeededForEnum>
+        <avrgcc.compiler.optimization.DebugLevel>Default (-g2)</avrgcc.compiler.optimization.DebugLevel>
+        <avrgcc.compiler.warnings.AllWarnings>True</avrgcc.compiler.warnings.AllWarnings>
+        <avrgcc.linker.libraries.Libraries>
+          <ListValues>
+            <Value>m</Value>
+          </ListValues>
+        </avrgcc.linker.libraries.Libraries>
+        <avrgcc.assembler.debugging.DebugLevel>Default (-Wa,-g)</avrgcc.assembler.debugging.DebugLevel>
+      </AvrGcc>
     </ToolchainSettings>
     <OutputFileName>riskyDriver</OutputFileName>
     <OutputFileExtension>.elf</OutputFileExtension>
@@ -119,10 +119,10 @@
     <Folder Include="osFiles" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="barometricSensor\atmega_bmp085_lib.c">
+    <Compile Include="barometricSensor\bmp085.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="barometricSensor\atmega_bmp085_lib.h">
+    <Compile Include="barometricSensor\bmp085.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="FreeRTOSConfig.h">
@@ -134,16 +134,13 @@
     <Compile Include="globals.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="imu3000\imu3000.c">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="imu3000\imu3000.h">
-      <SubType>compile</SubType>
-    </Compile>
     <Compile Include="initFiles\adcInit.c">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="initFiles\adcInit.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="initFiles\i2cmaster.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="initFiles\interrupt.c">
@@ -170,10 +167,7 @@
     <Compile Include="initFiles\timerInit.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="initFiles\twi_lib.c">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="initFiles\twi_lib.h">
+    <Compile Include="initFiles\twimaster.c">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="main.c">

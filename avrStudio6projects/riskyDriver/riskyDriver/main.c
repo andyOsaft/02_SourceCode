@@ -230,22 +230,21 @@ int main( void )
    
     
     //configure time measurment pin as output
-    DDRD |= (1<<PB7);
+    //DDRD |= (1<<PB7);
     
-    //Initialize TWI 100KHz
-    i2cSetBitrate(1);	
-    TWIM_Init(); 
+    //Initialize TWI 1000Hz
+    //i2cSetBitrate(1000);	
+    //TWIM_Init(); 
 
-    _delay_ms(100);	
-    
-    BMP085_Calibration( BMP085_calibration_int16_t, BMP085_calibration_uint16_t,&error_code );
+    bmp085_init();
+    //BMP085_Calibration( BMP085_calibration_int16_t, BMP085_calibration_uint16_t,&error_code );
     
     
     while( 1 )
     {
-        bmp085Convert( BMP085_calibration_int16_t, BMP085_calibration_uint16_t,&temperature, &pressure,&error_code );
+        //bmp085Convert( BMP085_calibration_int16_t, BMP085_calibration_uint16_t,&temperature, &pressure,&error_code );
     
-        altitude = bmp085CalcAltitude ( pressure );
+        //altitude = bmp085CalcAltitude ( pressure );
         _delay_ms(100);
     }
 

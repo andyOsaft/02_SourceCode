@@ -2,11 +2,9 @@
 # Automatically-generated file. Do not edit or delete the file
 ################################################################################
 
-barometricSensor\atmega_bmp085_lib.c
+barometricSensor\bmp085.c
 
 globals.c
-
-imu3000\imu3000.c
 
 initFiles\adcInit.c
 
@@ -18,7 +16,7 @@ initFiles\pwmInit.c
 
 initFiles\timerInit.c
 
-initFiles\twi_lib.c
+initFiles\twimaster.c
 
 main.c
 

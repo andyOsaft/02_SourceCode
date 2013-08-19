@@ -55,8 +55,8 @@ volatile int32_t ut;
 //----------------------------------------
 void input_init()
 {
-	input_DDR &= ~(1<<BMP085_pin);//Input
-	input_PORT |= (1<<BMP085_pin);//Enable PullUp
+	//input_DDR &= ~(1<<BMP085_pin);//Input
+	//input_PORT |= (1<<BMP085_pin);//Enable PullUp
 }
 //----------------------------------------
 // 
