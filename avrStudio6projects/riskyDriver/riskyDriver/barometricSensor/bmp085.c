@@ -102,18 +102,23 @@ void bmp085_getcalibration() {
 void bmp085_getrawtemperature() {
 	uint8_t buff[2];
 	memset(buff, 0, sizeof(buff));
-	long ut,x1,x2;
+	int32_t ut,x1,x2,b5;
 
 	//read raw temperature
 	bmp085_writemem(BMP085_REGCONTROL, BMP085_REGREADTEMPERATURE);
 	_delay_ms(5); // min. 4.5ms read Temp delay
 	bmp085_readmem(BMP085_REGCONTROLOUTPUT, buff, 2);
-	ut = ((long)buff[0] << 8 | ((long)buff[1])); //uncompensated temperature value
+	ut = ((int32_t)buff[0] << 8 | ((int32_t)buff[1])); //uncompensated temperature value
 
 	//calculate raw temperature
-	x1 = ((long)ut - bmp085_regac6) * bmp085_regac5 >> 15;
-	x2 = ((long)bmp085_regmc << 11) / (x1 + bmp085_regmd);
-	bmp085_rawtemperature = x1 + x2;
+	//x1 = ((long)ut - bmp085_regac6) * bmp085_regac5 >> 15;
+	//2 = ((long)bmp085_regmc << 11) / (x1 + bmp085_regmd);
+	//bmp085_rawtemperature = x1 + x2;
+    
+    x1 = ((int32_t)ut - (int32_t)bmp085_regac6) * (int32_t)bmp085_regac5 >> 15;
+    x2 = ((int32_t)bmp085_regmc << 11) / (x1 + bmp085_regmd);
+    b5 = x1 + x2;
+    bmp085_rawtemperature = (b5 + 8) >> 4;
 }
 
 /*
@@ -161,9 +166,9 @@ void bmp085_getrawpressure() {
  * get celsius temperature
  */
 double bmp085_gettemperature() {
-	bmp085_getrawtemperature();
-	double temperature = ((bmp085_rawtemperature + 8)>>4);
-	temperature = temperature /10;
+	double temperature;
+    bmp085_getrawtemperature();
+	temperature = bmp085_rawtemperature /10;
 	return temperature;
 }
 

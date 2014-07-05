@@ -21,7 +21,7 @@ Notes:
 #include <stdio.h>
 #include <avr/io.h>
 
-#define BMP085_ADDR (0x77<<1) //0x77 default I2C address
+#define BMP085_ADDR (0xEE) //0xEE default I2C address (write mode)
 
 #define BMP085_I2CFLEURYPATH "i2cmaster.h" //define the path to i2c fleury lib
 #define BMP085_I2CINIT 1 //init i2c
@@ -61,9 +61,9 @@ Notes:
 #define BMP085_FILTERPRESSURE 1 //avarage filter for pressure
 
 //variables
-int bmp085_regac1, bmp085_regac2, bmp085_regac3, bmp085_regb1, bmp085_regb2, bmp085_regmb, bmp085_regmc, bmp085_regmd;
-unsigned int bmp085_regac4, bmp085_regac5, bmp085_regac6;
-long bmp085_rawtemperature, bmp085_rawpressure;
+int16_t bmp085_regac1, bmp085_regac2, bmp085_regac3, bmp085_regb1, bmp085_regb2, bmp085_regmb, bmp085_regmc, bmp085_regmd;
+uint16_t bmp085_regac4, bmp085_regac5, bmp085_regac6;
+int32_t bmp085_rawtemperature, bmp085_rawpressure;
 
 //functions
 extern void bmp085_init();

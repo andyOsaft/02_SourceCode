@@ -14,7 +14,7 @@
 
 /* define CPU frequency in Mhz here if not defined in Makefile */
 #ifndef F_CPU
-#define F_CPU 4000000UL
+#define F_CPU 8000000UL
 #endif
 
 /* I2C clock in Hz */
@@ -95,7 +95,7 @@ void i2c_start_wait(unsigned char address)
     	TWDR = address;
     	TWCR = (1<<TWINT) | (1<<TWEN);
     
-    	// wail until transmission completed
+    	// wait until transmission completed
     	while(!(TWCR & (1<<TWINT)));
     
     	// check value of TWI Status Register. Mask prescaler bits.

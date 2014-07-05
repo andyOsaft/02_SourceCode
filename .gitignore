@@ -1,2 +1,8 @@
 avrStudio6projects/riskyDriver/riskyDriver/Debug/*
 avrStudio6projects/riskyDriver/riskyDriver/Debug/taskFiles/*
+avrStudio6projects/riskyDriver/riskyDriver/Debug/Makefile
+avrStudio6projects/riskyDriver/riskyDriver/Debug/*.o
+avrStudio6projects/riskyDriver/riskyDriver/Debug/*.d
+avrStudio6projects/riskyDriver/riskyDriver/Debug/*.mk
+avrStudio6projects/riskyDriver/riskyDriver/Debug/*/*.o
+avrStudio6projects/riskyDriver/riskyDriver/Debug/*/*.d
